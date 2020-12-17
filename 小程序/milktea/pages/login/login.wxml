@@ -1,0 +1,3 @@
+<button type="primary" open-type="getUserInfo" bindgetuserinfo="wxlogin">登录</button>
+
+

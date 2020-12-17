@@ -1,0 +1,26 @@
+<view class="u">
+  <view class="logo" bindtap="changelogo">
+    <image src="/icon/index1.jpg" class="image"></image>
+  </view>
+</view>
+
+<form bindsubmit="changeInfo" class="ub">
+<!-- <view class="ub"> -->
+  <view class="item" >
+    <view class="text">地址</view>
+    <view class="input" >
+      <input type="text" id="changeaddress" value="{{address}}" name="changeaddress"></input>
+    </view>
+  </view>
+
+  <view class="item" >
+    <view class="text">手机</view>
+    <view class="input">{{phone}}</view>
+  </view>
+
+
+
+<!-- </view> -->
+<button form-type="submit"  class="btn"><view class="text">保存</view></button>
+
+</form>
