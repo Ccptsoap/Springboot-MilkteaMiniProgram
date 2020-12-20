@@ -1,7 +1,6 @@
 <view class="main">
-	<image wx:if="{{milktea}}" src="/images/id{{milktea.id}}.jpg" class="current-img"></image>
+	<image wx:if="{{milktea}}" src="{{milktea.image}}" class="current-img"></image>
 	<view class="current-name">{{milktea.name}}</view>
-	<view class="current-des">{{milktea.des}}</view>
 
 	
 

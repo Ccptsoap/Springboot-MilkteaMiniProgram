@@ -27,9 +27,12 @@ Page({
           success:function(res){
             wx.request({
               url:'http://localhost:8080/login',
-              data: {userid:res.data.openid,username:userInfo.nickName},
+              data: {openid:res.data.openid,nickname:userInfo.nickName},
               success:(result)=>{
+                console.log(res.data.openid+"        "+userInfo.nickName)
+                console.log((result.data))
                 if(result.data.status==null){
+                  console.log((result.data.status));
                   base.globalData.isIn=1;
                   wx.showToast({
                     title: '登录成功',
@@ -37,9 +40,9 @@ Page({
                   })
                   wx.clearStorage({
                   })
-                  
                   wx.setStorageSync('userInfo', userInfo)
-                  wx.setStorageSync('openid', result.data)
+                  wx.setStorageSync('user', result.data)
+                  wx.setStorageSync('openid', result.data.getOpenid)
                   setTimeout(function () {
                     wx.navigateTo({
                       url: '../index/index',

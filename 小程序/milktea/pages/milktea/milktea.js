@@ -60,10 +60,12 @@ Page({
       var tmp1 = tmp + ".id"
       var tmp2 = tmp + ".name"
       var tmp3 = tmp + ".category"
+      var tmp4 = tmp + ".image"
       this.setData({
         [tmp1]: base.globalData.milktea[i].id,
         [tmp2]: base.globalData.milktea[i].name,
-        [tmp3]: base.globalData.milktea[i].category
+        [tmp3]: base.globalData.milktea[i].category,
+        [tmp4]: base.globalData.milktea[i].image
       })
     }
     this.setData({

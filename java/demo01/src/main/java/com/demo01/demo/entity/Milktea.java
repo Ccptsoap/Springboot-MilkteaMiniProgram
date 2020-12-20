@@ -3,18 +3,18 @@ package com.demo01.demo.entity;
 public class Milktea {
     String id;
     String name;
-    String des;
     String price;
     String type;
     String type_name;
+    String image;
 
-    public Milktea(String id, String name, String des, String price, String type, String type_name) {
+    public Milktea(String id, String name, String price, String type, String type_name, String image) {
         this.id = id;
         this.name = name;
-        this.des = des;
         this.price = price;
         this.type = type;
         this.type_name = type_name;
+        this.image = image;
     }
 
     public String getType_name() {
@@ -41,14 +41,6 @@ public class Milktea {
         this.name = name;
     }
 
-    public String getDes() {
-        return des;
-    }
-
-    public void setDes(String des) {
-        this.des = des;
-    }
-
     public String getPrice() {
         return price;
     }
@@ -63,5 +55,13 @@ public class Milktea {
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 }

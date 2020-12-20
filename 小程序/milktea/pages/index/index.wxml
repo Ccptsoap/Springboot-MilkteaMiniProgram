@@ -1,5 +1,5 @@
 <view class="title">
-<image src="/icon/java.png" class="java-img"></image>
+<image src="/icon/bokita.png" class="java-img"></image>
 <view class="tex">
 喜茶
 </view>
@@ -29,7 +29,7 @@
 <view class="recommend">
 	<view wx:for="{{recommendedMilktea}}" wx:key="index">
 		<view class="eachOne" bindtap="showDetail" data-id="{{item.id}}">
-			<image src="/images/id{{item.id}}.jpg" class="rec-img"></image>
+			<image src="{{item.image}}" class="rec-img"></image>
 			<view class="rec-name">{{item.name}}</view>
 			<view class="rec-price">￥{{item.price}}</view>
 		</view>

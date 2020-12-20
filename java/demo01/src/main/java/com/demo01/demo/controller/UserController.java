@@ -23,21 +23,24 @@ UserService userService;
 //        return res;
 //    }
 //
-    @RequestMapping("logon")
-    public String logon(User user){
-        String res= userService.logon(user);
-        return res;
-    }
+
 
     @RequestMapping("login")
-    public String login(User user){
-        String res= userService.login(user);
+    public User login(String openid,String nickname){
+        System.out.println("openid:"+openid+"name:"+nickname);
+        User res= userService.login(openid);
+        if(res.getOpenid()!=null){
+            res.setNickname(nickname);
+            userService.setNickName(res);
+        }
         return res;
     }
 
-    @RequestMapping("findByPhone")
-    public User findByPhone(String phone){
-        User res= userService.findByPhone(phone);
+
+
+    @RequestMapping("findByID")
+    public User findByID(String openid){
+        User res= userService.findByID(openid);
         return res;
     }
 
@@ -47,15 +50,7 @@ UserService userService;
         return res;
     }
 
-    @RequestMapping("findByPhoneAndPwd")
-    public String findByPhoneAndPwd(User user){
-        String res= userService.findByPhoneAndPwd(user);
-        return res;
-    }
 
-    @RequestMapping("changePwd")
-    public String changePwd(User user){
-        String res= userService.changePwd(user);
-        return res;
-    }
+
+
 }

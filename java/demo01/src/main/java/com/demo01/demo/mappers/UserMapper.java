@@ -8,9 +8,9 @@ import java.util.List;
 @Mapper
 public interface UserMapper {
 
-    public User login(User user);
-    public User findByPhone(String phone);
+    public User login(String openid);
+    public User findByID(String openid);
     public int changeUser(User user);
-    public int changePwd(User user);
-    public int logon(User user);
+    public int logon(String openid);
+    public int setNickname(User user);
 }

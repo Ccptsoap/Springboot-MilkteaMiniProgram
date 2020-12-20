@@ -2,22 +2,24 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.demo01.demo.mappers.UserMapper">
     <select id="login" resultType="User">
-    select *  from user where phone = #{phone} and pwd= #{pwd}
+    select *  from cusaccinfo where openid=#{openid}
     </select>
 
-    <select  id="findByPhone" resultType="User">
-    select * from user where phone=#{phone}
+    <select  id="findByID" resultType="User">
+    select * from cusaccinfo where openid=#{openid}
     </select>
 
     <update id="changeUser" parameterType="User">
-        update user set username=#{username}, gender=#{gender}, birthday=#{birthday} where phone=#{phone}
+        update cusaccinfo set name=#{name}, phonenum=#{phonenum}, address=#{address} where openid=#{openid}
     </update>
 
-    <update id="changePwd" parameterType="User">
-        update user set pwd=#{pwd} where phone=#{phone}
-    </update>
 
-    <insert id="logon" parameterType="User">
-        insert into user values(#{username},#{phone},#{pwd},#{level},#{gender},#{birthday})
+
+    <insert id="logon" parameterType="String">
+        insert into cusaccinfo(openid) values(#{openid})
     </insert>
+
+    <update id="setNickname" parameterType="User">
+        update cusaccinfo set nickname=#{nickname} where openid=#{openid}
+    </update>
 </mapper>

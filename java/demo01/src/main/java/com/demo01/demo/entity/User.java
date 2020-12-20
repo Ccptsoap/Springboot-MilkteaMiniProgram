@@ -2,83 +2,64 @@ package com.demo01.demo.entity;
 
 
 public class User {
-    private String username;
-    private String pwd;
-    private String phone;
-
-    public User(String username, String pwd, String phone, String gender, String birthday, int level) {
-        this.username = username;
-        this.pwd = pwd;
-        this.phone = phone;
-        this.gender = gender;
-        this.birthday = birthday;
-        this.level = level;
-    }
-
-    public User(String username, String phone, String gender, String birthday) {
-        this.username = username;
-        this.phone = phone;
-        this.gender = gender;
-        this.birthday = birthday;
-    }
-
-    public User(String pwd, String phone) {
-        this.pwd = pwd;
-        this.phone = phone;
-    }
-
-    private String gender;
-    private String birthday;
-    private int level;
+    private String openid;
+    private String name;
+    private String phonenum;
+    private String nickname;
+    private String address;
 
     public User() {
     }
 
-    public String getGender() {
-        return gender;
+    public User(String openid) {
+        this.openid = openid;
     }
 
-    public String getUsername() {
-        return username;
+    public User(String openid, String name, String phonenum, String nickname, String address) {
+        this.openid = openid;
+        this.name = name;
+        this.phonenum = phonenum;
+        this.nickname = nickname;
+        this.address = address;
     }
 
-    public String getPwd() {
-        return pwd;
+    public String getOpenid() {
+        return openid;
     }
 
-    public String getPhone() {
-        return phone;
+    public void setOpenid(String openid) {
+        this.openid = openid;
     }
 
-    public String getBirthday() {
-        return birthday;
+    public String getName() {
+        return name;
     }
 
-    public int getLevel() {
-        return level;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public void setPwd(String pwd) {
-        this.pwd = pwd;
+    public String getPhonenum() {
+        return phonenum;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setPhonenum(String phonenum) {
+        this.phonenum = phonenum;
     }
 
-    public void setPhone(String phone) {
-        this.phone = phone;
+    public String getNickname() {
+        return nickname;
     }
 
-    public void setLevel(int level) {
-        this.level = level;
+    public void setNickname(String nickname) {
+        this.nickname = nickname;
     }
 
-    public void setGender(String gender) {
-        this.gender = gender;
+    public String getAddress() {
+        return address;
     }
 
-    public void setBirthday(String birthday) {
-        this.birthday = birthday;
+    public void setAddress(String address) {
+        this.address = address;
     }
 }

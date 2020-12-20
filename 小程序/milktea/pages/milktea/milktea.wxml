@@ -15,7 +15,7 @@
 					<view class="index-right-text-top"><text>{{item.name}}</text></view>
 					<view class="index-right-text" wx:for="{{item.category}}" wx:key="id">
 						<view class="eachOne" bindtap="showDetail" data-id="{{item.id}}">
-							<image src="/images/id{{item.id}}.jpg" class="rec-img"></image>
+							<image src="{{item.image}}" class="rec-img"></image>
 							<view class="rec-name">{{item.name}}</view>
 							<view class="rec-price">￥{{item.price}}</view>
 						</view>
