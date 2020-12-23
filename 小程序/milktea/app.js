@@ -158,7 +158,9 @@ App({
     wx.showModal(p);
   },
   globalData: {
-    userInfo: null,
+    openid: "",
+    userInfo: "",
+    user: "",
     count_type: 0,
     milktea: [],
     isIn:0

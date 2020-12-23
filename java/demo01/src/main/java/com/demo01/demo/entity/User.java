@@ -11,6 +11,13 @@ public class User {
     public User() {
     }
 
+    public User(String openid, String name, String phonenum, String address) {
+        this.openid = openid;
+        this.name = name;
+        this.phonenum = phonenum;
+        this.address = address;
+    }
+
     public User(String openid) {
         this.openid = openid;
     }

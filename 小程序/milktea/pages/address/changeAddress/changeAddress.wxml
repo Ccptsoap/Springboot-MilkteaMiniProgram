@@ -1,7 +1,4 @@
 <view class="u">
-  <view class="logo" bindtap="changelogo">
-    <image src="{{userInfo.avatarURL}}" class="image"></image>
-  </view>
 </view>
 
 <form bindsubmit="changeaddress" class="ub">
@@ -26,7 +23,13 @@
   <view class="item" >
     <view class="text">手机</view>
     <view class="input">
-      <input type="text" id="phone" value="{{phone}}" name="phone"></input>
+      <input type="text" id="phonenum" value="{{phonenum}}" name="phonenum"></input>
+    </view>
+  </view>
+  <view class="item" >
+    <view class="text">姓名</view>
+    <view class="input">
+      <input type="text" id="name" value="{{name}}" name="name"></input>
     </view>
   </view>
 

@@ -84,18 +84,10 @@ public class OrderController {
 
     //增加一个订单条目
     @RequestMapping("addOneOrderByStr")
-    public boolean addOneOrderByStr(String userName,String drinkStr)
+    public boolean addOneOrderByStr(String openid,String drinkStr)
     {
 
-        return orderService.addOneOrderByStr(userName,drinkStr);
+        return orderService.addOneOrderByStr(openid,drinkStr);
     }
-//    @RequestMapping("testDate")
-//    public static String testDate(String oldDateStr) {
-//        DateFormat df = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
-//        Date date = df.parse(oldDateStr);
-//        SimpleDateFormat df1 = new SimpleDateFormat ("EEE MMM dd HH:mm:ss Z yyyy", Locale.UK);
-//        Date date1 =  df1.parse(date.toString());
-//        DateFormat df2 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-//        return df2.format(date1);
-//    }
+
 }

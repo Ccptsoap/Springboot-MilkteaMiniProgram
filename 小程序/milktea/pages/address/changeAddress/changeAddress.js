@@ -1,51 +1,62 @@
 // pages/address/changeAddress/changeAddress.js
+var base = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    userInfo: "",
-    phone: "",
+    openid:"",
+    phonenum: "",
     region: ['广东省', '东莞市', '松山湖'], // 初始值
     addressDetail: "",
-    changeaddress: ""
+    changeaddress: "",
+    name:""
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    this.getAll();
   },
   getAll:function(){
     this.setData({
-      phone:wx.getStorageSync('phone'),
-      userInfo:wx.getStorageSync('userInfo')
+      phonenum:base.globalData.user.phonenum,
+      name: base.globalData.user.name,
+      openid: base.globalData.openid
     })
   },
   changeaddress:function(e){
     this.setData({
       changeaddress: this.data.region+","+e.detail.value.addressDetail,
-      phone: e.detail.value.phone
+      phonenum: e.detail.value.phonenum,
+      openid: base.globalData.openid,
+      name: e.detail.value.name
     })
-    console.log(this.data.changeaddress)
+    console.log("address"+this.data.changeaddress)
+    console.log("name"+this.data.name)
+    console.log("num"+this.data.phonenum)
+    console.log("openid"+this.data.openid)
     wx.request({
-      url: 'http://localhost:8080/changeAddress',  //
-      data: {openid:wx.getStorageSync('openid'),address:this.data.changeaddress,phone:this.data.phone},
+      url: 'http://localhost:8080/changeUser',  //
+      data: {openid:this.data.openid,name:this.data.name,phonenum:this.data.phonenum,address:this.data.changeaddress},
       success:(result)=>{
+        console.log(result.data)
         if(result.data=="修改成功"){
           //重新获取信息
+          base.globalData.user.address =this.data.changeaddress
+          base.globalData.user.phonenum =this.data.phonenum
+          base.globalData.user.name =this.data.name
           this.getAll();
-          wx.setStorageSync('address', changeaddress)
-          wx.setStorageSync('phone', phone)
+          
           wx.showToast({
             title: '修改成功',
             icon:"success"
           })
           setTimeout(function () {
-            // login
             wx.switchTab({
-              url: '../../address/address',
+              url: '/pages/address/address',
             })
           }, 1000)
         }
@@ -76,7 +87,6 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
   },
 
   /**

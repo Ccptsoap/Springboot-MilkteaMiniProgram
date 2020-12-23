@@ -23,20 +23,43 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="794adb83-a7c3-4d67-ba64-7914649f06c1" name="Default Changelist" comment="11">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/demo01/demo/controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/demo01/demo/controller/OrderController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/demo01/demo/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/demo01/demo/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/demo01/demo/entity/Milktea.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/demo01/demo/entity/Milktea.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/demo01/demo/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/demo01/demo/entity/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/demo01/demo/mappers/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/demo01/demo/mappers/UserMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/demo01/demo/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/demo01/demo/service/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/demo01/demo/service/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/demo01/demo/service/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mappers/MilkteaMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mappers/MilkteaMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mappers/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mappers/UserMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/demo01/demo/DemoApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/demo01/demo/DemoApplicationTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/demo01/demo/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo01/demo/controller/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo01/demo/entity/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo01/demo/entity/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo01/demo/mappers/UserMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo01/demo/mappers/UserMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo01/demo/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo01/demo/service/UserService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/demo01/demo/service/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo01/demo/service/UserServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../小程序/milktea/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../小程序/milktea/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../小程序/milktea/app.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../小程序/milktea/app.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../小程序/milktea/icon/bokita.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../小程序/milktea/icon/index1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../小程序/milktea/icon/未标题-1.psd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../小程序/milktea/pages/address/address.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../小程序/milktea/pages/address/address.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../小程序/milktea/pages/address/address.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/../../小程序/milktea/pages/address/address.wxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../小程序/milktea/pages/address/address.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/../../小程序/milktea/pages/address/address.wxss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../小程序/milktea/pages/address/changeAddress/changeAddress.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../小程序/milktea/pages/address/changeAddress/changeAddress.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../小程序/milktea/pages/address/changeAddress/changeAddress.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/../../小程序/milktea/pages/address/changeAddress/changeAddress.wxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../小程序/milktea/pages/address/changeAddress/changeAddress.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/../../小程序/milktea/pages/address/changeAddress/changeAddress.wxss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../小程序/milktea/pages/login/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../小程序/milktea/pages/login/login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../小程序/milktea/pages/pay/pay.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../小程序/milktea/pages/pay/pay.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../小程序/milktea/pages/pay/pay.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/../../小程序/milktea/pages/pay/pay.wxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../小程序/milktea/pages/user/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../小程序/milktea/pages/user/user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../小程序/milktea/pages/user/user/changeSecret/changeSecret.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../小程序/milktea/pages/user/user/changeSecret/changeSecret.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../小程序/milktea/pages/user/user/changeSecret/changeSecret.wxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../小程序/milktea/pages/user/user/changeSecret/changeSecret.wxss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../小程序/milktea/pages/user/user/changeUserInfo/changeUserInfo.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../小程序/milktea/pages/user/user/changeUserInfo/changeUserInfo.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../小程序/milktea/pages/user/user/changeUserInfo/changeUserInfo.wxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../小程序/milktea/pages/user/user/changeUserInfo/changeUserInfo.wxss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../小程序/milktea/pages/user/user/logon/logon.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../小程序/milktea/pages/user/user/logon/logon.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../小程序/milktea/pages/user/user/logon/logon.wxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../小程序/milktea/pages/user/user/logon/logon.wxss" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,17 +95,6 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected="Spring Boot.DemoApplication">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="DemoApplicationTests.contextLoads" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="demo01" />
       <extension name="coverage">
@@ -127,6 +139,9 @@
       <workItem from="1608111447476" duration="3497000" />
       <workItem from="1608202737034" duration="232000" />
       <workItem from="1608356668597" duration="17772000" />
+      <workItem from="1608455081186" duration="2994000" />
+      <workItem from="1608480325540" duration="4801000" />
+      <workItem from="1608698489079" duration="4583000" />
     </task>
     <task id="LOCAL-00001" summary="11">
       <created>1608112980581</created>
@@ -158,46 +173,46 @@
     <option name="LAST_COMMIT_MESSAGE" value="11" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="659" y="177" key="#com.intellij.ide.util.MemberChooser" timestamp="1608385359196">
+    <state x="659" y="177" key="#com.intellij.ide.util.MemberChooser" timestamp="1608481409426">
       <screen x="0" y="0" width="1707" height="920" />
     </state>
-    <state x="659" y="177" key="#com.intellij.ide.util.MemberChooser/0.0.1707.920@0.0.1707.920" timestamp="1608385359196" />
+    <state x="659" y="177" key="#com.intellij.ide.util.MemberChooser/0.0.1707.920@0.0.1707.920" timestamp="1608481409426" />
     <state x="634" y="216" key="FileChooserDialogImpl" timestamp="1608111863284">
       <screen x="0" y="0" width="1707" height="920" />
     </state>
     <state x="634" y="216" key="FileChooserDialogImpl/0.0.1707.920@0.0.1707.920" timestamp="1608111863284" />
-    <state width="1663" height="232" key="GridCell.Tab.0.bottom" timestamp="1608404815972">
+    <state width="1663" height="232" key="GridCell.Tab.0.bottom" timestamp="1608487771913">
       <screen x="0" y="0" width="1707" height="920" />
     </state>
-    <state width="1663" height="232" key="GridCell.Tab.0.bottom/0.0.1707.920@0.0.1707.920" timestamp="1608404815972" />
-    <state width="1663" height="232" key="GridCell.Tab.0.center" timestamp="1608404815972">
+    <state width="1663" height="232" key="GridCell.Tab.0.bottom/0.0.1707.920@0.0.1707.920" timestamp="1608487771913" />
+    <state width="1663" height="232" key="GridCell.Tab.0.center" timestamp="1608487771913">
       <screen x="0" y="0" width="1707" height="920" />
     </state>
-    <state width="1663" height="232" key="GridCell.Tab.0.center/0.0.1707.920@0.0.1707.920" timestamp="1608404815972" />
-    <state width="1663" height="232" key="GridCell.Tab.0.left" timestamp="1608404815972">
+    <state width="1663" height="232" key="GridCell.Tab.0.center/0.0.1707.920@0.0.1707.920" timestamp="1608487771913" />
+    <state width="1663" height="232" key="GridCell.Tab.0.left" timestamp="1608487771913">
       <screen x="0" y="0" width="1707" height="920" />
     </state>
-    <state width="1663" height="232" key="GridCell.Tab.0.left/0.0.1707.920@0.0.1707.920" timestamp="1608404815972" />
-    <state width="1663" height="232" key="GridCell.Tab.0.right" timestamp="1608404815972">
+    <state width="1663" height="232" key="GridCell.Tab.0.left/0.0.1707.920@0.0.1707.920" timestamp="1608487771913" />
+    <state width="1663" height="232" key="GridCell.Tab.0.right" timestamp="1608487771913">
       <screen x="0" y="0" width="1707" height="920" />
     </state>
-    <state width="1663" height="232" key="GridCell.Tab.0.right/0.0.1707.920@0.0.1707.920" timestamp="1608404815972" />
-    <state width="1663" height="232" key="GridCell.Tab.1.bottom" timestamp="1608404815972">
+    <state width="1663" height="232" key="GridCell.Tab.0.right/0.0.1707.920@0.0.1707.920" timestamp="1608487771913" />
+    <state width="1663" height="232" key="GridCell.Tab.1.bottom" timestamp="1608487771913">
       <screen x="0" y="0" width="1707" height="920" />
     </state>
-    <state width="1663" height="232" key="GridCell.Tab.1.bottom/0.0.1707.920@0.0.1707.920" timestamp="1608404815972" />
-    <state width="1663" height="232" key="GridCell.Tab.1.center" timestamp="1608404815972">
+    <state width="1663" height="232" key="GridCell.Tab.1.bottom/0.0.1707.920@0.0.1707.920" timestamp="1608487771913" />
+    <state width="1663" height="232" key="GridCell.Tab.1.center" timestamp="1608487771913">
       <screen x="0" y="0" width="1707" height="920" />
     </state>
-    <state width="1663" height="232" key="GridCell.Tab.1.center/0.0.1707.920@0.0.1707.920" timestamp="1608404815972" />
-    <state width="1663" height="232" key="GridCell.Tab.1.left" timestamp="1608404815972">
+    <state width="1663" height="232" key="GridCell.Tab.1.center/0.0.1707.920@0.0.1707.920" timestamp="1608487771913" />
+    <state width="1663" height="232" key="GridCell.Tab.1.left" timestamp="1608487771913">
       <screen x="0" y="0" width="1707" height="920" />
     </state>
-    <state width="1663" height="232" key="GridCell.Tab.1.left/0.0.1707.920@0.0.1707.920" timestamp="1608404815972" />
-    <state width="1663" height="232" key="GridCell.Tab.1.right" timestamp="1608404815972">
+    <state width="1663" height="232" key="GridCell.Tab.1.left/0.0.1707.920@0.0.1707.920" timestamp="1608487771913" />
+    <state width="1663" height="232" key="GridCell.Tab.1.right" timestamp="1608487771913">
       <screen x="0" y="0" width="1707" height="920" />
     </state>
-    <state width="1663" height="232" key="GridCell.Tab.1.right/0.0.1707.920@0.0.1707.920" timestamp="1608404815972" />
+    <state width="1663" height="232" key="GridCell.Tab.1.right/0.0.1707.920@0.0.1707.920" timestamp="1608487771913" />
     <state x="433" y="203" key="IDE.errors.dialog" timestamp="1607961948734">
       <screen x="0" y="0" width="1707" height="920" />
     </state>

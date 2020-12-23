@@ -6,20 +6,21 @@ Page({
    * 页面的初始数据
    */
   data: {
-    userInfo:"",
-    phone:""
+    userInfo:""
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
   },
   clearInfo:function(){
     wx.clearStorage({
     })
     base.globalData.isIn = 0;
+    base.globalData.userInfo = "";
+    base.globalData.openid = "";
+    base.globalData.user = "";
     wx.showToast({
       title: '成功退出',
       icon:"success"
@@ -44,10 +45,13 @@ Page({
    */
   onShow: function () {
     console.log("onshow")
+    
     this.setData({
-      userInfo : wx.getStorageSync('userInfo')
+      userInfo : base.globalData.userInfo
     })
-    console.log(wx.getStorageSync('userInfo'))
+    
+    console.log(this.data.userInfo)
+    console.log(base.globalData.user.openid)
   },
  
   /**

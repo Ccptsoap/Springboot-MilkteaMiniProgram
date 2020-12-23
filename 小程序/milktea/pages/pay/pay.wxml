@@ -7,7 +7,7 @@
 <view class="phone" style="white-space:pre-wrap">{{address}}</view>
 <view class="list">
 
-  <view class="phone" style="white-space:pre-wrap">联系电话   {{phone}}
+  <view class="phone" style="white-space:pre-wrap">联系电话   {{phonenum}}
   </view>
   <view class="whiteSpace"></view>
 

@@ -7,13 +7,13 @@ Page({
    */
   data: {
     openid: "",
-    phone:"",
+    phonenum:"",
     totalPrice:0,
     totalNum:0,
     drinkList:"",
     //传回后端的drinklist
     dl:"",
-    address: "广东省东莞市松山湖东莞理工学院"
+    address: ""
   },
   goWePay: function () {
     wx.showModal({
@@ -35,28 +35,7 @@ Page({
             })
           }, 2000)
           
-
-          // if (base.globalData.isIn == 0)
-          // {
-          //   wx.showToast({
-          //     title: '请先去登录',
-          //     image: "/icon/fail.png"
-          //   })
-          //   setTimeout(function () {
-          //     // 回传后端订单，去往订单页面
-          //     wx.switchTab({
-          //       url: '../login/login',
-          //     })
-          //   }, 2000)
-          // }
-          
-          // ////////test
-          // this.setData({
-          //    userName: "amy" 
-             
-          // })
-          // 1 取出缓存中的用户名
-          var openid = wx.getStorageSync("openid")
+          var openid = base.globalData.openid
           this.setData(
             { openid:openid }
           )
@@ -106,9 +85,10 @@ Page({
    */
   onLoad: function (options) { 
     //1 取出缓存中的用户名
-    var phone = wx.getStorageSync("phone")
+    var phonenum = base.globalData.user.phonenum
+    this.getAddress
     this.setData(
-      { phone: phone }
+      { phonenum: phonenum }
     )
     //获得商品列表  
     var l = base.cart.getList();
@@ -116,7 +96,7 @@ Page({
     var tn = 0;
     var tmpList=[];
     for (var i = 0; i < l.length; i++) {
-      l[i].imgUrl = '/images/id' + l[i].id + '.jpg';
+      l[i].imgUrl =  l[i].image;
       tp += l[i].price * l[i].num;
       tn += l[i].num;
       tmpList[i] = {
@@ -138,7 +118,7 @@ Page({
   },
   getAddress: function(){
     this.setData({
-      address : wx.getStorageSync('address')
+      address : base.globalData.user.address
     }) 
   },
   changeAddress: function(){

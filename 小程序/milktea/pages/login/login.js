@@ -32,7 +32,6 @@ Page({
                 console.log(res.data.openid+"        "+userInfo.nickName)
                 console.log((result.data))
                 if(result.data.status==null){
-                  console.log((result.data.status));
                   base.globalData.isIn=1;
                   wx.showToast({
                     title: '登录成功',
@@ -41,11 +40,15 @@ Page({
                   wx.clearStorage({
                   })
                   wx.setStorageSync('userInfo', userInfo)
+                  base.globalData.userInfo = userInfo
+                  base.globalData.user = result.data
+                  base.globalData.openid = res.data.openid
                   wx.setStorageSync('user', result.data)
-                  wx.setStorageSync('openid', result.data.getOpenid)
+                  wx.setStorageSync('openid', result.data.openid)
+                  console.log(wx.getStorageSync('userInfo'))
                   setTimeout(function () {
-                    wx.navigateTo({
-                      url: '../index/index',
+                    wx.switchTab({
+                      url: '../user/user',
                     })
                   }, 1000)
                 }

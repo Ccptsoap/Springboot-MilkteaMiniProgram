@@ -47,11 +47,7 @@ public class UserServiceImpl implements UserService {
 //        调用 mapper中的方法
         User beforeUser = userMapper.findByID(user.getOpenid());
         if(beforeUser==null){
-            return "您尚未登录，请先登录";
-        }
-        if(beforeUser.getAddress().equals(user.getAddress()) && beforeUser.getPhonenum().equals(user.getPhonenum())
-                && beforeUser.getName().equals(user.getName())){
-            return "修改信息无变化";
+            return "您尚未登录，请先登录！！！！";
         }
         else{
             int count=userMapper.changeUser(user);

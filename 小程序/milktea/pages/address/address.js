@@ -1,20 +1,21 @@
 // pages/user/user/changeUserInfo/changeUserInfo.js
+var base = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-      userInfo: "",
       address:"",
-      phone:"",
+      phonenum:"",
+      name: ""
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.getAll();
+    
   },
   
   /**
@@ -30,21 +31,19 @@ Page({
   },
   
   getAll:function(){
-    this.setData({
-      phone:wx.getStorageSync('phone'),
-      userInfo:wx.getStorageSync('userInfo') 
-    })
     console.log("修改信息中的getAll()")
     wx.request({
-      url: 'http://localhost:8080/findAddress',  //通过手机号获取信息，可修改成通过id获取地址信息
-      data: {openid:wx.getStorageSync('openid')},
+      url: 'http://localhost:8080/findByID',  //通过手机号获取信息，可修改成通过id获取地址信息
+      data: {openid:base.globalData.openid},
       success:(result)=>{
         console.log(result)
-        wx.setStorageSync('address', result.data.address)
-        wx.setStorageSync('phone', result.data.phone)
+        base.globalData.user.address =result.data.address
+        base.globalData.user.phonenum =result.data.phonenum
+        base.globalData.user.name =result.data.name
         this.setData({
-          address:wx.getStorageSync('address'),
-          phone:wx.getStorageSync('phone')
+          address:base.globalData.user.address,
+          phonenum:base.globalData.user.phonenum,
+          name:base.globalData.user.name
         })
         console.log("222222222222")
       }
@@ -54,7 +53,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+    this.getAll();
   },
 
 

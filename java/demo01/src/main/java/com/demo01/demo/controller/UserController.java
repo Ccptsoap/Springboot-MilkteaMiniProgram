@@ -45,7 +45,8 @@ UserService userService;
     }
 
     @RequestMapping("changeUser")
-    public String changeUser(User user){
+    public String changeUser(String openid, String name, String phonenum, String address){
+        User user = new User(openid,name,phonenum,address);
         String res= userService.changeUser(user);
         return res;
     }
