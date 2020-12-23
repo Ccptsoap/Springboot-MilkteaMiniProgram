@@ -1,21 +1,24 @@
 package com.demo01.demo.entity;
 
-public class OrderDrink {
+import java.sql.Timestamp;
+import java.util.List;
+
+public class SelectInfo {
     private String drinkId;
-    private String drinkName;
     private int drinkNum;
     private String drinkInfo;
     private double drinkPrice;
+    private int orderId;
 
-    public OrderDrink(String drinkId, String drinkName, int drinkNum, String drinkInfo, double drinkPrice) {
+    public SelectInfo() {
+    }
+
+    public SelectInfo(String drinkId, int drinkNum, String drinkInfo, double drinkPrice, int orderId) {
         this.drinkId = drinkId;
-        this.drinkName = drinkName;
         this.drinkNum = drinkNum;
         this.drinkInfo = drinkInfo;
         this.drinkPrice = drinkPrice;
-    }
-
-    public OrderDrink() {
+        this.orderId = orderId;
     }
 
     public String getDrinkId() {
@@ -24,14 +27,6 @@ public class OrderDrink {
 
     public void setDrinkId(String drinkId) {
         this.drinkId = drinkId;
-    }
-
-    public String getDrinkName() {
-        return drinkName;
-    }
-
-    public void setDrinkName(String drinkName) {
-        this.drinkName = drinkName;
     }
 
     public int getDrinkNum() {
@@ -56,5 +51,13 @@ public class OrderDrink {
 
     public void setDrinkPrice(double drinkPrice) {
         this.drinkPrice = drinkPrice;
+    }
+
+    public int getOrderId() {
+        return orderId;
+    }
+
+    public void setOrderId(int orderId) {
+        this.orderId = orderId;
     }
 }

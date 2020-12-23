@@ -1,9 +1,8 @@
 package com.demo01.demo.controller;
 
 import com.demo01.demo.entity.MiniOrder;
-import com.demo01.demo.entity.MiniOrderEntry;
 import com.demo01.demo.entity.Order;
-import com.demo01.demo.entity.OrderEntry;
+import com.demo01.demo.entity.SelectInfo;
 import com.demo01.demo.mappers.OrderMapper;
 import com.demo01.demo.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,11 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.sql.Timestamp;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.List;
-import java.util.Locale;
 
 @RestController
 public class OrderController {
@@ -58,29 +53,24 @@ public class OrderController {
 
     //////////test
     //查询用户所有订单
-    @RequestMapping("test")
-    public int test()
-    {
-        Timestamp time=new Timestamp(System.currentTimeMillis()); ;
-        OrderEntry orderEntry = new OrderEntry();
-        orderEntry.setUserName("bob");
-        orderEntry.setDrinkId("0001");
-        orderEntry.setDrinkInfo("全糖");
-        orderEntry.setDrinkName("烤奶");
-        orderEntry.setDrinkNum(1);
-        orderEntry.setDrinkPrice(10);
-        orderEntry.setOrderId(114);
-        orderEntry.setOrderTime(time);
-        orderEntry.setPickId(122);
-        return orderMapper.addOneOrder(orderEntry);
-    }
+//    @RequestMapping("test")
+//    public int test()
+//    {
+//        Timestamp time=new Timestamp(System.currentTimeMillis()); ;
+//        SelectInfo selectInfo = new SelectInfo();
+//        selectInfo.setUserName("bob");
+//        selectInfo.setDrinkId("0001");
+//        selectInfo.setDrinkInfo("全糖");
+//        selectInfo.setDrinkName("烤奶");
+//        selectInfo.setDrinkNum(1);
+//        selectInfo.setDrinkPrice(10);
+//        selectInfo.setOrderId(114);
+//        selectInfo.setOrderTime(time);
+//        selectInfo.setPickId(122);
+//        return orderMapper.addOneOrder(selectInfo);
+//    }
 
-    //增加一个订单条目
-    @RequestMapping("addOneOrder")
-    public boolean addOneOrder(Order order)
-    {
-        return orderService.addOneOrder(order);
-    }
+
 
     //增加一个订单条目
     @RequestMapping("addOneOrderByStr")

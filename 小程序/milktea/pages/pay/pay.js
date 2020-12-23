@@ -64,31 +64,17 @@ Page({
       }
     })
   },
-  // goWePay: function(){
-  //   wx.requestPayment({
-  //     'timeStamp': '',
-  //     'nonceStr': '',
-  //     'package': '',
-  //     'signType': 'MD5',
-  //     'paySign': '',
-  //     'success': function (res) {
-  //     },
-  //     'fail': function (res) {
-  //     }
-  //   })
-  //   // wx.navigateTo({
-  //   //   url: '../wepay/wepay?total=totalPrice'
-  //   // })
-  // },
+  
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) { 
-    //1 取出缓存中的用户名
+    //1 取出缓存中的openid
     var phonenum = base.globalData.user.phonenum
-    this.getAddress
     this.setData(
-      { phonenum: phonenum }
+      { phonenum: phonenum,
+        address : base.globalData.user.address
+       }
     )
     //获得商品列表  
     var l = base.cart.getList();
@@ -96,13 +82,12 @@ Page({
     var tn = 0;
     var tmpList=[];
     for (var i = 0; i < l.length; i++) {
-      l[i].imgUrl =  l[i].image;
       tp += l[i].price * l[i].num;
       tn += l[i].num;
       tmpList[i] = {
         drinkId: l[i].id,
         drinkName: l[i].name,
-        drinkPrice: l[i].price,
+        drinkPrice: l[i].price*l[i].num,
         drinkInfo: l[i].size,
         drinkNum: l[i].num
       }
@@ -115,11 +100,6 @@ Page({
       drinkList:l,
       dl:tmpList
     })
-  },
-  getAddress: function(){
-    this.setData({
-      address : base.globalData.user.address
-    }) 
   },
   changeAddress: function(){
     wx.navigateTo({

@@ -10,22 +10,7 @@ Page({
     total: 0,
     his: ""
   },
-  // ///////test
-  // test:function()
-  // {
-  //   if (base.cart.add({
-  //     supplyno: 1,
-  //     id: 1,
-  //     name: "奶绿",
-  //     size: "不加糖",
-  //     price: 8,
-  //     num: 2
-  //   })) 
-  //     this.setData({
-  //       cartNum: base.cart.getNum()
-  //     })
-    
-  //},
+ 
   /**
    * 生命周期函数--监听页面加载
    */

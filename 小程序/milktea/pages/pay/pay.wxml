@@ -16,7 +16,7 @@
   <view class="eachOne" wx:for="{{drinkList}}" wx:key="index" >
 
       <view class="pic">
-        <image class="img" src="{{item.imgUrl}}" ></image>
+        <image class="img" src="{{item.image}}" ></image>
       </view>
       
           <view class="drinkNameAndInfo" >  

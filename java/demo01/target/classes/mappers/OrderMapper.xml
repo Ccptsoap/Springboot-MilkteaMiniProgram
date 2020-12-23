@@ -6,7 +6,7 @@
     <!--<select id="findAllOrderByName" resultType="Order">-->
         <!--select drinkId,orderId,orderTime from orderTable where userName=#{userName}-->
     <!--</select>-->
-    <select id="findAllOrderByName" resultType="OrderEntry">
+    <select id="findAllOrderByName" resultType="SelectInfo">
         select * from orderTable where userName=#{userName}
     </select>
 
@@ -14,7 +14,7 @@
         select userName, drinkId, orderTime, orderId, drinkNum, drinkPrice from orderTable where userName=#{userName}
     </select>
 
-    <select id="findOneOrder" resultType="OrderEntry">
+    <select id="findOneOrder" resultType="SelectInfo">
         select * from orderTable where userName=#{userName} and orderId=#{orderId}
     </select>
     <!--怎么根据日期查询！！！！！！！-->
@@ -25,19 +25,19 @@
 
     <!--查询最后一个订单的订单编号-->
     <select id="findLastOrderId" resultType="int">
-        select   orderId   from   orderTable   order   by   orderId   desc   limit   1
+        select   orderId   from   OrderInfo   order   by   orderId   desc   limit   1
     </select>
 
-    <!--查询最后一个订单的取茶码-->
-    <select id="findLastPickId" resultType="int">
-        select   pickId   from   orderTable   order   by   orderId   desc   limit   1
-    </select>
 
     <!--增加-->
     <!--增删改都没有resultType-->
     <!---->
-    <insert id="addOneOrder" parameterType="OrderEntry">
-        insert into orderTable value(#{userName},#{drinkId},#{drinkName},#{drinkInfo},#{drinkPrice},#{drinkNum},#{orderTime},#{orderId},#{pickId})
+    <insert id="addOneSelectInfo" parameterType="SelectInfo">
+        insert into comselectinfo value(#{orderId},#{drinkId},#{drinkNum},#{drinkInfo},#{drinkPrice})
+    </insert>
+
+    <insert id="addOneOrderInfo" parameterType="OrderInfo">
+        insert into orderinfo value(#{orderId},#{openid},#{timestamp},#{total},#{statu})
     </insert>
 
 </mapper>
