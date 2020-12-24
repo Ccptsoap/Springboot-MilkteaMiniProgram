@@ -19,65 +19,45 @@ public class OrderController {
     @Autowired
     OrderMapper orderMapper;
 
-/*    @RequestMapping("testO1")
-    public List<Order> testO1(){
-        //调用mapper层的方法
-        return orderService.findAllOrderByName("amy");
-    }*/
+
     //查询用户所有订单详细信息
-    @RequestMapping("findAllOrderByName")
-    public List<Order> findAllOrderByName(String userName)
+    @RequestMapping("findAllOrderByID")
+    public List<Order> findAllOrderByID(String openid)
     {
-        return orderService.findAllOrderByName(userName);
+        return orderService.findAllOrderByID(openid);
     }
 
     //查询用户今日订单缩略信息
     @RequestMapping("findTodayMiniOrder")
-    public List<MiniOrder> findTodayMiniOrder(String userName)
+    public List<MiniOrder> findTodayMiniOrder(String openid)
     {
-        return orderService.findTodayMiniOrder(userName);
+        return orderService.findTodayMiniOrder(openid);
     }
     //查询用户所有订单缩略信息
     @RequestMapping("findAllMiniOrder")
-    public List<MiniOrder> findAllMiniOrder(String userName)
+    public List<MiniOrder> findAllMiniOrder(String openid)
     {
-        return orderService.findAllMiniOrder(userName);
+        return orderService.findAllMiniOrder(openid);
     }
 
     //查询一个订单的详细信息
     @RequestMapping("findOneOrder")
-    public Order findOneOrder(String userName,int orderId)
+    public Order findOneOrder(int orderId)
     {
-        return orderService.findOneOrder(userName,orderId);
+        return orderService.findOneOrder(orderId);
     }
 
-    //////////test
     //查询用户所有订单
-//    @RequestMapping("test")
-//    public int test()
-//    {
-//        Timestamp time=new Timestamp(System.currentTimeMillis()); ;
-//        SelectInfo selectInfo = new SelectInfo();
-//        selectInfo.setUserName("bob");
-//        selectInfo.setDrinkId("0001");
-//        selectInfo.setDrinkInfo("全糖");
-//        selectInfo.setDrinkName("烤奶");
-//        selectInfo.setDrinkNum(1);
-//        selectInfo.setDrinkPrice(10);
-//        selectInfo.setOrderId(114);
-//        selectInfo.setOrderTime(time);
-//        selectInfo.setPickId(122);
-//        return orderMapper.addOneOrder(selectInfo);
-//    }
+
 
 
 
     //增加一个订单条目
     @RequestMapping("addOneOrderByStr")
-    public boolean addOneOrderByStr(String openid,String drinkStr)
+    public boolean addOneOrderByStr(String openid,String drinkStr,String address,String phoneNum,String name)
     {
 
-        return orderService.addOneOrderByStr(openid,drinkStr);
+        return orderService.addOneOrderByStr(openid,drinkStr,address,phoneNum,name);
     }
 
 }

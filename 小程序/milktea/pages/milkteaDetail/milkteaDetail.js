@@ -9,6 +9,7 @@ Page({
     milktea: "",
     //设置中间变量，把onLoad中的获取到的标题函数传入到onReady中使用
     navigateTitle: "",
+    image: "",
     price: 0,
     total: "", //选择内容的描述
     num: 1, //购买数量
@@ -137,6 +138,7 @@ Page({
     this.data.sugar_buttons[0].checked = true
     this.data.ice_buttons[0].checked = true
     this.setData({
+      image: this.data.milktea.image,
       price: this.data.milktea.price,
       sugar_buttons: this.data.sugar_buttons,
       ice_buttons: this.data.ice_buttons,
@@ -155,7 +157,8 @@ Page({
         name: this.data.milktea.name,
         size: this.data.total,
         price: singlePrice,
-        num: this.data.num
+        num: this.data.num,
+        image: this.data.image
       })) {
       this.setData({
         cartNum: base.cart.getNum()

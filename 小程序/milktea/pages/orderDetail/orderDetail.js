@@ -19,7 +19,7 @@ Page({
     })
     var tmp = this.data.orderDetail;
     //console.log(tmp[i].orderTime);  //2019-01-21T06:25:50.000Z
-    var d = new Date(tmp.orderTime);
+    var d = new Date(tmp.time);
     //console.log(d);   //Sun Jan 20 2019 16:43:42 GMT+0800
     //console.log(d.getTime());  //这个全输入时间戳
     var y = d.getFullYear();
@@ -35,15 +35,9 @@ Page({
     if (m < 10) {
       m = "0" + m;
     }
-    tmp.orderTime = y + '/' + mon + '/' + day + ' ' + h + ':' + m + ':' + s
-    //for (var i = 0; i < tmp.length; i++) {
-      var img=[];
-      for (var j = 0; j < tmp.drinkList.length; j++) {
-        tmp.drinkList[j].img = '/images/id' + tmp.drinkList[j].drinkId + '.jpg';
-      }
+    tmp.time = y + '/' + mon + '/' + day + ' ' + h + ':' + m + ':' + s
+      console.log(tmp.drinkList)
       
-      //tmp[i].drinkList = img;
-    //} 
     this.setData({
       orderDetail: tmp
     })

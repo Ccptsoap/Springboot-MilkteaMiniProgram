@@ -39,13 +39,8 @@ App({
     ref: "",
     add: function (p) {
       var re = false;
-      if (p.supplyno && p.id && p.price && p.size && p.name && p.num) {
+      if (p.supplyno && p.id && p.price && p.size && p.name && p.num ) {
         var dic = wx.getStorageSync(this.key) || {};
-        // if (p.supplyno in dic) {
-        //     dic[p.supplyno].num += p.num;
-        // } else {
-        //     dic[p.supplyno] = { id: p.id, name: p.name, price: p.price, size: p.size, num: p.num}
-        // }
         var flag = false
         var des
         for (var d in dic) {
@@ -63,7 +58,8 @@ App({
             name: p.name,
             price: p.price,
             size: p.size,
-            num: p.num
+            num: p.num,
+            image: p.image
           }
         }
         wx.setStorageSync(this.key, dic);
@@ -116,7 +112,8 @@ App({
           name: dic[p].name,
           price: dic[p].price,
           size: dic[p].size,
-          num: dic[p].num
+          num: dic[p].num,
+          image: dic[p].image
         });
       }
       return list;

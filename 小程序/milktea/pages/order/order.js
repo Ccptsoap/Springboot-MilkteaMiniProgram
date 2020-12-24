@@ -1,4 +1,5 @@
 // pages/order/order.js
+var base = getApp();
 Page({
 
   /**
@@ -24,10 +25,9 @@ Page({
   },
   update: function(){
    // 1 取出缓存中的用户名
-    var openid = wx.getStorageSync('openid')
-    var userName = wx.getStorageSync("username")
+    var openid = base.globalData.openid
     this.setData(
-      { userName: userName,
+      { 
         openid: openid
       }
     )
@@ -35,7 +35,7 @@ Page({
     {
       wx.request({
 
-        data: { userName: this.data.userName },
+        data: { openid: this.data.openid},
         url: 'http://localhost:8080/findTodayMiniOrder',
         success: (result) => {
           //console.log(result.data)
@@ -43,8 +43,8 @@ Page({
           var img = []
           for (var i = 0; i < tmp.length; i++) {
             img = []
-            for (var j = 0; j < tmp[i].drinkIdList.length; j++) {
-              img[j] = '/images/id' + tmp[i].drinkIdList[j] + '.jpg';
+            for (var j = 0; j < tmp[i].imageList.length; j++) {
+              img[j] = tmp[i].imageList[j];
             }
             tmp[i].img = img;
           }
@@ -88,7 +88,7 @@ Page({
     {
       wx.request({
 
-        data: { userName: this.data.userName },
+        data: { openid: this.data.openid },
         url: 'http://localhost:8080/findAllMiniOrder',
         success: (result) => {
           //console.log(result.data)
@@ -96,9 +96,9 @@ Page({
           var img=[]
           for (var i=0;  i< tmp.length; i++) {
             img = []
-            for (var j = 0; j < tmp[i].drinkIdList.length;j++)
+            for (var j = 0; j < tmp[i].imageList.length;j++)
             {
-              img[j] = '/images/id' + tmp[i].drinkIdList[j] + '.jpg';
+              img[j] = tmp[i].imageList[j];
             }  
             tmp[i].img=img;
           }
@@ -136,7 +136,7 @@ Page({
     var orderId = e.currentTarget.dataset.id
     //发送请求的api
     wx.request({
-      data: { userName: this.data.userName, orderId: orderId},
+      data: { orderId: orderId},
       url: 'http://localhost:8080/findOneOrder',
       success: (result) => {
         console.log(result.data)

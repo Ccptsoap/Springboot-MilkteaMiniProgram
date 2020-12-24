@@ -3,21 +3,25 @@
 <mapper namespace="com.demo01.demo.mappers.OrderMapper">
     <!--sql-->
     <!--根据openid 查询用户所有订单-->
-    <select id="findAllOrderByName" resultType="SelectInfo">
-        select * from orderTable where userName=#{userName}
+    <select id="findAllOrderByID" resultType="int">
+        select orderid from orderinfo where openid=#{openid}
     </select>
 
     <select id="findAllMiniOrder" resultType="MiniOrderEntry">
-        select userName, drinkId, orderTime, orderId, drinkNum, drinkPrice from orderTable where userName=#{userName}
+        select a.orderId,a.openid,a.total,a.time,b.id,b.number,b.price,c.image
+        from OrderInfo a, comselectinfo b, milktea c
+        where openid=#{openid} and a.orderId = b.orderId and b.id = c.id
     </select>
 
-    <select id="findOneOrder" resultType="SelectInfo">
-        select * from orderinfo where userName=#{userName} and orderId=#{orderId}
+    <select id="findOneOrder" resultType="Order">
+        select orderId,status,time,address,phonenum,name  from orderinfo where orderId=#{orderId}
     </select>
     <!--怎么根据日期查询！！！！！！！-->
     <!--根据用户名 查询用户当日订单-->
     <select id="findTodayMiniOrder" resultType="MiniOrderEntry">
-        select * from ordertable where userName=#{userName} and to_days(orderTime) = to_days(now());
+        select a.orderId,a.openid,a.total,a.time,b.id,b.number,b.price,c.image
+        from OrderInfo a, comselectinfo b, milktea c
+        where openid=#{openid} and a.orderId = b.orderId and b.id = c.id and to_days(time) = to_days(now());
     </select>
 
     <!--查询最后一个订单的订单编号-->
@@ -30,11 +34,17 @@
     <!--增删改都没有resultType-->
     <!---->
     <insert id="addOneSelectInfo" parameterType="SelectInfo">
-        insert into comselectinfo value(#{orderId},#{drinkId},#{drinkNum},#{drinkInfo},#{drinkPrice})
+        insert into comselectinfo value(#{orderId},#{id},#{number},#{description},#{price})
     </insert>
 
-    <insert id="addOneOrderInfo" parameterType="OrderInfo">
-        insert into orderinfo value(#{orderId},#{openid},#{timestamp},#{total},#{statu})
+    <insert id="addOneOrderInfo" parameterType="Order">
+        insert into OrderInfo value(#{orderId},#{openid},#{time},#{total},#{status},#{address},#{phonenum},#{name})
     </insert>
+
+    <select id="findSelectInfo" resultType="SelectInfo">
+        select a.orderId,a.id,a.number,a.description,a.price,b.image,b.name
+        from comselectinfo a, milktea b
+        where orderid=#{orderid} and a.id = b.id
+    </select>
 
 </mapper>

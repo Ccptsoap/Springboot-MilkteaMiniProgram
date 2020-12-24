@@ -2,48 +2,51 @@ package com.demo01.demo.entity;
 
 import java.sql.Timestamp;
 
+//获取缩略订单，entry直接与数据库对接
 public class MiniOrderEntry {
-    private String userName;
-    private String drinkId;
-    private Timestamp orderTime;
+    private String openid;
+    private String Id;
+    private Timestamp time;
     private int orderId;
-    private double drinkPrice;
-    private int drinkNum;
+    private double price;
+    private int number;
+    private String image;
 
     public MiniOrderEntry() {
     }
 
-    public MiniOrderEntry(String userName, String drinkId, Timestamp orderTime, int orderId, double drinkPrice, int drinkNum) {
-        this.userName = userName;
-        this.drinkId = drinkId;
-        this.orderTime = orderTime;
+    public MiniOrderEntry(String openid, String id, Timestamp time, int orderId, double price, int number, String image) {
+        this.openid = openid;
+        Id = id;
+        this.time = time;
         this.orderId = orderId;
-        this.drinkPrice = drinkPrice;
-        this.drinkNum = drinkNum;
+        this.price = price;
+        this.number = number;
+        this.image = image;
     }
 
-    public String getUserName() {
-        return userName;
+    public String getOpenid() {
+        return openid;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setOpenid(String openid) {
+        this.openid = openid;
     }
 
-    public String getDrinkId() {
-        return drinkId;
+    public String getId() {
+        return Id;
     }
 
-    public void setDrinkId(String drinkId) {
-        this.drinkId = drinkId;
+    public void setId(String id) {
+        Id = id;
     }
 
-    public Timestamp getOrderTime() {
-        return orderTime;
+    public Timestamp getTime() {
+        return time;
     }
 
-    public void setOrderTime(Timestamp orderTime) {
-        this.orderTime = orderTime;
+    public void setTime(Timestamp time) {
+        this.time = time;
     }
 
     public int getOrderId() {
@@ -54,19 +57,27 @@ public class MiniOrderEntry {
         this.orderId = orderId;
     }
 
-    public double getDrinkPrice() {
-        return drinkPrice;
+    public double getPrice() {
+        return price;
     }
 
-    public void setDrinkPrice(double drinkPrice) {
-        this.drinkPrice = drinkPrice;
+    public void setPrice(double price) {
+        this.price = price;
     }
 
-    public int getDrinkNum() {
-        return drinkNum;
+    public int getNumber() {
+        return number;
     }
 
-    public void setDrinkNum(int drinkNum) {
-        this.drinkNum = drinkNum;
+    public void setNumber(int number) {
+        this.number = number;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 }

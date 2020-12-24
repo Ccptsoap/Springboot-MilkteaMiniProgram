@@ -13,7 +13,8 @@ Page({
     drinkList:"",
     //传回后端的drinklist
     dl:"",
-    address: ""
+    address: "",
+    name: ""
   },
   goWePay: function () {
     wx.showModal({
@@ -37,12 +38,17 @@ Page({
           
           var openid = base.globalData.openid
           this.setData(
-            { openid:openid }
+            { openid:openid,
+              address: base.globalData.user.address,
+              phonenum: base.globalData.user.phonenum,
+              name: base.globalData.user.name
+            }
           )
           console.log(JSON.stringify(this.data.dl))
           wx.request({
 
-            data: { openid: this.data.openid, drinkStr: JSON.stringify(this.data.dl)},
+            data: { openid: this.data.openid, drinkStr: JSON.stringify(this.data.dl), address: this.data.address,
+              phoneNum: this.data.phonenum, name: this.data.name},
             url: 'http://localhost:8080/addOneOrderByStr',
             success: (result) => {
               console.log(result.data)

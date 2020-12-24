@@ -24,7 +24,7 @@
         <view class="timeAndId" style="white-space:pre-wrap">  下单时间：{{item.orderTime}}
   订单编号:{{item.orderId}}
         </view>
-        <view class="price">￥:{{item.totalPrice}}</view>
+        <view class="price">￥:{{item.total}}</view>
       </view>
       <view class="whiteSpace"></view>
     </view>
@@ -54,7 +54,7 @@
         <view class="timeAndId" style="white-space:pre-wrap">  下单时间：{{item.orderTime}}
   订单编号:{{item.orderId}}
         </view>
-        <view class="price">￥:{{item.totalPrice}}</view>
+        <view class="price">￥:{{item.total}}</view>
       </view>
       <view class="whiteSpace"></view>
     </view>

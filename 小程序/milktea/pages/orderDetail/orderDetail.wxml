@@ -2,14 +2,20 @@
 <view class="main">
 <view class="box">
 
-  <view class="pickId" style="white-space:pre-wrap">订单状态
-{{orderDetail.pickId}}   
+  <view wx:if="{{orderDetail.status==0}}" class="pickId" style="white-space:pre-wrap">订单状态
+ 制作中  
+  </view>
+  <view wx:if="{{orderDetail.status==1}}" class="pickId" style="white-space:pre-wrap">订单状态
+ 配送中
+  </view>
+  <view wx:if="{{orderDetail.status==2}}" class="pickId" style="white-space:pre-wrap">订单状态
+订单完成 
   </view>
 
   <view class="eachOne" wx:for="{{orderDetail.drinkList}}" wx:key="index" >
 
     <view class="pic">
-      <image class="img" src="{{item.img}}" ></image>
+      <image class="img" src="{{item.drinkImage}}" ></image>
     </view>
     
     <view class="drinkNameAndInfo" >  
@@ -32,11 +38,14 @@
 
   <view class="total">
   <view class="label">合计</view>
-  <view class="sum">￥{{orderDetail.totalPrice}}</view>
+  <view class="sum">￥{{orderDetail.total}}</view>
   </view>
 
-  <view class="other" style="white-space:pre-wrap">下单时间：{{orderDetail.orderTime}}
+  <view class="other" style="white-space:pre-wrap">下单时间：{{orderDetail.time}}
 订单编号：{{orderDetail.orderId}}
+地址：{{orderDetail.address}}
+姓名：{{orderDetail.name}}
+电话：{{orderDetail.phonenum}}
   </view>
 
 </view>

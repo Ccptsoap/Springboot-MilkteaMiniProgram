@@ -7,12 +7,24 @@ public class OrderDrink {
     private String drinkInfo;
     private double drinkPrice;
 
+    //获取订单详细时使用到
+    private String drinkImage;
+
     public OrderDrink(String drinkId, String drinkName, int drinkNum, String drinkInfo, double drinkPrice) {
         this.drinkId = drinkId;
         this.drinkName = drinkName;
         this.drinkNum = drinkNum;
         this.drinkInfo = drinkInfo;
         this.drinkPrice = drinkPrice;
+    }
+
+    public OrderDrink(String drinkId, String drinkName, int drinkNum, String drinkInfo, double drinkPrice, String drinkImage) {
+        this.drinkId = drinkId;
+        this.drinkName = drinkName;
+        this.drinkNum = drinkNum;
+        this.drinkInfo = drinkInfo;
+        this.drinkPrice = drinkPrice;
+        this.drinkImage = drinkImage;
     }
 
     public OrderDrink() {
@@ -56,5 +68,13 @@ public class OrderDrink {
 
     public void setDrinkPrice(double drinkPrice) {
         this.drinkPrice = drinkPrice;
+    }
+
+    public String getDrinkImage() {
+        return drinkImage;
+    }
+
+    public void setDrinkImage(String drinkImage) {
+        this.drinkImage = drinkImage;
     }
 }

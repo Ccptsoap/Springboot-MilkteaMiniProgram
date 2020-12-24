@@ -11,7 +11,7 @@
  Target Server Version : 50726
  File Encoding         : 65001
 
- Date: 23/12/2020 15:30:21
+ Date: 25/12/2020 03:36:41
 */
 
 SET NAMES utf8mb4;
@@ -34,6 +34,21 @@ CREATE TABLE `comselectinfo`  (
 -- ----------------------------
 -- Records of comselectinfo
 -- ----------------------------
+INSERT INTO `comselectinfo` VALUES ('1', '0012', 1, '标准糖,正常冰', 23.00);
+INSERT INTO `comselectinfo` VALUES ('1', '0003', 1, '标准糖,正常冰', 20.00);
+INSERT INTO `comselectinfo` VALUES ('2', '0010', 1, '标准糖,正常冰', 32.00);
+INSERT INTO `comselectinfo` VALUES ('3', '0010', 1, '标准糖,正常冰', 32.00);
+INSERT INTO `comselectinfo` VALUES ('3', '0002', 1, '标准糖,正常冰', 27.00);
+INSERT INTO `comselectinfo` VALUES ('4', '0011', 2, '无糖,正常', 56.00);
+INSERT INTO `comselectinfo` VALUES ('4', '0002', 1, '标准糖,正常冰', 27.00);
+INSERT INTO `comselectinfo` VALUES ('5', '0007', 1, '标准糖,正常冰', 25.00);
+INSERT INTO `comselectinfo` VALUES ('6', '0010', 1, '标准糖,正常冰', 32.00);
+INSERT INTO `comselectinfo` VALUES ('7', '0010', 3, '微糖,正常', 96.00);
+INSERT INTO `comselectinfo` VALUES ('9', '0013', 1, '标准糖,正常冰', 30.00);
+INSERT INTO `comselectinfo` VALUES ('9', '0002', 1, '标准糖,正常冰', 27.00);
+INSERT INTO `comselectinfo` VALUES ('9', '0012', 1, '标准糖,正常冰', 23.00);
+INSERT INTO `comselectinfo` VALUES ('8', '0012', 1, '标准糖,正常冰', 23.00);
+INSERT INTO `comselectinfo` VALUES ('9', '0008', 1, '标准糖,正常冰', 26.00);
 
 -- ----------------------------
 -- Table structure for cusaccinfo
@@ -94,6 +109,9 @@ CREATE TABLE `orderinfo`  (
   `Time` datetime(0) NOT NULL,
   `Total` decimal(6, 2) NOT NULL,
   `Status` int(11) NOT NULL,
+  `Address` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
+  `PhoneNum` char(15) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
+  `Name` char(15) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
   PRIMARY KEY (`OrderID`) USING BTREE,
   INDEX `Fk_penID`(`OpenID`) USING BTREE
 ) ENGINE = MyISAM CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Dynamic;
@@ -101,5 +119,15 @@ CREATE TABLE `orderinfo`  (
 -- ----------------------------
 -- Records of orderinfo
 -- ----------------------------
+INSERT INTO `orderinfo` VALUES ('0', 'oJSWT4t6a9pS2v5TAY2oJZFltKY4', '2020-09-05 10:28:17', 1.00, 1, NULL, NULL, NULL);
+INSERT INTO `orderinfo` VALUES ('1', 'oJSWT4t6a9pS2v5TAY2oJZFltKY4', '2020-12-24 23:55:12', 43.00, 0, NULL, NULL, NULL);
+INSERT INTO `orderinfo` VALUES ('2', 'oJSWT4t6a9pS2v5TAY2oJZFltKY4', '2020-12-25 00:05:25', 32.00, 0, NULL, NULL, NULL);
+INSERT INTO `orderinfo` VALUES ('3', 'oJSWT4t6a9pS2v5TAY2oJZFltKY4', '2020-12-25 00:06:33', 59.00, 0, NULL, NULL, NULL);
+INSERT INTO `orderinfo` VALUES ('4', 'oJSWT4t6a9pS2v5TAY2oJZFltKY4', '2020-12-25 00:45:36', 83.00, 0, NULL, NULL, NULL);
+INSERT INTO `orderinfo` VALUES ('5', 'oJSWT4t6a9pS2v5TAY2oJZFltKY4', '2020-12-25 00:49:05', 25.00, 0, '广东省,东莞市,松山湖,东莞理工学院', NULL, '李华铧');
+INSERT INTO `orderinfo` VALUES ('6', 'oJSWT4t6a9pS2v5TAY2oJZFltKY4', '2020-12-25 00:50:35', 32.00, 0, '广东省,东莞市,松山湖,东莞理工学院', '13602348194', '李华铧');
+INSERT INTO `orderinfo` VALUES ('7', 'oJSWT4t6a9pS2v5TAY2oJZFltKY4', '2020-12-25 02:35:43', 96.00, 0, '广东省,东莞市,松山湖,东莞理工学院', '13602348194', '李华铧');
+INSERT INTO `orderinfo` VALUES ('8', 'oJSWT4t6a9pS2v5TAY2oJZFltKY4', '2020-12-25 03:21:15', 23.00, 0, '广东省,东莞市,松山湖,东莞理工学院', '13602348194', '李华铧');
+INSERT INTO `orderinfo` VALUES ('9', 'oJSWT4t6a9pS2v5TAY2oJZFltKY4', '2020-12-25 03:21:45', 106.00, 0, '广东省,东莞市,松山湖,东莞理工学院', '13602348194', '李华铧');
 
 SET FOREIGN_KEY_CHECKS = 1;
