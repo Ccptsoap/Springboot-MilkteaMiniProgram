@@ -192,11 +192,32 @@ public class OrderServiceImpl  implements OrderService{
         List<OrderDrink> drinkList = (List<OrderDrink>)JSONArray.toCollection(json, OrderDrink.class);
         //加入时间、订单编号以及取茶号
         Timestamp time=new Timestamp(System.currentTimeMillis()); ;
-        int orderId=orderMapper.findLastOrderId()+1;
+
         double totalPrice = 0;
 
+        //统计价格
+        for(OrderDrink d:drinkList)
+        {
+            totalPrice = totalPrice + d.getDrinkPrice();
+        }
 
+        //先插入orderinfo表
+        Order order = new Order();
+
+        order.setOpenid(openid);
+        order.setTime(time);
+        order.setTotal(totalPrice);
+        order.setStatus(0);
+        order.setAddress(address);
+        order.setPhonenum(phoneNum);
+        order.setName(name);
+        if(orderMapper.addOneOrderInfo(order)==0)
+            return false;
+
+        //后插入selectinfo表
         SelectInfo selectInfo;
+        //获取orderinof表最大的orderid
+        int orderId=orderMapper.findLastOrderId();
 
         //拆分drinklist,组成为单条条目，插入数据库
         for(OrderDrink d:drinkList)
@@ -211,19 +232,6 @@ public class OrderServiceImpl  implements OrderService{
             if(orderMapper.addOneSelectInfo(selectInfo)==0)
                 return false;
         }
-
-        Order order = new Order();
-
-        order.setOrderId(orderId);
-        order.setOpenid(openid);
-        order.setTime(time);
-        order.setTotal(totalPrice);
-        order.setStatus(0);
-        order.setAddress(address);
-        order.setPhonenum(phoneNum);
-        order.setName(name);
-        if(orderMapper.addOneOrderInfo(order)==0)
-            return false;
         return true;
     }
 }
