@@ -14,7 +14,7 @@ public class UserController {
 
 //  自动装配
     @Autowired
-UserService userService;
+    UserService userService;
 
 //
 //    @RequestMapping("change")

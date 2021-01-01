@@ -1,6 +1,9 @@
 package com.demo01.demo.entity;
 
 
+/**
+ * 
+ */
 public class User {
     private String openid;
     private String name;

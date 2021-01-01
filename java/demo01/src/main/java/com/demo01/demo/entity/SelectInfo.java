@@ -1,5 +1,8 @@
 package com.demo01.demo.entity;
 
+/**
+ *
+ */
 public class SelectInfo {
     private String id;
     private int number;

@@ -1,5 +1,8 @@
 package com.demo01.demo.entity;
 
+/**
+ * NULL
+ */
 public class Milktea {
     String id;
     String name;

@@ -24,38 +24,18 @@
   <component name="ChangeListManager">
     <list default="true" id="794adb83-a7c3-4d67-ba64-7914649f06c1" name="Default Changelist" comment="11">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/demo01/demo/service/OrderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/demo01/demo/service/OrderServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mappers/OrderMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mappers/OrderMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/demo01/demo/controller/OrderController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo01/demo/controller/OrderController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/demo01/demo/entity/MiniOrder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo01/demo/entity/MiniOrder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/demo01/demo/entity/MiniOrderEntry.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo01/demo/entity/MiniOrderEntry.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/demo01/demo/entity/Order.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo01/demo/entity/Order.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/demo01/demo/mappers/OrderMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo01/demo/mappers/OrderMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/demo01/demo/service/OrderServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo01/demo/service/OrderServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mappers/OrderMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mappers/OrderMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../小程序/milktea/app.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../小程序/milktea/app.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../小程序/milktea/icon/bokita.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../小程序/milktea/icon/index10.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../小程序/milktea/icon/index11.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../小程序/milktea/icon/index2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../小程序/milktea/icon/index7.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../小程序/milktea/icon/index8.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../小程序/milktea/icon/index9.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../小程序/milktea/icon/java.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../小程序/milktea/images/id0014.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../小程序/milktea/images/id0015.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../小程序/milktea/images/id0016.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../小程序/milktea/images/id0017.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../小程序/milktea/images/id0018.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../小程序/milktea/images/id0019.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../小程序/milktea/images/id0020.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../小程序/milktea/images/id0021.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../小程序/milktea/images/id0022.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../小程序/milktea/pages/index/index.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/../../小程序/milktea/pages/index/index.wxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../小程序/milktea/pages/wepay/wepay.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../小程序/milktea/pages/wepay/wepay.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../小程序/milktea/pages/wepay/wepay.wxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../小程序/milktea/pages/wepay/wepay.wxss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/demo01/demo/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/demo01/demo/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/demo01/demo/entity/Milktea.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/demo01/demo/entity/Milktea.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/demo01/demo/entity/MiniOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/demo01/demo/entity/MiniOrder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/demo01/demo/entity/MiniOrderEntry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/demo01/demo/entity/MiniOrderEntry.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/demo01/demo/entity/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/demo01/demo/entity/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/demo01/demo/entity/OrderDrink.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/demo01/demo/entity/OrderDrink.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/demo01/demo/entity/SelectInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/demo01/demo/entity/SelectInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/demo01/demo/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/demo01/demo/entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo01/demo/controller/MilkteaController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo01/demo/controller/MilkteaController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo01/demo/service/MilkteaServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo01/demo/service/MilkteaServiceImpl.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,7 +55,7 @@
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
-        <option name="mavenHome" value="C:\Users\Hyper Beast\.m2\wrapper\dists\apache-maven-3.6.3-bin\1iopthnavndlasol9gbrbg6bf2\apache-maven-3.6.3" />
+        <option name="mavenHome" value="C:\Users\CharlesCR\.m2\wrapper\dists\apache-maven-3.6.3-bin\1iopthnavndlasol9gbrbg6bf2\apache-maven-3.6.3" />
       </MavenGeneralSettings>
     </option>
   </component>
@@ -95,17 +75,25 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected="Spring Boot.DemoApplication">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -162,6 +150,7 @@
       <workItem from="1608773753799" duration="19369000" />
       <workItem from="1608893479130" duration="1781000" />
       <workItem from="1608975434181" duration="3442000" />
+      <workItem from="1609508298689" duration="3095000" />
     </task>
     <task id="LOCAL-00001" summary="11">
       <created>1608112980581</created>

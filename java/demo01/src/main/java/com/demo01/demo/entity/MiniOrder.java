@@ -3,7 +3,9 @@ package com.demo01.demo.entity;
 import java.sql.Timestamp;
 import java.util.List;
 
-//获取缩略订单
+/**
+ * 获取缩略订单
+ */
 public class MiniOrder {
     private String openid;
     private List<String> drinkIdList;
