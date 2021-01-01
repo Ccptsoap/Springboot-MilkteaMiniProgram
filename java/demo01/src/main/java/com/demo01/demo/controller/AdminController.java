@@ -32,14 +32,18 @@ public class AdminController {
     @PutMapping("/admin/milktea")
     @ApiOperation(value = "根据ID修改奶茶")
     public Result<?> updateMilkteaInfo(@RequestBody Milktea milktea) {
-        return ResultUtils.success();
+        return ResultUtils.success(milkteaService.updateMilktea(milktea));
     }
     @PostMapping("/admin/milktea")
     @ApiOperation(value = "新增奶茶信息")
     public Result<?> saveMilkteaInfo(@RequestBody Milktea milktea) {
         return ResultUtils.success(milkteaService.saveMilktea(milktea));
     }
-
+    @PostMapping("/admin/milktea/{milkteaId}")
+    @ApiOperation(value = "删除奶茶信息")
+    public Result<?> deleteMilkteaInfo(@PathVariable("milkteaId") String milkteaId) {
+        return ResultUtils.success(milkteaService.deleteMilktea(milkteaId));
+    }
 
 
 }

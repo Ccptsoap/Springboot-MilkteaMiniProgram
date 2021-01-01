@@ -18,4 +18,7 @@ public interface MilkteaService {
     Integer countType();
 
     public Integer saveMilktea(Milktea milktea);
+
+    public Integer updateMilktea(Milktea milktea);
+    public Integer deleteMilktea(String milkteaId);
 }

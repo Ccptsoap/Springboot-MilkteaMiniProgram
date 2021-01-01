@@ -25,4 +25,7 @@ public interface MilkteaMapper {
     Integer countMilktea();
 
     Integer insertMilktea(Milktea milktea);
+
+    Integer updateMilktea(Milktea milktea);
+    Integer deleteMilktea(String id);
 }

@@ -75,4 +75,12 @@ public class MilkteaServiceImpl implements MilkteaService {
     public Integer saveMilktea(Milktea milktea) {
         return milkteaMapper.insertMilktea(milktea);
     }
+    @Override
+    public Integer updateMilktea(Milktea milktea) {
+        return milkteaMapper.updateMilktea(milktea);
+    }
+    @Override
+    public Integer deleteMilktea(String milkteaId) {
+        return milkteaMapper.deleteMilktea(milkteaId);
+    }
 }
