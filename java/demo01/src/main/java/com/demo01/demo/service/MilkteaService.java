@@ -13,7 +13,9 @@ public interface MilkteaService {
 
     List<Milktea> selectByType(String type);
 
-    int countMilktea();
+    Integer countMilktea();
 
-    int countType();
+    Integer countType();
+
+    public Integer saveMilktea(Milktea milktea);
 }

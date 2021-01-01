@@ -21,14 +21,12 @@ public class MilkteaController {
 
     @GetMapping("recommend")
     @ApiOperation(value = " 首页“为你推荐”")
-//    首页“为你推荐”
     public List<Milktea> recommend() {
         return milkteaService.recommend();
     }
 
     @GetMapping("selectOneMilktea")
     @ApiOperation(value = "根据id返回对应的奶茶")
-//    根据id返回对应的奶茶
     public Milktea selectOneMilktea(String id) {
         Milktea milktea = milkteaService.selectOneMilktea(id);
         return milktea;
@@ -36,7 +34,6 @@ public class MilkteaController {
 
     @GetMapping("selectAllMilktea")
     @ApiOperation(value = "返回全部奶茶")
-//    返回全部奶茶
     public List<Milktea> selectAllMilktea() {
         List<Milktea> milkteas = milkteaService.selectAllMilktea();
         return milkteas;
@@ -44,7 +41,6 @@ public class MilkteaController {
 
     @GetMapping("selectByType")
     @ApiOperation(value = "返回对应分类的奶茶")
-//    返回对应分类的奶茶
     public List<Milktea> selectByType(String type) {
         List<Milktea> milkteas = milkteaService.selectByType(type);
         return milkteas;
@@ -52,7 +48,6 @@ public class MilkteaController {
 
     @GetMapping("selectAllByType")
     @ApiOperation(value = "返回对应分类的奶茶")
-//    返回对应分类的奶茶
     public List<List<Milktea>> selectAllByType(String type) {
         List<List<Milktea>> res= new ArrayList<List<Milktea>>();
         for (int i = 0; i < 4; i++) {
@@ -64,14 +59,12 @@ public class MilkteaController {
 
     @GetMapping("countType")
     @ApiOperation(value = "返回奶茶的种类数")
-//    返回奶茶的种类数
     public int countType() {
         return milkteaService.countType();
     }
 
     @GetMapping("countMilktea")
     @ApiOperation(value = "返回奶茶的种类数")
-//    返回奶茶的种类数
     public int countMilktea() {
         return milkteaService.countMilktea();
     }

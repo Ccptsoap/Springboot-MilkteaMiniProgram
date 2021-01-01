@@ -24,7 +24,6 @@ public class OrderController {
     @Autowired
     OrderMapper orderMapper;
 
-
     //查询用户所有订单详细信息
     @GetMapping("findAllOrderByID")
     @ApiOperation(value = "查询用户所有订单详细信息")
@@ -57,9 +56,6 @@ public class OrderController {
     }
 
     //查询用户所有订单
-
-
-
 
     //增加一个订单条目
     @PostMapping("addOneOrderByStr")

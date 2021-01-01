@@ -23,43 +23,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="794adb83-a7c3-4d67-ba64-7914649f06c1" name="Default Changelist" comment="11">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_classmate_1_5_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_guava_20_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_springfox_springfox_core_2_9_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_springfox_springfox_schema_2_9_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_springfox_springfox_spi_2_9_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_springfox_springfox_spring_web_2_9_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_springfox_springfox_swagger2_2_9_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_springfox_springfox_swagger_common_2_9_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_springfox_springfox_swagger_ui_2_9_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_swagger_swagger_annotations_1_5_20.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_swagger_swagger_models_1_5_20.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mapstruct_mapstruct_1_2_0_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_plugin_spring_plugin_core_1_2_0_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_plugin_spring_plugin_metadata_1_2_0_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/demo01/demo/dto/LoginInfoDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/demo01.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/demo01.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/demo01/demo/controller/AdminController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/demo01/demo/utils/Result.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/demo01/demo/utils/ResultUtils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/demo01/demo/config/Swagger2Configuration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/demo01/demo/config/Swagger2Configuration.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/demo01/demo/controller/MilkteaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/demo01/demo/controller/MilkteaController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/demo01/demo/controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/demo01/demo/controller/OrderController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/demo01/demo/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/demo01/demo/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/demo01/demo/entity/Milktea.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/demo01/demo/entity/Milktea.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/demo01/demo/mappers/MilkteaMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/demo01/demo/mappers/MilkteaMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/demo01/demo/mappers/OrderMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/demo01/demo/mappers/OrderMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/demo01/demo/mappers/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/demo01/demo/mappers/UserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/demo01/demo/service/MilkteaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/demo01/demo/service/MilkteaService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/demo01/demo/service/MilkteaServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/demo01/demo/service/MilkteaServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/demo01/demo/service/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/demo01/demo/service/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mappers/MilkteaMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mappers/MilkteaMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/demo01/demo/controller/MilkteaController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo01/demo/controller/MilkteaController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/demo01/demo/controller/OrderController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo01/demo/controller/OrderController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/demo01/demo/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo01/demo/controller/UserController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/demo01/demo/entity/Milktea.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo01/demo/entity/Milktea.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/demo01/demo/entity/MiniOrder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo01/demo/entity/MiniOrder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/demo01/demo/entity/MiniOrderEntry.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo01/demo/entity/MiniOrderEntry.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/demo01/demo/entity/Order.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo01/demo/entity/Order.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/demo01/demo/entity/OrderDrink.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo01/demo/entity/OrderDrink.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/demo01/demo/entity/SelectInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo01/demo/entity/SelectInfo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/demo01/demo/entity/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo01/demo/entity/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../小程序/milktea/pages/address/changeAddress/changeAddress.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../小程序/milktea/pages/address/changeAddress/changeAddress.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../小程序/milktea/pages/login/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../小程序/milktea/pages/login/login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo01/demo/mappers/MilkteaMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo01/demo/mappers/MilkteaMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo01/demo/mappers/OrderMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo01/demo/mappers/OrderMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo01/demo/mappers/UserMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo01/demo/mappers/UserMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo01/demo/service/MilkteaService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo01/demo/service/MilkteaService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo01/demo/service/MilkteaServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo01/demo/service/MilkteaServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo01/demo/service/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo01/demo/service/UserServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mappers/MilkteaMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mappers/MilkteaMapper.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,6 +97,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.demo01.demo.utils" />
       <recent name="com.demo01.demo.config" />
     </key>
   </component>
@@ -179,7 +167,7 @@
       <workItem from="1608773753799" duration="19369000" />
       <workItem from="1608893479130" duration="1781000" />
       <workItem from="1608975434181" duration="3442000" />
-      <workItem from="1609508298689" duration="4970000" />
+      <workItem from="1609508298689" duration="8022000" />
     </task>
     <task id="LOCAL-00001" summary="11">
       <created>1608112980581</created>
@@ -218,11 +206,11 @@
     <option name="LAST_COMMIT_MESSAGE" value="11" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="741" y="200" key="#com.intellij.ide.util.MemberChooser" timestamp="1609512931446">
+    <state x="741" y="200" key="#com.intellij.ide.util.MemberChooser" timestamp="1609515747525">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="659" y="177" key="#com.intellij.ide.util.MemberChooser/0.0.1707.920@0.0.1707.920" timestamp="1608836844993" />
-    <state x="741" y="200" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1609512931446" />
+    <state x="741" y="200" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1609515747525" />
     <state x="287" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1608836583709">
       <screen x="0" y="0" width="1707" height="920" />
     </state>
@@ -231,46 +219,46 @@
       <screen x="0" y="0" width="1707" height="920" />
     </state>
     <state x="634" y="216" key="FileChooserDialogImpl/0.0.1707.920@0.0.1707.920" timestamp="1608111863284" />
-    <state width="1876" height="251" key="GridCell.Tab.0.bottom" timestamp="1609513044333">
+    <state width="1860" height="251" key="GridCell.Tab.0.bottom" timestamp="1609516263067">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1663" height="232" key="GridCell.Tab.0.bottom/0.0.1707.920@0.0.1707.920" timestamp="1608980334042" />
-    <state width="1876" height="251" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1609513044333" />
-    <state width="1876" height="251" key="GridCell.Tab.0.center" timestamp="1609513044333">
+    <state width="1860" height="251" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1609516263067" />
+    <state width="1860" height="251" key="GridCell.Tab.0.center" timestamp="1609516263067">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1663" height="232" key="GridCell.Tab.0.center/0.0.1707.920@0.0.1707.920" timestamp="1608980334041" />
-    <state width="1876" height="251" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1609513044333" />
-    <state width="1876" height="251" key="GridCell.Tab.0.left" timestamp="1609513044332">
+    <state width="1860" height="251" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1609516263067" />
+    <state width="1860" height="251" key="GridCell.Tab.0.left" timestamp="1609516263067">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1663" height="232" key="GridCell.Tab.0.left/0.0.1707.920@0.0.1707.920" timestamp="1608980334041" />
-    <state width="1876" height="251" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1609513044332" />
-    <state width="1876" height="251" key="GridCell.Tab.0.right" timestamp="1609513044333">
+    <state width="1860" height="251" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1609516263067" />
+    <state width="1860" height="251" key="GridCell.Tab.0.right" timestamp="1609516263067">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1663" height="232" key="GridCell.Tab.0.right/0.0.1707.920@0.0.1707.920" timestamp="1608980334041" />
-    <state width="1876" height="251" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1609513044333" />
-    <state width="1876" height="251" key="GridCell.Tab.1.bottom" timestamp="1609513044333">
+    <state width="1860" height="251" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1609516263067" />
+    <state width="1860" height="251" key="GridCell.Tab.1.bottom" timestamp="1609516263068">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1663" height="232" key="GridCell.Tab.1.bottom/0.0.1707.920@0.0.1707.920" timestamp="1608980334043" />
-    <state width="1876" height="251" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1609513044333" />
-    <state width="1876" height="251" key="GridCell.Tab.1.center" timestamp="1609513044333">
+    <state width="1860" height="251" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1609516263068" />
+    <state width="1860" height="251" key="GridCell.Tab.1.center" timestamp="1609516263068">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1663" height="232" key="GridCell.Tab.1.center/0.0.1707.920@0.0.1707.920" timestamp="1608980334043" />
-    <state width="1876" height="251" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1609513044333" />
-    <state width="1876" height="251" key="GridCell.Tab.1.left" timestamp="1609513044333">
+    <state width="1860" height="251" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1609516263068" />
+    <state width="1860" height="251" key="GridCell.Tab.1.left" timestamp="1609516263067">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1663" height="232" key="GridCell.Tab.1.left/0.0.1707.920@0.0.1707.920" timestamp="1608980334042" />
-    <state width="1876" height="251" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1609513044333" />
-    <state width="1876" height="251" key="GridCell.Tab.1.right" timestamp="1609513044333">
+    <state width="1860" height="251" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1609516263067" />
+    <state width="1860" height="251" key="GridCell.Tab.1.right" timestamp="1609516263068">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1663" height="232" key="GridCell.Tab.1.right/0.0.1707.920@0.0.1707.920" timestamp="1608980334043" />
-    <state width="1876" height="251" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1609513044333" />
+    <state width="1860" height="251" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1609516263068" />
     <state x="433" y="203" key="IDE.errors.dialog" timestamp="1607961948734">
       <screen x="0" y="0" width="1707" height="920" />
     </state>

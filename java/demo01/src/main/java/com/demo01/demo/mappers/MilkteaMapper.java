@@ -20,7 +20,9 @@ public interface MilkteaMapper {
 
     List<Milktea> selectByType(String type);
 
-    int countType();
+    Integer countType();
 
-    int countMilktea();
+    Integer countMilktea();
+
+    Integer insertMilktea(Milktea milktea);
 }

@@ -15,19 +15,14 @@ import java.util.List;
 @Api(tags="用户控制器")
 public class UserController {
 
-//  自动装配
     @Autowired
     UserService userService;
-
-//
 //    @RequestMapping("change")
 //    public boolean test01(User user){
 //        boolean res= userService.changeOne(user);
 //        return res;
 //    }
 //
-
-
     @PostMapping("login")
     @ApiOperation(value = "登录")
     public User login(@RequestBody LoginInfoDTO loginInfoDTO){
@@ -41,22 +36,17 @@ public class UserController {
         }
         return res;
     }
-
-
-
     @GetMapping("findByID")
     @ApiOperation(value = "通过ID查询")
     public User findByID(String openid){
-        User res= userService.findByID(openid);
-        return res;
+        return userService.findByID(openid);
     }
 
     @PostMapping("changeUser")
     @ApiOperation(value = "修改用户信息")
     public String changeUser(String openid, String name, String phonenum, String address){
         User user = new User(openid,name,phonenum,address);
-        String res= userService.changeUser(user);
-        return res;
+        return userService.changeUser(user);
     }
 
 

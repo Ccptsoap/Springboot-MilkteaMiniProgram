@@ -16,8 +16,7 @@ public class UserServiceImpl implements UserService {
     public User login(String openid) {
         if(openid.equals("")){
             System.out.println("ID是空的，无法登陆");
-            User user = new User();
-            return user;
+            return new User();
         }
        User successUser=userMapper.login(openid);
         if(null==successUser){
