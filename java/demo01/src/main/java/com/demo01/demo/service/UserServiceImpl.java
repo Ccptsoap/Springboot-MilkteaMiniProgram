@@ -66,7 +66,6 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public int setNickName(User user) {
-        int count=userMapper.setNickname(user);
-        return count;
+        return userMapper.setNickname(user);
     }
 }

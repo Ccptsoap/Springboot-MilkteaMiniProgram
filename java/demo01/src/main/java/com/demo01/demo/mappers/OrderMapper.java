@@ -4,10 +4,12 @@ import com.demo01.demo.entity.MiniOrderEntry;
 import com.demo01.demo.entity.Order;
 import com.demo01.demo.entity.SelectInfo;
 import org.apache.ibatis.annotations.Mapper;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
 @Mapper
+@Repository
 public interface OrderMapper {
     public int[] findAllOrderByID(String openid);
     public List<MiniOrderEntry> findAllMiniOrder(String openid);

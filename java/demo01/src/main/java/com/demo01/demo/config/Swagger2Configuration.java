@@ -27,8 +27,8 @@ public class Swagger2Configuration {
 
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-                .title("二手车接口文档")
-                .description("二手车相关接口的文档")
+                .title("milktea接口文档")
+                .description("milktea相关接口的文档")
                 .termsOfServiceUrl("https://www.charleschr.xyz")
                 .version("1.0.0")
                 .build();
