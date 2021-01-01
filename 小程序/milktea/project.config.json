@@ -40,7 +40,6 @@
   },
   "compileType": "miniprogram",
   "libVersion": "2.12.2",
-  "appid": "wxea509e2fe57d041e",
   "projectname": "milktea",
   "debugOptions": {
     "hidedInDevtools": []
@@ -49,6 +48,7 @@
   "isGameTourist": false,
   "simulatorType": "wechat",
   "simulatorPluginLibVersion": {},
+  "appid": "wxea509e2fe57d041e",
   "condition": {
     "search": {
       "list": []
