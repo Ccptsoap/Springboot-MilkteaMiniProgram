@@ -11,13 +11,12 @@ import java.util.List;
 @Mapper
 @Repository
 public interface OrderMapper {
-    public int[] findAllOrderByID(String openid);
-    public List<MiniOrderEntry> findAllMiniOrder(String openid);
-    public List<MiniOrderEntry> showAllOrderForMaker();//给制作人员看的订单信息
-    public Order findOneOrder(int orderId);
-    public List<MiniOrderEntry> findTodayMiniOrder(String openid);
-    public int addOneOrderInfo(Order order);
-    public int findLastOrderId();
-    public int addOneSelectInfo(SelectInfo selectInfo);
-    public List<SelectInfo> findSelectInfo(int orderId);
+     int[] findAllOrderByID(String openid);
+     List<MiniOrderEntry> findAllMiniOrder(String openid);
+     Order findOneOrder(int orderId);
+     List<MiniOrderEntry> findTodayMiniOrder(String openid);
+     int addOneOrderInfo(Order order);
+     int findLastOrderId();
+     int addOneSelectInfo(SelectInfo selectInfo);
+     List<SelectInfo> findSelectInfo(int orderId);
 }
