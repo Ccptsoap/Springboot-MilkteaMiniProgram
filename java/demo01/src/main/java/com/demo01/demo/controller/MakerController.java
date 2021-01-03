@@ -17,7 +17,7 @@ public class MakerController {
     @Resource
     MakerService makerService;
 
-    @GetMapping("/admin/order")
+    @GetMapping("/maker/orders")
     @ApiOperation(value = "查看订单信息")
     public Result<?> showAllOrderForMaker(){
         return ResultUtils.success(makerService.showAllOrderForMaker());
