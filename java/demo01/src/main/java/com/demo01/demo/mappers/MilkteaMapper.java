@@ -2,10 +2,12 @@ package com.demo01.demo.mappers;
 
 import com.demo01.demo.entity.Milktea;
 import org.apache.ibatis.annotations.Mapper;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
 @Mapper
+@Repository
 public interface MilkteaMapper {
 //    num为推荐展示的奶茶数量
     List<Milktea> selectTop(int num);
@@ -18,7 +20,12 @@ public interface MilkteaMapper {
 
     List<Milktea> selectByType(String type);
 
-    int countType();
+    Integer countType();
 
-    int countMilktea();
+    Integer countMilktea();
+
+    Integer insertMilktea(Milktea milktea);
+
+    Integer updateMilktea(Milktea milktea);
+    Integer deleteMilktea(String id);
 }

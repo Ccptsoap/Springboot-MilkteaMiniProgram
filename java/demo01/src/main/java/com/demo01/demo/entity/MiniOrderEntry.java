@@ -2,7 +2,9 @@ package com.demo01.demo.entity;
 
 import java.sql.Timestamp;
 
-//获取缩略订单，entry直接与数据库对接
+/**
+ * 获取缩略订单，entry直接与数据库对接
+ */
 public class MiniOrderEntry {
     private String openid;
     private String Id;

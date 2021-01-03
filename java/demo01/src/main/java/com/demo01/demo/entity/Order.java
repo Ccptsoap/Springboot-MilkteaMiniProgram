@@ -3,7 +3,9 @@ package com.demo01.demo.entity;
 import java.sql.Timestamp;
 import java.util.List;
 
-//对应数据库 orderInfo
+/**
+ * 对应数据库 orderInfo
+ */
 public class Order {
     private String openid;
     private Timestamp time;

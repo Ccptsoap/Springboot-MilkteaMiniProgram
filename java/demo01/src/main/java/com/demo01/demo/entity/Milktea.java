@@ -1,29 +1,15 @@
 package com.demo01.demo.entity;
 
+/**
+ * NULL
+ */
 public class Milktea {
     String id;
     String name;
     String price;
     String type;
-    String type_name;
+    String typeName;
     String image;
-
-    public Milktea(String id, String name, String price, String type, String type_name, String image) {
-        this.id = id;
-        this.name = name;
-        this.price = price;
-        this.type = type;
-        this.type_name = type_name;
-        this.image = image;
-    }
-
-    public String getType_name() {
-        return type_name;
-    }
-
-    public void setType_name(String type_name) {
-        this.type_name = type_name;
-    }
 
     public String getId() {
         return id;
@@ -57,6 +43,14 @@ public class Milktea {
         this.type = type;
     }
 
+    public String getTypeName() {
+        return typeName;
+    }
+
+    public void setTypeName(String typeName) {
+        this.typeName = typeName;
+    }
+
     public String getImage() {
         return image;
     }
@@ -64,4 +58,7 @@ public class Milktea {
     public void setImage(String image) {
         this.image = image;
     }
+
+    public Milktea() {}
+
 }

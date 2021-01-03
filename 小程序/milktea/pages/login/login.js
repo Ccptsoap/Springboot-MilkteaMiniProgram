@@ -27,6 +27,7 @@ Page({
           success:function(res){
             wx.request({
               url:'http://localhost:8080/login',
+              method: 'POST',
               data: {openid:res.data.openid,nickname:userInfo.nickName},
               success:(result)=>{
                 console.log(res.data.openid+"        "+userInfo.nickName)

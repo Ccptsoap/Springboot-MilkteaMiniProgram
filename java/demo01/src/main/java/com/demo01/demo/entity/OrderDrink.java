@@ -1,5 +1,8 @@
 package com.demo01.demo.entity;
 
+/**
+ *
+ */
 public class OrderDrink {
     private String drinkId;
     private String drinkName;
