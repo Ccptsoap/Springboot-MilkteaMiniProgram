@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.demo01.demo.mappers.MilkteaMapper">
+
+    <!--检索前n项-->
+    <select id="selectTop" resultType="com.demo01.demo.entity.Milktea">
+        select *
+        from milktea limit
+             #{num}
+    </select>
+
+    <select id="selectMilkteaById" resultType="com.demo01.demo.entity.Milktea">
+        select *
+        from milktea
+        where id = #{id}
+    </select>
+
+    <!--检索前n项-->
+    <select id="selectAll" resultType="com.demo01.demo.entity.Milktea">
+        select *
+        from milktea
+    </select>
+
+    <select id="selectByType" resultType="com.demo01.demo.entity.Milktea">
+        select *
+        from milktea
+        where type = #{type}
+    </select>
+
+    <select id="countType" resultType="int">
+        select count(*)
+        from (select distinct(type) from milktea) as types
+    </select>
+
+    <select id="countMilktea" resultType="int">
+        select count(*)
+        from milktea
+    </select>
+
+    <select id="insertMilktea" resultType="java.lang.Integer">
+        INSERT INTO milktea (id, type, price, Type_Name, image, name) VALUES (#{id},#{type},#{price},#{typeName},#{image},#{name})
+    </select>
+    <update id="updateMilktea">
+            update milktea
+            <trim prefix="set" suffixOverrides=",">
+                <if test="type != null">type = #{type},</if>
+                <if test="price != null">price = #{price},</if>
+                <if test="typeName != null">Type_Name = #{typeName},</if>
+                <if test="image != null">image = #{image},</if>
+                <if test="name != null">name = #{name},</if>
+            </trim>
+            <where>id = #{id}</where>
+    </update>
+    <select id="deleteMilktea" resultType="java.lang.Integer">
+        delete from milktea where id=#{id}
+    </select>
+</mapper>

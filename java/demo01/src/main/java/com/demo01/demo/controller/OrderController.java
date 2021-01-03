@@ -32,6 +32,11 @@ public class OrderController {
         return orderService.findAllOrderByID(openid);
     }
 
+    //查询全部订单详细信息
+    @GetMapping("findAllOrder")
+    @ApiOperation(value = "查询全部订单详细信息")
+    public List<Order> findAllOrder(){ return orderService.findAllOrder(); }
+
     //查询用户今日订单缩略信息
     @GetMapping("findTodayMiniOrder")
     @ApiOperation(value = "查询用户今日订单缩略信息")

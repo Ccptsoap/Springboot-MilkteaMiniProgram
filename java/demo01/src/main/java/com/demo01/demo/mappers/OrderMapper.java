@@ -11,7 +11,8 @@ import java.util.List;
 @Mapper
 @Repository
 public interface OrderMapper {
-     int[] findAllOrderByID(String openid);
+     List<Integer> findAllOrderByID(String openid);
+     List<Integer> findAllOrderId();
      List<MiniOrderEntry> findAllMiniOrder(String openid);
      Order findOneOrder(int orderId);
      List<MiniOrderEntry> findTodayMiniOrder(String openid);

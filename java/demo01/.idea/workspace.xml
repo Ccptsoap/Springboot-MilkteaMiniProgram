@@ -24,38 +24,12 @@
   <component name="ChangeListManager">
     <list default="true" id="794adb83-a7c3-4d67-ba64-7914649f06c1" name="Default Changelist" comment="11">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/demo01/demo/controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/demo01/demo/controller/OrderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/demo01/demo/mappers/OrderMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/demo01/demo/mappers/OrderMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/demo01/demo/service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/demo01/demo/service/OrderService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/demo01/demo/service/OrderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/demo01/demo/service/OrderServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mappers/DeliveryMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mappers/DeliveryMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/mappers/OrderMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mappers/OrderMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/demo01/demo/controller/OrderController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo01/demo/controller/OrderController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/demo01/demo/entity/MiniOrder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo01/demo/entity/MiniOrder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/demo01/demo/entity/MiniOrderEntry.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo01/demo/entity/MiniOrderEntry.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/demo01/demo/entity/Order.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo01/demo/entity/Order.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/demo01/demo/mappers/OrderMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo01/demo/mappers/OrderMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/demo01/demo/service/OrderServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo01/demo/service/OrderServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mappers/OrderMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mappers/OrderMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../小程序/milktea/app.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../小程序/milktea/app.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../小程序/milktea/icon/bokita.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../小程序/milktea/icon/index10.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../小程序/milktea/icon/index11.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../小程序/milktea/icon/index2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../小程序/milktea/icon/index7.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../小程序/milktea/icon/index8.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../小程序/milktea/icon/index9.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../小程序/milktea/icon/java.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../小程序/milktea/images/id0014.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../小程序/milktea/images/id0015.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../小程序/milktea/images/id0016.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../小程序/milktea/images/id0017.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../小程序/milktea/images/id0018.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../小程序/milktea/images/id0019.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../小程序/milktea/images/id0020.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../小程序/milktea/images/id0021.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../小程序/milktea/images/id0022.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../小程序/milktea/pages/index/index.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/../../小程序/milktea/pages/index/index.wxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../小程序/milktea/pages/wepay/wepay.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../小程序/milktea/pages/wepay/wepay.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../小程序/milktea/pages/wepay/wepay.wxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../小程序/milktea/pages/wepay/wepay.wxss" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,13 +73,15 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected="Spring Boot.DemoApplication">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -212,38 +188,38 @@
       <screen x="0" y="0" width="1707" height="920" />
     </state>
     <state x="634" y="216" key="FileChooserDialogImpl/0.0.1707.920@0.0.1707.920" timestamp="1608111863284" />
-    <state width="1663" height="232" key="GridCell.Tab.0.bottom" timestamp="1608980334042">
+    <state width="1663" height="232" key="GridCell.Tab.0.bottom" timestamp="1609678754368">
       <screen x="0" y="0" width="1707" height="920" />
     </state>
-    <state width="1663" height="232" key="GridCell.Tab.0.bottom/0.0.1707.920@0.0.1707.920" timestamp="1608980334042" />
-    <state width="1663" height="232" key="GridCell.Tab.0.center" timestamp="1608980334041">
+    <state width="1663" height="232" key="GridCell.Tab.0.bottom/0.0.1707.920@0.0.1707.920" timestamp="1609678754368" />
+    <state width="1663" height="232" key="GridCell.Tab.0.center" timestamp="1609678754367">
       <screen x="0" y="0" width="1707" height="920" />
     </state>
-    <state width="1663" height="232" key="GridCell.Tab.0.center/0.0.1707.920@0.0.1707.920" timestamp="1608980334041" />
-    <state width="1663" height="232" key="GridCell.Tab.0.left" timestamp="1608980334041">
+    <state width="1663" height="232" key="GridCell.Tab.0.center/0.0.1707.920@0.0.1707.920" timestamp="1609678754367" />
+    <state width="1663" height="232" key="GridCell.Tab.0.left" timestamp="1609678754367">
       <screen x="0" y="0" width="1707" height="920" />
     </state>
-    <state width="1663" height="232" key="GridCell.Tab.0.left/0.0.1707.920@0.0.1707.920" timestamp="1608980334041" />
-    <state width="1663" height="232" key="GridCell.Tab.0.right" timestamp="1608980334041">
+    <state width="1663" height="232" key="GridCell.Tab.0.left/0.0.1707.920@0.0.1707.920" timestamp="1609678754367" />
+    <state width="1663" height="232" key="GridCell.Tab.0.right" timestamp="1609678754367">
       <screen x="0" y="0" width="1707" height="920" />
     </state>
-    <state width="1663" height="232" key="GridCell.Tab.0.right/0.0.1707.920@0.0.1707.920" timestamp="1608980334041" />
-    <state width="1663" height="232" key="GridCell.Tab.1.bottom" timestamp="1608980334043">
+    <state width="1663" height="232" key="GridCell.Tab.0.right/0.0.1707.920@0.0.1707.920" timestamp="1609678754367" />
+    <state width="1663" height="232" key="GridCell.Tab.1.bottom" timestamp="1609678754368">
       <screen x="0" y="0" width="1707" height="920" />
     </state>
-    <state width="1663" height="232" key="GridCell.Tab.1.bottom/0.0.1707.920@0.0.1707.920" timestamp="1608980334043" />
-    <state width="1663" height="232" key="GridCell.Tab.1.center" timestamp="1608980334043">
+    <state width="1663" height="232" key="GridCell.Tab.1.bottom/0.0.1707.920@0.0.1707.920" timestamp="1609678754368" />
+    <state width="1663" height="232" key="GridCell.Tab.1.center" timestamp="1609678754368">
       <screen x="0" y="0" width="1707" height="920" />
     </state>
-    <state width="1663" height="232" key="GridCell.Tab.1.center/0.0.1707.920@0.0.1707.920" timestamp="1608980334043" />
-    <state width="1663" height="232" key="GridCell.Tab.1.left" timestamp="1608980334042">
+    <state width="1663" height="232" key="GridCell.Tab.1.center/0.0.1707.920@0.0.1707.920" timestamp="1609678754368" />
+    <state width="1663" height="232" key="GridCell.Tab.1.left" timestamp="1609678754368">
       <screen x="0" y="0" width="1707" height="920" />
     </state>
-    <state width="1663" height="232" key="GridCell.Tab.1.left/0.0.1707.920@0.0.1707.920" timestamp="1608980334042" />
-    <state width="1663" height="232" key="GridCell.Tab.1.right" timestamp="1608980334043">
+    <state width="1663" height="232" key="GridCell.Tab.1.left/0.0.1707.920@0.0.1707.920" timestamp="1609678754368" />
+    <state width="1663" height="232" key="GridCell.Tab.1.right" timestamp="1609678754368">
       <screen x="0" y="0" width="1707" height="920" />
     </state>
-    <state width="1663" height="232" key="GridCell.Tab.1.right/0.0.1707.920@0.0.1707.920" timestamp="1608980334043" />
+    <state width="1663" height="232" key="GridCell.Tab.1.right/0.0.1707.920@0.0.1707.920" timestamp="1609678754368" />
     <state x="433" y="203" key="IDE.errors.dialog" timestamp="1607961948734">
       <screen x="0" y="0" width="1707" height="920" />
     </state>
@@ -252,6 +228,14 @@
       <screen x="0" y="0" width="1707" height="920" />
     </state>
     <state x="355" y="105" key="SettingsEditor/0.0.1707.920@0.0.1707.920" timestamp="1608202965545" />
+    <state x="446" y="194" key="Vcs.Push.Dialog.v2" timestamp="1609680154847">
+      <screen x="0" y="0" width="1707" height="920" />
+    </state>
+    <state x="446" y="194" key="Vcs.Push.Dialog.v2/0.0.1707.920@0.0.1707.920" timestamp="1609680154847" />
+    <state x="661" y="374" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1609664018565">
+      <screen x="0" y="0" width="1707" height="920" />
+    </state>
+    <state x="661" y="374" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1707.920@0.0.1707.920" timestamp="1609664018565" />
     <state x="416" y="0" width="1305" height="653" key="dock-window-1" timestamp="1608128586524">
       <screen x="0" y="0" width="1707" height="920" />
     </state>

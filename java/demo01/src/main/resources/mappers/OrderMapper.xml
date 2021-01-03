@@ -3,8 +3,12 @@
 <mapper namespace="com.demo01.demo.mappers.OrderMapper">
     <!--sql-->
     <!--根据openid 查询用户所有订单-->
-    <select id="findAllOrderByID" resultType="int">
+    <select id="findAllOrderByID" resultType="Integer">
         select orderid from orderinfo where openid=#{openid}
+    </select>
+
+    <select id="findAllOrderId" resultType="Integer">
+        select orderid from orderinfo
     </select>
 
     <select id="findAllMiniOrder" resultType="com.demo01.demo.entity.MiniOrderEntry">
@@ -14,7 +18,7 @@
     </select>
 
     <select id="findOneOrder" resultType="com.demo01.demo.entity.Order">
-        select orderId,status,time,address,phonenum,name  from orderinfo where orderId=#{orderId}
+        select orderId,status,time,address,phonenum,name,openid  from orderinfo where orderId=#{orderId}
     </select>
     <!--怎么根据日期查询！！！！！！！-->
     <!--根据用户名 查询用户当日订单-->
