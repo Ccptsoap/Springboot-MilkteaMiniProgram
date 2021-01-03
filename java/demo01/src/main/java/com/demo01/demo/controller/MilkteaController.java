@@ -18,7 +18,6 @@ import java.util.List;
 public class MilkteaController {
     @Autowired
     MilkteaService milkteaService;
-
     @GetMapping("recommend")
     @ApiOperation(value = " 首页“为你推荐”")
     public List<Milktea> recommend() {

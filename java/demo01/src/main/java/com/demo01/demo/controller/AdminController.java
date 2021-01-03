@@ -1,6 +1,7 @@
 package com.demo01.demo.controller;
 
 import com.demo01.demo.entity.Milktea;
+import com.demo01.demo.service.MakerService;
 import com.demo01.demo.service.MilkteaService;
 import com.demo01.demo.utils.Result;
 import com.demo01.demo.utils.ResultUtils;
@@ -17,7 +18,7 @@ public class AdminController {
 
     @Autowired
     MilkteaService milkteaService;
-
+    MakerService makerService;
     @GetMapping("/admin/milktea")
     @ApiOperation(value = "获取奶茶列表")
     public Result<?> getMilkteaList() {
@@ -44,6 +45,5 @@ public class AdminController {
     public Result<?> deleteMilkteaInfo(@PathVariable("milkteaId") String milkteaId) {
         return ResultUtils.success(milkteaService.deleteMilktea(milkteaId));
     }
-
 
 }

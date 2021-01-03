@@ -32,54 +32,67 @@ public class ResultUtils {
 
 
     public static Result<String> fileNotFound() {
+
         return error(-13,"文件丢失");
     }
 
     public static Result<String> userNotFound() {
+
         return error(-12,"该用户无法登录，请联系管理员");
     }
 
     public static Result<String> unAuthorized() {
+
         return error(-11,"unauthorized");
     }
 
     public static Result<String> invalidToken(){
+
         return error(-10,"无效的token");
     }
 
     public static Result<String> tokenExpired(){
+
         return error(-9,"token已过时");
     }
 
     public static Result<String> unAuth(){
+
         return error(-8,"该资源未授权");
     }
 
     public static Result<String> authFail(){
+
         return error(-7,"appId或者appSecret不正确");
     }
 
     public static Result<String> systemError(){
+
         return error(-1,"系统异常");
     }
 
     public static Result<String> badReuest(){
+
         return error(-2,"错误请求参数");
     }
 
     public static Result<String> notFound(){
+
         return error(-3,"找不到请求路径");
     }
 
     public static Result<String> connectionError(){
+
         return error(-4,"网络连接请求失败");
     }
 
     public static Result methodNotAllowed(){
+
         return error(-5,"不合法的请求方式");
     }
 
     public static Result<String> databaseError(){
+
         return error(-6,"数据库异常");
     }
 

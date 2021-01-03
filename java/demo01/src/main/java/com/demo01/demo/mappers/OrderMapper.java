@@ -13,6 +13,7 @@ import java.util.List;
 public interface OrderMapper {
     public int[] findAllOrderByID(String openid);
     public List<MiniOrderEntry> findAllMiniOrder(String openid);
+    public List<MiniOrderEntry> showAllOrderForMaker();//给制作人员看的订单信息
     public Order findOneOrder(int orderId);
     public List<MiniOrderEntry> findTodayMiniOrder(String openid);
     public int addOneOrderInfo(Order order);

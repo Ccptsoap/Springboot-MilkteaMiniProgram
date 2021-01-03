@@ -68,6 +68,7 @@ public class MilkteaServiceImpl implements MilkteaService {
 
     @Override
     public Integer countType() {
+
         return milkteaMapper.countType();
     }
 

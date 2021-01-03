@@ -4,25 +4,25 @@
 <mapper namespace="com.demo01.demo.mappers.MilkteaMapper">
 
     <!--检索前n项-->
-    <select id="selectTop" resultType="Milktea">
+    <select id="selectTop" resultType="com.demo01.demo.entity.Milktea">
         select *
         from milktea limit
              #{num}
     </select>
 
-    <select id="selectMilkteaById" resultType="Milktea">
+    <select id="selectMilkteaById" resultType="com.demo01.demo.entity.Milktea">
         select *
         from milktea
         where id = #{id}
     </select>
 
     <!--检索前n项-->
-    <select id="selectAll" resultType="Milktea">
+    <select id="selectAll" resultType="com.demo01.demo.entity.Milktea">
         select *
         from milktea
     </select>
 
-    <select id="selectByType" resultType="Milktea">
+    <select id="selectByType" resultType="com.demo01.demo.entity.Milktea">
         select *
         from milktea
         where type = #{type}
@@ -38,7 +38,7 @@
         from milktea
     </select>
 
-    <select id="insertMilktea">
+    <select id="insertMilktea" resultType="java.lang.Integer">
         INSERT INTO milktea (id, type, price, Type_Name, image, name) VALUES (#{id},#{type},#{price},#{typeName},#{image},#{name})
     </select>
     <update id="updateMilktea">
@@ -52,7 +52,7 @@
             </trim>
             <where>id = #{id}</where>
     </update>
-    <select id="deleteMilktea">
+    <select id="deleteMilktea" resultType="java.lang.Integer">
         delete from milktea where id=#{id}
     </select>
 </mapper>
