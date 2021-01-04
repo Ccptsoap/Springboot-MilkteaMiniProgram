@@ -17,5 +17,10 @@ public class DeliveryServiceImpl implements DeliveryService {
         return DeliveryMapper.billPrintInfo(OrderID);
     }
 
+    @Override
+    public void UpdateStatus(String orderID) {
+        DeliveryMapper.updateStatus(orderID);
+    }
+
 }
 

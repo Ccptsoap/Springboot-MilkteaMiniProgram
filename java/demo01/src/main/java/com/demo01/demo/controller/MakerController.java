@@ -23,4 +23,8 @@ public class MakerController {
         return ResultUtils.success(makerService.showAllOrderForMaker());
     }
 
+    @GetMapping("/maker/updatestatus")
+    public void updateStatus(String orderID){
+    }
+
 }

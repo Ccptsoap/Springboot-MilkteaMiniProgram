@@ -23,4 +23,9 @@ public class DeliveryController {
 
         return  ResultUtils.success(deliveryService.BILL_PRINT_INFO(OrderID));
     }
+    @GetMapping("/Delivery/updateStatus")
+    @ApiOperation(value = "更新订单状态")
+    public void updateStatus(String orderID){
+        deliveryService.UpdateStatus(orderID);
+    }
 }

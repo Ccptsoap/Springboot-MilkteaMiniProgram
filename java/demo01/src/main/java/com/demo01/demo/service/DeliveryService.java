@@ -6,4 +6,5 @@ import java.util.List;
 
 public interface DeliveryService {
     List<BillPrintInfo> BILL_PRINT_INFO(String OrderID);
+    void UpdateStatus(String orderID);//调用则是配送完成
 }
