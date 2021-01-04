@@ -7,6 +7,7 @@ import java.util.List;
 
 public interface OrderService {
      List<Order> findAllOrderByID(String openid);
+     List<Order> findAllOrder();
      List<MiniOrder> findAllMiniOrder(String openid);
      List<MiniOrder> findTodayMiniOrder(String openid);
      Order findOneOrder(int orderId);

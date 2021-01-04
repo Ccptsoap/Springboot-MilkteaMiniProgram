@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.demo01.demo.mappers.UserMapper">
+    <select id="login" resultType="User">
+    select *  from cusaccinfo where openid=#{openid}
+    </select>
+
+    <select  id="findByID" resultType="User">
+    select * from cusaccinfo where openid=#{openid}
+    </select>
+
+    <update id="changeUser" parameterType="User">
+        update cusaccinfo set name=#{name}, phonenum=#{phonenum}, address=#{address} where openid=#{openid}
+    </update>
+
+
+
+    <insert id="logon" parameterType="String">
+        insert into cusaccinfo(openid) values(#{openid})
+    </insert>
+
+    <update id="setNickname" parameterType="User">
+        update cusaccinfo set nickname=#{nickname} where openid=#{openid}
+    </update>
+</mapper>

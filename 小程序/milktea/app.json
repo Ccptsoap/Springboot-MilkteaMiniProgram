@@ -10,7 +10,6 @@
     "pages/login/login",
     "pages/orderDetail/orderDetail",
     "pages/pay/pay",
-    "pages/wepay/wepay",
     "pages/address/address",
     "pages/address/changeAddress/changeAddress"
   ],

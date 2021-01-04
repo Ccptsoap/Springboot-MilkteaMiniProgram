@@ -15,10 +15,16 @@ public class OrderServiceImpl  implements OrderService{
     OrderMapper orderMapper;
 
     @Override
-    public List<Order> findAllOrderByID(String openid)    //未完成,未来接口
+    public List<Order> findAllOrderByID(String openid)    
     {
-        int a[] = orderMapper.findAllOrderByID(openid);
-        return null;
+        List<Order> orderList = new ArrayList<>();
+        List<Integer> orderIdList= new ArrayList<>();
+        orderIdList=orderMapper.findAllOrderByID(openid);
+        orderIdList.forEach(re->{
+            Order order = findOneOrder(re);
+            orderList.add(order);
+        });
+        return orderList;
     }
     public List<MiniOrder> findAllMiniOrder(String openid)
     {
@@ -146,6 +152,17 @@ public class OrderServiceImpl  implements OrderService{
         orderList.add(orderTmp);
         return orderList;
     }
+
+    public List<Order> findAllOrder(){
+        List<Order> orderList = new ArrayList();
+        List<Integer> orderIdList = orderMapper.findAllOrderId();
+        orderIdList.forEach(re->{
+            Order order = findOneOrder(re);
+            orderList.add(order);
+        });
+        return orderList;
+    }
+
     public Order findOneOrder(int orderId)
     {
         List<SelectInfo> entryList=orderMapper.findSelectInfo(orderId);
@@ -174,6 +191,7 @@ public class OrderServiceImpl  implements OrderService{
             drinkList.add(drinkTmp);
         }
         Order orderEntry = orderMapper.findOneOrder(order.getOrderId());
+        order.setOpenid(orderEntry.getOpenid());
         order.setTime(orderEntry.getTime());
         order.setStatus(orderEntry.getStatus());
         order.setDrinkList(drinkList);

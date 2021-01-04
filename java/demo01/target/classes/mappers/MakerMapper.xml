@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.demo01.demo.mappers.MakerMapper">
+    <select id="showAllOrderForMaker" resultType="com.demo01.demo.entity.OrderForMaker">
+        select csi.OrderID,mt.name,csi.Description,oi.Time
+        from comselectinfo csi,milktea mt,orderinfo oi
+        where  csi.OrderID = oi.OrderID and csi.id in (mt.id) and oi.Status=1
+        group by mt.name, csi.OrderID, csi.Description, oi.Time
+        order by oi.Time DESC
+    </select>
+</mapper>

@@ -1,7 +1,7 @@
 <view class="title">
-<image src="/icon/bokita.png" class="java-img"></image>
+<image src="/icon/logo.png" class="java-img"></image>
 <view class="tex">
-喜茶
+	喜茶
 </view>
 </view>
 
