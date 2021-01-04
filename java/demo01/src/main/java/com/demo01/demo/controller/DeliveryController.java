@@ -25,7 +25,7 @@ public class DeliveryController {
     }
     @GetMapping("/Delivery/updateStatus")
     @ApiOperation(value = "更新订单状态")
-    public void updateStatus(String orderID){
+    void  updateStatus(String orderID){
         deliveryService.UpdateStatus(orderID);
     }
 }

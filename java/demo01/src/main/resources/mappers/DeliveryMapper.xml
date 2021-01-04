@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.demo01.demo.mappers.DeliveryMapper">
     <update id="updateStatus">
-        update orderinfo set Status = 2 where OrderID=#{orderID}
+        update orderinfo set Status = 2 where OrderID=#{orderID} and Status = 1
     </update>
     <select id="billPrintInfo" resultType="com.demo01.demo.entity.BillPrintInfo">
         select csi.OrderID,mt.name as MilkTeaName,oi.Time,oi.Name as Name,Oi.Address,oi.PhoneNum,csi.Description,csi.Price

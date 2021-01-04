@@ -19,7 +19,13 @@ public class DeliveryServiceImpl implements DeliveryService {
 
     @Override
     public void UpdateStatus(String orderID) {
-        DeliveryMapper.updateStatus(orderID);
+//
+//        try {
+            DeliveryMapper.updateStatus(orderID);
+//            return "更新成功";
+//        }catch (Exception e){
+//            return "更新失败，订单不存在或订单已在配送/已完成";
+//        }
     }
 
 }
