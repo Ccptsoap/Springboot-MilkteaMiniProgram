@@ -19,6 +19,7 @@ public class AdminController {
     @Autowired
     MilkteaService milkteaService;
     MakerService makerService;
+
     @GetMapping("/admin/milktea")
     @ApiOperation(value = "获取奶茶列表")
     public Result<?> getMilkteaList() {

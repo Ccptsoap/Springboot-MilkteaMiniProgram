@@ -14,7 +14,6 @@
     </update>
 
 
-
     <insert id="logon" parameterType="String">
         insert into cusaccinfo(openid) values(#{openid})
     </insert>

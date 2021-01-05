@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.demo01.demo.mappers.DeliveryMapper">
+    <update id="updateStatus">
+        update orderinfo set Status = 2 where OrderID=#{orderID}
+    </update>
     <select id="billPrintInfo" resultType="com.demo01.demo.entity.BillPrintInfo">
         select csi.OrderID,mt.name as MilkTeaName,oi.Time,oi.Name as Name,Oi.Address,oi.PhoneNum,csi.Description,csi.Price
         from comselectinfo csi,milktea mt,orderinfo oi
-        where  csi.OrderID = oi.OrderID and csi.id in (mt.id) and  csi.OrderID=#{OrderID}
+        where  csi.OrderID = oi.OrderID and csi.id in (mt.id)  and csi.OrderID=#{OrderID}
         group by csi.OrderID, mt.name, oi.Time, oi.Name, Oi.Address, oi.PhoneNum, csi.Description, csi.Price
     </select>
 </mapper>
