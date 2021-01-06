@@ -2,6 +2,8 @@ package com.demo01.demo.service;
 
 import com.demo01.demo.entity.Admin;
 
+import java.util.List;
+
 /**
  * @author Soap
  * time 2021-01-06 2:40
@@ -10,4 +12,5 @@ import com.demo01.demo.entity.Admin;
 public interface AdminService {
 
     Admin CheckAdmin(String username, String password_md5);
+    List<Admin> getAllAdmin();
 }

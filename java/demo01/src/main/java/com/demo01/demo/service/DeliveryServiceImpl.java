@@ -18,6 +18,11 @@ public class DeliveryServiceImpl implements DeliveryService {
     }
 
     @Override
+    public List<BillPrintInfo> BILL_PRINT_INFOAll() {
+        return DeliveryMapper.billPrintInfoALL();
+    }
+
+    @Override
     public void UpdateStatus(String orderID) {
 //
 //        try {

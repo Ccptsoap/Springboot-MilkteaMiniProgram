@@ -4,6 +4,8 @@ import com.demo01.demo.entity.Admin;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 /**
  * @author Soap
  * time 2021-01-06 2:49
@@ -13,4 +15,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface AdminMapper {
     Admin findByUsernameAndPassword(String username, String password_md5);
+    List<Admin> getAllAdmin();
 }

@@ -4,4 +4,7 @@
     <select id="findByUsernameAndPassword" resultType="com.demo01.demo.entity.Admin">
         select * from admin where username=#{username} and password=#{password_md5}
     </select>
+    <select id="getAllAdmin" resultType="com.demo01.demo.entity.Admin">
+        select *from admin
+    </select>
 </mapper>

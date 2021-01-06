@@ -11,4 +11,5 @@ import java.util.List;
 public interface DeliveryMapper {
      List<BillPrintInfo> billPrintInfo(String OrderID);
      void updateStatus(String orderID);
+     List<BillPrintInfo> billPrintInfoALL();
 }

@@ -9,4 +9,9 @@
         from comselectinfo csi,milktea mt,orderinfo oi
         where  csi.OrderID = oi.OrderID and csi.id in (mt.id)  and csi.OrderID=#{OrderID}
     </select>
+    <select id="billPrintInfoALL" resultType="com.demo01.demo.entity.BillPrintInfo">
+        select csi.OrderID,mt.name as MilkTeaName,oi.Time,oi.Name as Name,Oi.Address,oi.PhoneNum,csi.Description,csi.Price
+        from comselectinfo csi,milktea mt,orderinfo oi
+        where  csi.OrderID = oi.OrderID and csi.id in (mt.id)
+    </select>
 </mapper>
