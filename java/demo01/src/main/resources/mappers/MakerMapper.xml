@@ -9,7 +9,7 @@
         select csi.OrderID,mt.name,csi.Description,oi.Time
         from comselectinfo csi,milktea mt,orderinfo oi
         where  csi.OrderID = oi.OrderID and csi.id in (mt.id) and oi.Status=1
-        group by mt.name, csi.OrderID, csi.Description, oi.Time
+
         order by oi.Time DESC
     </select>
 </mapper>
