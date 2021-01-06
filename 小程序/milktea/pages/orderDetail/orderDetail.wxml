@@ -2,13 +2,13 @@
 <view class="main">
 <view class="box">
 
-  <view wx:if="{{orderDetail.status==0}}" class="pickId" style="white-space:pre-wrap">订单状态
+  <view wx:if="{{orderDetail.status==1}}" class="pickId" style="white-space:pre-wrap">订单状态
  制作中  
   </view>
-  <view wx:if="{{orderDetail.status==1}}" class="pickId" style="white-space:pre-wrap">订单状态
+  <view wx:if="{{orderDetail.status==2}}" class="pickId" style="white-space:pre-wrap">订单状态
  配送中
   </view>
-  <view wx:if="{{orderDetail.status==2}}" class="pickId" style="white-space:pre-wrap">订单状态
+  <view wx:if="{{orderDetail.status==3}}" class="pickId" style="white-space:pre-wrap">订单状态
 订单完成 
   </view>
 
