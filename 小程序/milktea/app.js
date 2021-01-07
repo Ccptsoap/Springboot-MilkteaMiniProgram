@@ -139,7 +139,7 @@ App({
             for (var i = 0; i < count_type; i++) {
               var newtemp = []
               newtemp.id = "id" + (String)(i + 1)
-              newtemp.name = temp_category[i][0].type_name
+              newtemp.name = temp_category[i][0].typeName
               newtemp.category = temp_category[i]
               this.globalData.milktea[i] = newtemp
             }

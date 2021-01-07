@@ -2,7 +2,7 @@
 	<view class="index">
 		<view class="index-left">
 			<scroll-view scroll-with-animation="true" scroll-y style="height:100vh;" scroll-top="{{leftToTop}}">
-				<view wx:for="{{milktea}}" wx:key="id" bindtap="jumpTo" data-id="{{item.id}}" style="background: {{item.id === currentLeftSelect ? '#F6EEE4' : ''}}" class="index-left-text">
+				<view wx:for="{{milktea}}" wx:key="id" bindtap="jumpTo" data-id="{{item.id}}" style="background: {{item.id === currentLeftSelect ? '#C4F5FF' : ''}}" class="index-left-text">
 					<view class="navi-bar" id="{{item.id}}">
 						{{item.name}}
 					</view>

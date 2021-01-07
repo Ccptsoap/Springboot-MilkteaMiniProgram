@@ -1,6 +1,6 @@
 page{background-color: #f0f0f0;}
 .u{justify-content: center; display: flex;padding:30px 0; flex-direction:row; 
-  background-color:#FFE4C4}
+  background-color:#66CCFF}
 .u .logo{display: flex;padding:0 20px;}
 .u .logo .image{width: 80px; height: 80px; border-radius: 50%; border:2px solid #ddd;}
 
@@ -14,7 +14,7 @@ page{background-color: #f0f0f0;}
 .ub .item .input{ align-items: center; display: flex; margin-left:10px;}
 .ub .item .checkbox{ align-items: center; display: flex; margin-left:30px;}
 
-.btn {width: 70%;height: 40px;margin-top: 40rpx;background-color:#e7c290;}
+.btn {width: 70%;height: 40px;margin-top: 40rpx;background-color:#66CCFF;}
 .btn .text{font-size: 12pt;color:white;}
 
 /* 未选中的 背景样式 */

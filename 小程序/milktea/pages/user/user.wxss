@@ -1,5 +1,5 @@
 page{background-color: #f0f0f0;}
-.u{display: flex;padding:15px 0; flex-direction:row; background-color:#FFE4C4}
+.u{display: flex;padding:15px 0; flex-direction:row; background-color:#66CCFF}
 .u .logo{padding:0 20px;}
 .u .logo image{width: 60px; height: 60px; border-radius: 50%; border:2px solid #fff;}
 

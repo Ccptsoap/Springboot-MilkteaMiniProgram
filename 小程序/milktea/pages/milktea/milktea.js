@@ -44,7 +44,7 @@ Page({
           var tmp3 = tmp + ".category"
           that.setData({
             [tmp1]: "id" + i,
-            [tmp2]: temp_category[i][0].type_name,
+            [tmp2]: temp_category[i][0].typeName,
             [tmp3]: temp_category[i],
           })
         }

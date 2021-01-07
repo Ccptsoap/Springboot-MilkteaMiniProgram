@@ -10,7 +10,7 @@
   /* padding: 20rpx 30rpx; */
   /* margin: 10rpx 0 0; */
   background-color:#fff;
-  color: #c69e6d;
+  color: #66CCFF;
   text-align: center;
   height: 100rpx;
   /* padding:0rpx; */
@@ -30,7 +30,7 @@
   font-weight: bold;
   padding: 20rpx 30rpx;
   margin: 10rpx 0 0;
-  color: #c69e6d;
+  color: #66CCFF;
 }
 
 .eachOne {
@@ -66,7 +66,7 @@
 .refresh text {
   font-size: 35rpx;
   margin-right: 10rpx;
-  color: #c69e6d;
+  color: #66CCFF;
 }
 
 .refresh-img {
@@ -87,7 +87,7 @@
 }
 
 .rec-price {
-  color: #c69e6d;
+  color: #65C2F0;
   width: 150rpx;
 }
 

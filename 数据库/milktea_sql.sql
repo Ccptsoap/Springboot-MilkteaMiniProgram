@@ -11,11 +11,27 @@
  Target Server Version : 50726
  File Encoding         : 65001
 
- Date: 25/12/2020 03:36:41
+ Date: 07/01/2021 20:27:58
 */
 
 SET NAMES utf8mb4;
 SET FOREIGN_KEY_CHECKS = 0;
+
+-- ----------------------------
+-- Table structure for admin
+-- ----------------------------
+DROP TABLE IF EXISTS `admin`;
+CREATE TABLE `admin`  (
+  `id` int(15) NOT NULL,
+  `password` char(20) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `username` char(15) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = MyISAM CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Fixed;
+
+-- ----------------------------
+-- Records of admin
+-- ----------------------------
+INSERT INTO `admin` VALUES (1, '123', 'root');
 
 -- ----------------------------
 -- Table structure for comselectinfo
@@ -49,6 +65,19 @@ INSERT INTO `comselectinfo` VALUES ('9', '0002', 1, '标准糖,正常冰', 27.00
 INSERT INTO `comselectinfo` VALUES ('9', '0012', 1, '标准糖,正常冰', 23.00);
 INSERT INTO `comselectinfo` VALUES ('8', '0012', 1, '标准糖,正常冰', 23.00);
 INSERT INTO `comselectinfo` VALUES ('9', '0008', 1, '标准糖,正常冰', 26.00);
+INSERT INTO `comselectinfo` VALUES ('10', '0012', 1, '标准糖,正常冰', 23.00);
+INSERT INTO `comselectinfo` VALUES ('10', '0003', 2, '标准糖,正常冰', 40.00);
+INSERT INTO `comselectinfo` VALUES ('10', '0011', 1, '标准糖,正常冰', 28.00);
+INSERT INTO `comselectinfo` VALUES ('13', '0007', 1, '标准糖,正常冰', 25.00);
+INSERT INTO `comselectinfo` VALUES ('14', '0008', 1, '标准糖,正常冰', 26.00);
+INSERT INTO `comselectinfo` VALUES ('14', '0013', 1, '标准糖,正常冰', 30.00);
+INSERT INTO `comselectinfo` VALUES ('14', '0011', 1, '标准糖,正常冰', 28.00);
+INSERT INTO `comselectinfo` VALUES ('15', '0013', 1, '标准糖,正常冰', 30.00);
+INSERT INTO `comselectinfo` VALUES ('16', '0004', 1, '标准糖,正常冰', 19.00);
+INSERT INTO `comselectinfo` VALUES ('16', '0002', 1, '标准糖,正常冰', 27.00);
+INSERT INTO `comselectinfo` VALUES ('16', '0008', 1, '标准糖,正常冰', 26.00);
+INSERT INTO `comselectinfo` VALUES ('17', '0001', 1, '标准糖,正常冰', 31.00);
+INSERT INTO `comselectinfo` VALUES ('17', '0009', 1, '标准糖,正常冰', 29.00);
 
 -- ----------------------------
 -- Table structure for cusaccinfo
@@ -76,7 +105,7 @@ CREATE TABLE `milktea`  (
   `id` char(15) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `Type` int(11) NULL DEFAULT NULL,
   `Price` decimal(6, 2) NOT NULL,
-  `Type_Name` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
+  `TypeName` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
   `image` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
   `Name` varchar(30) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`) USING BTREE
@@ -104,7 +133,7 @@ INSERT INTO `milktea` VALUES ('0001', 3, 31.00, '波波家族', '/images/id0001.
 -- ----------------------------
 DROP TABLE IF EXISTS `orderinfo`;
 CREATE TABLE `orderinfo`  (
-  `OrderID` char(15) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `OrderID` int(11) NOT NULL AUTO_INCREMENT,
   `OpenID` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `Time` datetime(0) NOT NULL,
   `Total` decimal(6, 2) NOT NULL,
@@ -114,20 +143,25 @@ CREATE TABLE `orderinfo`  (
   `Name` char(15) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
   PRIMARY KEY (`OrderID`) USING BTREE,
   INDEX `Fk_penID`(`OpenID`) USING BTREE
-) ENGINE = MyISAM CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = MyISAM AUTO_INCREMENT = 18 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of orderinfo
 -- ----------------------------
-INSERT INTO `orderinfo` VALUES ('0', 'oJSWT4t6a9pS2v5TAY2oJZFltKY4', '2020-09-05 10:28:17', 1.00, 1, NULL, NULL, NULL);
-INSERT INTO `orderinfo` VALUES ('1', 'oJSWT4t6a9pS2v5TAY2oJZFltKY4', '2020-12-24 23:55:12', 43.00, 0, NULL, NULL, NULL);
-INSERT INTO `orderinfo` VALUES ('2', 'oJSWT4t6a9pS2v5TAY2oJZFltKY4', '2020-12-25 00:05:25', 32.00, 0, NULL, NULL, NULL);
-INSERT INTO `orderinfo` VALUES ('3', 'oJSWT4t6a9pS2v5TAY2oJZFltKY4', '2020-12-25 00:06:33', 59.00, 0, NULL, NULL, NULL);
-INSERT INTO `orderinfo` VALUES ('4', 'oJSWT4t6a9pS2v5TAY2oJZFltKY4', '2020-12-25 00:45:36', 83.00, 0, NULL, NULL, NULL);
-INSERT INTO `orderinfo` VALUES ('5', 'oJSWT4t6a9pS2v5TAY2oJZFltKY4', '2020-12-25 00:49:05', 25.00, 0, '广东省,东莞市,松山湖,东莞理工学院', NULL, '李华铧');
-INSERT INTO `orderinfo` VALUES ('6', 'oJSWT4t6a9pS2v5TAY2oJZFltKY4', '2020-12-25 00:50:35', 32.00, 0, '广东省,东莞市,松山湖,东莞理工学院', '13602348194', '李华铧');
-INSERT INTO `orderinfo` VALUES ('7', 'oJSWT4t6a9pS2v5TAY2oJZFltKY4', '2020-12-25 02:35:43', 96.00, 0, '广东省,东莞市,松山湖,东莞理工学院', '13602348194', '李华铧');
-INSERT INTO `orderinfo` VALUES ('8', 'oJSWT4t6a9pS2v5TAY2oJZFltKY4', '2020-12-25 03:21:15', 23.00, 0, '广东省,东莞市,松山湖,东莞理工学院', '13602348194', '李华铧');
-INSERT INTO `orderinfo` VALUES ('9', 'oJSWT4t6a9pS2v5TAY2oJZFltKY4', '2020-12-25 03:21:45', 106.00, 0, '广东省,东莞市,松山湖,东莞理工学院', '13602348194', '李华铧');
+INSERT INTO `orderinfo` VALUES (1, 'oJSWT4t6a9pS2v5TAY2oJZFltKY4', '2020-12-24 23:55:12', 43.00, 0, NULL, NULL, NULL);
+INSERT INTO `orderinfo` VALUES (2, 'oJSWT4t6a9pS2v5TAY2oJZFltKY4', '2020-12-25 00:05:25', 32.00, 0, NULL, NULL, NULL);
+INSERT INTO `orderinfo` VALUES (3, 'oJSWT4t6a9pS2v5TAY2oJZFltKY4', '2020-12-25 00:06:33', 59.00, 0, NULL, NULL, NULL);
+INSERT INTO `orderinfo` VALUES (4, 'oJSWT4t6a9pS2v5TAY2oJZFltKY4', '2020-12-25 00:45:36', 83.00, 0, NULL, NULL, NULL);
+INSERT INTO `orderinfo` VALUES (5, 'oJSWT4t6a9pS2v5TAY2oJZFltKY4', '2020-12-25 00:49:05', 25.00, 0, '广东省,东莞市,松山湖,东莞理工学院', NULL, '李华铧');
+INSERT INTO `orderinfo` VALUES (6, 'oJSWT4t6a9pS2v5TAY2oJZFltKY4', '2020-12-25 00:50:35', 32.00, 0, '广东省,东莞市,松山湖,东莞理工学院', '13602348194', '李华铧');
+INSERT INTO `orderinfo` VALUES (7, 'oJSWT4t6a9pS2v5TAY2oJZFltKY4', '2020-12-25 02:35:43', 96.00, 0, '广东省,东莞市,松山湖,东莞理工学院', '13602348194', '李华铧');
+INSERT INTO `orderinfo` VALUES (8, 'oJSWT4t6a9pS2v5TAY2oJZFltKY4', '2020-12-25 03:21:15', 23.00, 0, '广东省,东莞市,松山湖,东莞理工学院', '13602348194', '李华铧');
+INSERT INTO `orderinfo` VALUES (9, 'oJSWT4t6a9pS2v5TAY2oJZFltKY4', '2020-12-25 03:21:45', 106.00, 0, '广东省,东莞市,松山湖,东莞理工学院', '13602348194', '李华铧');
+INSERT INTO `orderinfo` VALUES (10, 'oJSWT4t6a9pS2v5TAY2oJZFltKY4', '2020-12-26 17:45:16', 28.00, 0, '广东省,东莞市,松山湖,东莞理工学院', '13602348194', '李华铧');
+INSERT INTO `orderinfo` VALUES (14, 'oJSWT4t6a9pS2v5TAY2oJZFltKY4', '2020-12-26 18:15:29', 84.00, 0, '广东省,东莞市,松山湖,东莞理工学院', '13602348194', '李华铧');
+INSERT INTO `orderinfo` VALUES (13, 'oJSWT4t6a9pS2v5TAY2oJZFltKY4', '2020-12-26 18:14:29', 25.00, 0, '广东省,东莞市,松山湖,东莞理工学院', '13602348194', '李华铧');
+INSERT INTO `orderinfo` VALUES (15, 'oJSWT4t6a9pS2v5TAY2oJZFltKY4', '2020-12-26 18:55:33', 30.00, 0, '广东省,东莞市,松山湖,东莞理工学院', '13602348194', '李华铧');
+INSERT INTO `orderinfo` VALUES (16, 'oJSWT4t6a9pS2v5TAY2oJZFltKY4', '2020-12-26 18:58:29', 72.00, 0, '广东省,东莞市,松山湖,东莞理工学院', '13602348194', '李华铧');
+INSERT INTO `orderinfo` VALUES (17, 'oJSWT4t6a9pS2v5TAY2oJZFltKY4', '2020-12-26 19:00:26', 60.00, 0, '广东省,东莞市,松山湖,东莞理工学院', '13602348194', '李华铧');
 
 SET FOREIGN_KEY_CHECKS = 1;

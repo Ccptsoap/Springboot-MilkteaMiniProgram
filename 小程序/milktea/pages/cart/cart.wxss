@@ -173,8 +173,8 @@ page {
   line-height: 40px;
   text-align: center;
   border-radius: 3px;
-  background-color:  #e7c290;
-  border: 1rpx solid  #e7c290;
+  background-color:  #66CCFF;
+  border: 1rpx solid  #66CCFF;
   color: #fff;
   margin: 0 20rpx 0 10rpx;
 }

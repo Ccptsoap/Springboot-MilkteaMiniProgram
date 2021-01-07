@@ -43,12 +43,12 @@
 
 .index-right-text-top {
   height: 40rpx;
-  background: #F6EEE4;
+  background: #C4F5FF;
 }
 
 .index-right-text-top text{
   font-size: 30rpx;
-  color: #C69E6D;
+  color: #65C2F0;
 }
 
 .mark {
@@ -74,7 +74,7 @@
 }
 
 .navi-bar{
-  color: #C69E6D;
+  color: #65C2F0;
 }
 
 .rec-name {
@@ -86,7 +86,7 @@
 
 .rec-price{
   padding: 20rpx;
-  color: #C69E6D;
+  color: #65C2F0;
   display: flex;
   width: 150rpx;
 }
