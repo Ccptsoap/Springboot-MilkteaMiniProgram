@@ -2,10 +2,7 @@ package com.demo01.demo.controller;
 
 import com.alibaba.excel.annotation.ExcelProperty;
 import com.alibaba.excel.metadata.BaseRowModel;
-import com.demo01.demo.entity.Admin;
-import com.demo01.demo.entity.BillPrintInfo;
-import com.demo01.demo.entity.Milktea;
-import com.demo01.demo.entity.Order;
+import com.demo01.demo.entity.*;
 import com.demo01.demo.service.AdminService;
 import com.demo01.demo.service.DeliveryService;
 import com.demo01.demo.service.MilkteaService;
@@ -18,7 +15,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletResponse;
+import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -56,72 +55,92 @@ public class getExcleController {
     @GetMapping("/getAllordersExcle")
     @ApiOperation(value = "下载全部订单信息")
     public void getAllorders(HttpServletResponse response){
+        class myResponse extends BaseRowModel{
+            @ExcelProperty(value = "用户openID",index = 0)
+            private String openid;
+            @ExcelProperty(value = "下单时间",index = 1)
+            private String time;
+            @ExcelProperty(value = "订单编号",index = 2)
+            private int orderId;
+            @ExcelProperty(value = "总价",index = 3)
+            private double total;
+            @ExcelProperty(value = "购买列表",index = 4)
+            //获取订单详细时使用
+            private String drinkList;
+            public List<myResponse> parse(List<Order> orders){
+                int size=orders.size();
+                List<myResponse> myResponses=new ArrayList<myResponse>();
+                int j=0;
+                while (j<size){
+
+                    myResponse myResponse=new myResponse();
+                    myResponse.setOrderId(orders.get(j).getOrderId());
+                    myResponse.setOpenid(orders.get(j).getOpenid());
+                    myResponse.setTime(orders.get(j).getTime().toLocalDateTime().toString());
+                    myResponse.setTotal(orders.get(j).getTotal());
+                    String DrinkList=new String();
+                    int i=0;
+                    int sizeofDL=orders.get(j).getDrinkList().size();
+                    while (i<sizeofDL){
+                        DrinkList=DrinkList+"id:"+orders.get(j).getDrinkList().get(i).getDrinkId()+","+
+                                "name:"+ orders.get(j).getDrinkList().get(i).getDrinkName()+","+
+                                "单价:"+orders.get(j).getDrinkList().get(i).getDrinkPrice()+"\n";
+
+                        i+=1;
+                    }
+                    myResponse.setDrinkList(DrinkList);
+                    myResponses.add(myResponse);
+                    j+=1;
+                }
+                return myResponses;
+            }
+            public String getOpenid() {
+                return openid;
+            }
+
+            public void setOpenid(String openid) {
+                this.openid = openid;
+            }
+
+            public String getTime() {
+                return time;
+            }
+
+            public void setTime(String time) {
+                this.time = time;
+            }
+
+            public int getOrderId() {
+                return orderId;
+            }
+
+            public void setOrderId(int orderId) {
+                this.orderId = orderId;
+            }
+
+            public double getTotal() {
+                return total;
+            }
+
+            public void setTotal(double total) {
+                this.total = total;
+            }
+
+            public String getDrinkList() {
+                return drinkList;
+            }
+
+            public void setDrinkList(String drinkList) {
+                this.drinkList = drinkList;
+            }
+        }
+
         List<Order> orders= orderService.findAllOrder();
+
         SimpleDateFormat sdf=new SimpleDateFormat("yyyyMMdd");
         String time=sdf.format(new Date());
         time=time.replaceAll("-","").replaceAll(":","").replaceAll(" ","");
         String fileName="全部订单信息";
-        ExcelUtil.writeExcel(response,orders,fileName+time,fileName,new Order());
-//        class myResponse extends BaseRowModel {
-//            @ExcelProperty(value = "订单编号",index = 0)
-//            String orderid;
-//            @ExcelProperty(value = "购买列表",index = 1)
-//            List<String> MKnames;
-//            @ExcelProperty(value = "订单描述",index = 2)
-//            List<String> Description;
-//            String Total;
-//
-//            public String getOrderid() {
-//                return orderid;
-//            }
-//
-//            public void setOrderid(String orderid) {
-//                this.orderid = orderid;
-//            }
-//
-//            public List<String> getMKnames() {
-//                return MKnames;
-//            }
-//
-//            public void setMKnames(List<String> MKnames) {
-//                this.MKnames = MKnames;
-//            }
-//
-//            public String getTotal() {
-//                return Total;
-//            }
-//
-//            public void setTotal(String total) {
-//                Total = total;
-//            }
-//
-//            public List<String> getDescription() {
-//                return Description;
-//            }
-//
-//            public void setDescription(List<String> description) {
-//                Description = description;
-//            }
-//        }
-//        List<BillPrintInfo> bpi=deliveryService.BILL_PRINT_INFOAll();
-//        int from=0;
-//        int size=bpi.size();
-//        int j=0;
-//        String orderID=bpi.get(0).getOrderID();
-//        while (j<size)
-//        {
-//            if (bpi.get(j).getOrderID().equals(orderID))
-//            j+=1;
-//        }
-//        myResponse myResponse=new myResponse();
-
-
-
-
-//        SimpleDateFormat sdf=new SimpleDateFormat("yyyyMMdd");
-//        String time=sdf.format(new Date());
-//        time=time.replaceAll("-","").replaceAll(":","").replaceAll(" ","");
-//        String fileName="全部奶茶信息";
-//        ExcelUtil.writeExcel(response,milkteas,fileName+time,fileName,new Milktea());
+        ExcelUtil.writeExcel(response,new myResponse().parse(orders),fileName+time,fileName,new myResponse());
     }
 }
