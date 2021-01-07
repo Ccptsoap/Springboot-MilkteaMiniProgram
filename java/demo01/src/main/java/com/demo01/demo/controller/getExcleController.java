@@ -5,9 +5,11 @@ import com.alibaba.excel.metadata.BaseRowModel;
 import com.demo01.demo.entity.Admin;
 import com.demo01.demo.entity.BillPrintInfo;
 import com.demo01.demo.entity.Milktea;
+import com.demo01.demo.entity.Order;
 import com.demo01.demo.service.AdminService;
 import com.demo01.demo.service.DeliveryService;
 import com.demo01.demo.service.MilkteaService;
+import com.demo01.demo.service.OrderService;
 import com.demo01.demo.utils.ExcelUtil;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -28,7 +30,7 @@ public class getExcleController {
     @Resource
     MilkteaService milkteaService;
     @Resource
-    DeliveryService deliveryService;
+    OrderService orderService;
     @GetMapping("/getAdminInfo")
     @ApiOperation(value = "下载管理员账户信息表")
     public void getAdminInfo(HttpServletResponse response){
@@ -51,9 +53,15 @@ public class getExcleController {
         String fileName="全部奶茶信息";
         ExcelUtil.writeExcel(response,milkteas,fileName+time,fileName,new Milktea());
     }
-    @GetMapping("/getAllorders")
+    @GetMapping("/getAllordersExcle")
     @ApiOperation(value = "下载全部订单信息")
     public void getAllorders(HttpServletResponse response){
+        List<Order> orders= orderService.findAllOrder();
+        SimpleDateFormat sdf=new SimpleDateFormat("yyyyMMdd");
+        String time=sdf.format(new Date());
+        time=time.replaceAll("-","").replaceAll(":","").replaceAll(" ","");
+        String fileName="全部订单信息";
+        ExcelUtil.writeExcel(response,orders,fileName+time,fileName,new Order());
 //        class myResponse extends BaseRowModel {
 //            @ExcelProperty(value = "订单编号",index = 0)
 //            String orderid;

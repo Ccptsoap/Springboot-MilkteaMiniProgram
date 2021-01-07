@@ -1,22 +1,29 @@
 package com.demo01.demo.entity;
 
+import com.alibaba.excel.annotation.ExcelProperty;
+import com.alibaba.excel.metadata.BaseRowModel;
+
 import java.sql.Timestamp;
 import java.util.List;
 
 /**
  * 对应数据库 orderInfo
  */
-public class Order {
+public class Order extends BaseRowModel {
+    @ExcelProperty(value = "用户openID",index = 0)
     private String openid;
+    @ExcelProperty(value = "下单时间",index = 1)
     private Timestamp time;
+    @ExcelProperty(value = "订单编号",index = 2)
     private int orderId;
+    @ExcelProperty(value = "总价",index = 3)
     private double total;
 
     private int status;
     private String address;
     private String phonenum;
     private String name;
-
+    @ExcelProperty(value = "购买列表",index = 4)
     //获取订单详细时使用到
     private List<OrderDrink> drinkList;
 
