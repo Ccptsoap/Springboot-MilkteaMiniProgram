@@ -36,7 +36,7 @@ Page({
       wx.request({
 
         data: { openid: this.data.openid},
-        url: 'http://localhost:8080/findTodayMiniOrder',
+        url: 'http://localhost:8081/findTodayMiniOrder',
         success: (result) => {
           //console.log(result.data)
           var tmp = result.data
@@ -89,7 +89,7 @@ Page({
       wx.request({
 
         data: { openid: this.data.openid },
-        url: 'http://localhost:8080/findAllMiniOrder',
+        url: 'http://localhost:8081/findAllMiniOrder',
         success: (result) => {
           //console.log(result.data)
           var tmp = result.data
@@ -137,7 +137,7 @@ Page({
     //发送请求的api
     wx.request({
       data: { orderId: orderId},
-      url: 'http://localhost:8080/findOneOrder',
+      url: 'http://localhost:8081/findOneOrder',
       success: (result) => {
         console.log(result.data)
         wx.navigateTo({

@@ -39,14 +39,14 @@
     </select>
 
     <select id="insertMilktea" resultType="java.lang.Integer">
-        INSERT INTO milktea (id, type, price, Type_Name, image, name) VALUES (#{id},#{type},#{price},#{typeName},#{image},#{name})
+        INSERT INTO milktea (id, type, price, TypeName, image, name) VALUES (#{id},#{type},#{price},#{typeName},#{image},#{name})
     </select>
     <update id="updateMilktea">
             update milktea
             <trim prefix="set" suffixOverrides=",">
                 <if test="type != null">type = #{type},</if>
                 <if test="price != null">price = #{price},</if>
-                <if test="typeName != null">Type_Name = #{typeName},</if>
+                <if test="typeName != null">TypeName = #{typeName},</if>
                 <if test="image != null">image = #{image},</if>
                 <if test="name != null">name = #{name},</if>
             </trim>

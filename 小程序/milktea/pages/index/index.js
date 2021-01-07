@@ -12,7 +12,7 @@ Page({
   // 为你推荐
   recommend: function () {
     wx.request({
-      url: 'http://localhost:8080/recommend',
+      url: 'http://localhost:8081/recommend',
       success: (result) => {
         console.log(result)
         this.setData({
@@ -25,7 +25,7 @@ Page({
   showDetail: function (e) {
     var selectedMilkteaId = e.currentTarget.dataset.id
     wx.request({
-      url: 'http://localhost:8080/selectOneMilktea',
+      url: 'http://localhost:8081/selectOneMilktea',
       data: {
         id: selectedMilkteaId
       },

@@ -20,11 +20,13 @@ public class AdminController {
     @Autowired
     MilkteaService milkteaService;
     OrderService orderService;
+
     @GetMapping("/admin/milktea")
     @ApiOperation(value = "获取奶茶列表")
     public Result<?> getMilkteaList() {
         return ResultUtils.success(milkteaService.selectAllMilktea());
     }
+
     @GetMapping("/admin/order/getTodayInfo")
     @ApiOperation(value="统计今日订单数")
     public Integer getTodayOrderNum(){

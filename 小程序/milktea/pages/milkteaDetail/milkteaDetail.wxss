@@ -23,7 +23,7 @@
 
 .subtitle {
   font-size: 28rpx;
-  color: #808080;
+  color: #808180;
   margin-left: 48rpx;
   margin-top: 40rpx;
   margin-bottom: 25rpx;
@@ -52,7 +52,7 @@
 /* 按钮未选中 */
 .normal-button {
   background: #F5F5F7;
-  color: #808080;
+  color: #808180;
 }
 
 /* 按钮选中 */
@@ -86,7 +86,7 @@
 }
 
 .total-text {
-  color: #808080;
+  color: #808180;
   margin-top: 20rpx;
   font-size: 30rpx;
   width: 400rpx;
@@ -126,7 +126,7 @@
 
 .minus-button text {
   line-height: 100%;
-  color: #808080;
+  color: #808180;
 }
 
 .plus-button text {
@@ -137,7 +137,7 @@
 .milktea-num {
   margin-left: 15rpx;
   margin-right: 15rpx;
-  color: #808080;
+  color: #808180;
   font-size: 30rpx;
   margin-top: 10rpx;
 }
