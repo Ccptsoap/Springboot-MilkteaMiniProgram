@@ -52,7 +52,7 @@ Page({
                     address: this.data.address,
                     phoneNum: this.data.phonenum,  
                     name: this.data.name},
-            url: 'http://localhost:8080/addOneOrderByStr',
+            url: 'http://localhost:8081/addOneOrderByStr',
             header: {
               "Content-Type": "application/x-www-form-urlencoded"
             },

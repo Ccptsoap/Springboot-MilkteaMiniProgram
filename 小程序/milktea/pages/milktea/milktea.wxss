@@ -81,7 +81,7 @@
   font-size: 35rpx;
   padding: 20rpx 30rpx;
   margin-left: 10rpx;
-  color: #808080;
+  color: #808180;
 }
 
 .rec-price{

@@ -16,5 +16,5 @@ import java.util.List;
 public interface AdminMapper {
     Admin findByUsernameAndPassword(String username, String password_md5);
     List<Admin> getAllAdmin();
-
+    Admin getAdminInfoByUsername(String username);
 }

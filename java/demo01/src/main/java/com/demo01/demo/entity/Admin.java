@@ -7,6 +7,7 @@ import com.alibaba.excel.metadata.BaseRowModel;
  * @author Soap
  * time 2021-01-06 2:41
  */
+
 public class Admin extends BaseRowModel {
     @ExcelProperty(value = "id",index = 0)
     private int id;
@@ -23,6 +24,19 @@ public class Admin extends BaseRowModel {
         this.id = id;
         this.username = username;
         this.password_md5 = password_md5;
+    }
+
+    public Admin(int id, String username) {
+        this.id = id;
+        this.username = username;
+    }
+    public Admin(String username, String password_md5) {
+        this.username = username;
+        this.password_md5 = password_md5;
+    }
+
+    public Admin(String username) {
+        this.username = username;
     }
 
     public int getId() {

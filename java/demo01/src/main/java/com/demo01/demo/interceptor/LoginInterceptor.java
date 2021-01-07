@@ -17,8 +17,9 @@ public class LoginInterceptor implements HandlerInterceptor {
     public boolean preHandle(HttpServletRequest request,
                              HttpServletResponse response,
                              Object handler) throws Exception {
-        System.out.println("LoginInterceptor触发：" + request.getRequestURI());
+
         if (request.getSession().getAttribute("admin") == null) {
+            System.out.println(request.getRequestURI() + " 请求被拦截，原因：未登录。");
             response.sendRedirect("login");
             return false;
         }

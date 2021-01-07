@@ -11,6 +11,7 @@ import java.util.List;
  */
 public interface AdminService {
 
-    Admin CheckAdmin(String username, String password_md5);
+    Admin checkAdmin(String username, String password_md5);
     List<Admin> getAllAdmin();
+    Admin getAdminInfoByUsername(String username);
 }

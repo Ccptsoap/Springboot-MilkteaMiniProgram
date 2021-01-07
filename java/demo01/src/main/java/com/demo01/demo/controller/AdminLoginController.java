@@ -32,9 +32,9 @@ public class AdminLoginController {
     public Result<?> login(@RequestParam String username,
                            @RequestParam String password_md5,
                            HttpSession session) {
-        Admin admin = adminService.CheckAdmin(username, password_md5);
+        Admin admin = adminService.checkAdmin(username, password_md5);
         if (admin != null) {
-            admin.setPassword_md5(null);
+//            admin.setPassword_md5("");
             session.setAttribute("admin",admin);
             return ResultUtils.success(admin);
         }else

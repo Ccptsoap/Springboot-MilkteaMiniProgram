@@ -11,7 +11,7 @@ import java.io.IOException;
  * time 2021-01-05 3:00
  * 过滤器，还未使用。
  */
-@WebFilter(filterName = "testFilter", urlPatterns = "/*")
+//@WebFilter(filterName = "testFilter", urlPatterns = "/*")
 public class TestFilter implements Filter {
 
     @Override

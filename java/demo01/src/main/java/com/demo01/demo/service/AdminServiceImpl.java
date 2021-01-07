@@ -18,7 +18,7 @@ public class AdminServiceImpl implements AdminService {
     AdminMapper adminMapper;
 
     @Override
-    public Admin CheckAdmin(String username, String password_md5) {
+    public Admin checkAdmin(String username, String password_md5) {
         System.out.println("查询数据库，用户名：" + username + " 密码：" + password_md5);
         Admin admin = adminMapper.findByUsernameAndPassword(username, password_md5);
         return admin;
@@ -27,5 +27,11 @@ public class AdminServiceImpl implements AdminService {
     @Override
     public List<Admin> getAllAdmin() {
         return adminMapper.getAllAdmin();
+    }
+
+    @Override
+    public Admin getAdminInfoByUsername(String username) {
+        Admin admin = adminMapper.getAdminInfoByUsername(username);
+        return admin;
     }
 }
