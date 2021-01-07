@@ -20,4 +20,5 @@ public interface OrderMapper {
      int findLastOrderId();
      int addOneSelectInfo(SelectInfo selectInfo);
      List<SelectInfo> findSelectInfo(int orderId);
+     Integer getTodayOrderNum();
 }

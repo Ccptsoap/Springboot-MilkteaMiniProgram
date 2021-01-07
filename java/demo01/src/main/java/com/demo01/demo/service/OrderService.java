@@ -12,4 +12,5 @@ public interface OrderService {
      List<MiniOrder> findTodayMiniOrder(String openid);
      Order findOneOrder(int orderId);
      boolean addOneOrderByStr(String openid,String drinkStr,String address,String phoneNum,String name);
+     Integer getTodayOrderNum();
 }

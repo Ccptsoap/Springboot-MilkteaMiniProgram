@@ -3,6 +3,7 @@ package com.demo01.demo.controller;
 import com.demo01.demo.entity.Milktea;
 import com.demo01.demo.service.MakerService;
 import com.demo01.demo.service.MilkteaService;
+import com.demo01.demo.service.OrderService;
 import com.demo01.demo.utils.Result;
 import com.demo01.demo.utils.ResultUtils;
 import io.swagger.annotations.Api;
@@ -18,14 +19,17 @@ public class AdminController {
 
     @Autowired
     MilkteaService milkteaService;
-    MakerService makerService;
-
+    OrderService orderService;
     @GetMapping("/admin/milktea")
     @ApiOperation(value = "获取奶茶列表")
     public Result<?> getMilkteaList() {
         return ResultUtils.success(milkteaService.selectAllMilktea());
     }
-
+    @GetMapping("/admin/order/getTodayInfo")
+    @ApiOperation(value="统计今日订单数")
+    public Integer getTodayOrderNum(){
+        return orderService.getTodayOrderNum();
+    }
     @GetMapping("/admin/milktea/{milkteaId}")
     @ApiOperation(value = "根据ID查询奶茶")
     public Result<?> getMilkteaById(@PathVariable("milkteaId") String milkteaId) {
@@ -46,5 +50,6 @@ public class AdminController {
     public Result<?> deleteMilkteaInfo(@PathVariable("milkteaId") String milkteaId) {
         return ResultUtils.success(milkteaService.deleteMilktea(milkteaId));
     }
+
 
 }

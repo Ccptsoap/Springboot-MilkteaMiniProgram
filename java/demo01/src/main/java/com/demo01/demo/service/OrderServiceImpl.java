@@ -252,4 +252,9 @@ public class OrderServiceImpl  implements OrderService{
         }
         return true;
     }
+
+    @Override
+    public Integer getTodayOrderNum() {
+        return orderMapper.getTodayOrderNum();
+    }
 }

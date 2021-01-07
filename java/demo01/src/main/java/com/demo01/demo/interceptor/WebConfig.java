@@ -20,14 +20,12 @@ public class WebConfig implements WebMvcConfigurer {
     }
 
     //注册拦截器
+
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(new LoginInterceptor())
-                .addPathPatterns("/**")
-                //除去测试页 /index.html  /    /user/login  /css/**   /img/**   /js/**这些不进行拦截
-                .excludePathPatterns("/index.html", "/", "/admin/login", "/css/**", "/img/**", "/js/**", "/error")
-                .excludePathPatterns("/swagger-resources/**", "/webjars/**", "/v2/**", "/swagger-ui.html/**","/csrf");
-        ;
+                .addPathPatterns("/admin")
+                .excludePathPatterns("/admin/login");
     }
 
 }
