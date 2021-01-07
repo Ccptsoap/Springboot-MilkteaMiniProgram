@@ -83,7 +83,7 @@
 
 .rec-name {
   font-size: 32rpx;
-  color: #808180;
+  color: #808080;
 }
 
 .rec-price {

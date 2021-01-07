@@ -26,7 +26,7 @@ Page({
           method: "GET",
           success:function(res){
             wx.request({
-              url:'http://localhost:8081/login',
+              url:'http://localhost:8080/login',
               method: 'POST',
               data: {openid:res.data.openid,nickname:userInfo.nickName},
               success:(result)=>{
@@ -69,7 +69,7 @@ Page({
   },
   // submit:function(){
   //   wx.request({
-  //     url:'http://localhost:8081/login',
+  //     url:'http://localhost:8080/login',
   //     data: {phone:this.data.phone, pwd:this.data.pwd},
   //     success:(result)=>{
   //       if(result.data!=""){
@@ -102,7 +102,7 @@ Page({
 
   // getAll:function(){
   //   wx.request({
-  //     url: 'http://localhost:8081/findByPhone',
+  //     url: 'http://localhost:8080/findByPhone',
   //     data: {phone:this.data.phone},
   //     success:(result)=>{
   //       console.log(result)

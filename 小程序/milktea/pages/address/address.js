@@ -33,7 +33,7 @@ Page({
   getAll:function(){
     console.log("修改信息中的getAll()")
     wx.request({
-      url: 'http://localhost:8081/findByID',  //通过手机号获取信息，可修改成通过id获取地址信息
+      url: 'http://localhost:8080/findByID',  //通过手机号获取信息，可修改成通过id获取地址信息
       data: {openid:base.globalData.openid},
       success:(result)=>{
         console.log(result)

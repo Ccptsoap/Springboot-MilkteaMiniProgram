@@ -49,7 +49,7 @@ Page({
 
             data: { openid: this.data.openid, drinkStr: JSON.stringify(this.data.dl), address: this.data.address,
               phoneNum: this.data.phonenum, name: this.data.name},
-            url: 'http://localhost:8081/addOneOrderByStr',
+            url: 'http://localhost:8080/addOneOrderByStr',
             success: (result) => {
               console.log(result.data)
               if (result.data==true)

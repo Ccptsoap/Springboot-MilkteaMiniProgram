@@ -127,13 +127,13 @@ App({
     var that = this
     wx.request({
       // 获取种类数
-      url: 'http://localhost:8081/countType',
+      url: 'http://localhost:8080/countType',
       success: (result) => {
         this.globalData.count_type = result.data
         var count_type = result.data
         wx.request({
           // 获取每种类型对应的奶茶产品
-          url: 'http://localhost:8081/selectAllByType',
+          url: 'http://localhost:8080/selectAllByType',
           success: (result) => {
             var temp_category = result.data
             for (var i = 0; i < count_type; i++) {
