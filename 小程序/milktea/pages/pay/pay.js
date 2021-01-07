@@ -47,9 +47,16 @@ Page({
           console.log(JSON.stringify(this.data.dl))
           wx.request({
 
-            data: { openid: this.data.openid, drinkStr: JSON.stringify(this.data.dl), address: this.data.address,
-              phoneNum: this.data.phonenum, name: this.data.name},
+            data: { openid: this.data.openid,
+                    drinkStr: JSON.stringify(this.data.dl), 
+                    address: this.data.address,
+                    phoneNum: this.data.phonenum,  
+                    name: this.data.name},
             url: 'http://localhost:8080/addOneOrderByStr',
+            header: {
+              "Content-Type": "application/x-www-form-urlencoded"
+            },
+            method:'POST',
             success: (result) => {
               console.log(result.data)
               if (result.data==true)
