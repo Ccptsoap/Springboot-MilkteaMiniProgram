@@ -27,7 +27,11 @@
         from OrderInfo a, comselectinfo b, milktea c
         where openid=#{openid} and a.orderId = b.orderId and b.id = c.id and to_days(time) = to_days(now());
     </select>
-
+    <select id="getTodayOrderNum" resultType="Integer">
+        select count(*)
+        from orderinfo
+        where date_format(Time,'%Y-%m')=date_format(now(),'%Y-%m')
+    </select>
     <!--查询最后一个订单的订单编号-->
     <select id="findLastOrderId" resultType="int">
         select max(orderid) from orderinfo

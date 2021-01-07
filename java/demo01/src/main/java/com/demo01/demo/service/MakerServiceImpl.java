@@ -17,5 +17,12 @@ public class MakerServiceImpl implements MakerService{
     @Override
     public List<OrderForMaker> showAllOrderForMaker(){
         return makerMapper.showAllOrderForMaker();
-    };
+    }
+
+    @Override
+    public void updateStatus(String orderID) {
+        makerMapper.updateStatus(orderID);
+    }
+
+    ;
 }

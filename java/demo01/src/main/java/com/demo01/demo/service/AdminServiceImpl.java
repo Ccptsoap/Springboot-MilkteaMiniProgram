@@ -5,6 +5,8 @@ import com.demo01.demo.mappers.AdminMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * @author Soap
  * time 2021-01-06 2:44
@@ -20,5 +22,10 @@ public class AdminServiceImpl implements AdminService {
         System.out.println("查询数据库，用户名：" + username + " 密码：" + password_md5);
         Admin admin = adminMapper.findByUsernameAndPassword(username, password_md5);
         return admin;
+    }
+
+    @Override
+    public List<Admin> getAllAdmin() {
+        return adminMapper.getAllAdmin();
     }
 }

@@ -8,5 +8,5 @@ import java.util.List;
 public interface MakerService {
 
     List<OrderForMaker> showAllOrderForMaker();
-
+    void updateStatus(String orderID);
 }

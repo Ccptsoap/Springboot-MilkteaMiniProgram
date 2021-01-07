@@ -1,12 +1,18 @@
 package com.demo01.demo.entity;
 
+import com.alibaba.excel.annotation.ExcelProperty;
+import com.alibaba.excel.metadata.BaseRowModel;
+
 /**
  * @author Soap
  * time 2021-01-06 2:41
  */
-public class Admin {
+public class Admin extends BaseRowModel {
+    @ExcelProperty(value = "id",index = 0)
     private int id;
+    @ExcelProperty(value = "账号",index = 1)
     private String username;
+    @ExcelProperty(value = "密码",index = 2)
     private String password_md5;
 
     public Admin() {

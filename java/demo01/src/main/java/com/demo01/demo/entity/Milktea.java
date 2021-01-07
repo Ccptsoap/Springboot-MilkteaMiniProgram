@@ -1,14 +1,23 @@
 package com.demo01.demo.entity;
 
+import com.alibaba.excel.annotation.ExcelProperty;
+import com.alibaba.excel.metadata.BaseRowModel;
+
 /**
  * NULL
  */
-public class Milktea {
+public class Milktea extends BaseRowModel {
+    @ExcelProperty(value = "编号",index = 0)
     String id;
+    @ExcelProperty(value = "品名",index = 1)
     String name;
+    @ExcelProperty(value = "单价",index = 2)
     String price;
+    @ExcelProperty(value = "类型编号",index = 3)
     String type;
+    @ExcelProperty(value = "类型",index = 4)
     String typeName;
+    @ExcelProperty(value = "展示图片",index = 5)
     String image;
 
     public String getId() {
