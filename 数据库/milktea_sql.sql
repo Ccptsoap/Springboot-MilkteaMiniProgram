@@ -114,19 +114,18 @@ CREATE TABLE `milktea`  (
 -- ----------------------------
 -- Records of milktea
 -- ----------------------------
-INSERT INTO `milktea` VALUES ('0002', 1, 27.00, '果茶家族', '/images/id0002.jpg', '多肉芒芒甘露');
-INSERT INTO `milktea` VALUES ('0003', 1, 20.00, '果茶家族', '/images/id0003.jpg', '芝芝桃桃');
-INSERT INTO `milktea` VALUES ('0004', 2, 19.00, '茗茶/牛乳', '/images/id0004.jpg', '芝芝绿妍');
-INSERT INTO `milktea` VALUES ('0005', 2, 22.00, '茗茶/牛乳', '/images/id0005.jpg', '芝芝金玉');
-INSERT INTO `milktea` VALUES ('0006', 3, 27.00, '波波家族', '/images/id0006.jpg', '豆豆波波茶');
-INSERT INTO `milktea` VALUES ('0007', 3, 25.00, '波波家族', '/images/id0007.jpg', '芋泥波波牛乳');
-INSERT INTO `milktea` VALUES ('0008', 4, 26.00, '醇香咖啡', '/images/id0008.jpg', '芝芝咖啡');
-INSERT INTO `milktea` VALUES ('0009', 4, 29.00, '醇香咖啡', '/images/id0009.jpg', '雪山香草拿铁');
-INSERT INTO `milktea` VALUES ('0010', 1, 32.00, '果茶家族', '/images/id0010.jpg', '芝芝莓莓');
-INSERT INTO `milktea` VALUES ('0011', 1, 28.00, '果茶家族', '/images/id0011.jpg', '芝芝莓莓桃');
-INSERT INTO `milktea` VALUES ('0012', 1, 23.00, '果茶家族', '/images/id0012.jpg', '满杯红柚');
-INSERT INTO `milktea` VALUES ('0013', 2, 30.00, '茗茶/牛乳', '/images/id0013.jpg', '芝芝金凤茶王');
-INSERT INTO `milktea` VALUES ('0001', 3, 31.00, '波波家族', '/images/id0001.jpg', '葡萄波波奶盖');
+INSERT INTO milktea_sql.milktea (id, Type, Price, TypeName, image, Name) VALUES ('0001', 3, 31.00, '波波家族', 'https://springboot-exp-1255644734.cos.ap-guangzhou.myqcloud.com/id0001.jpg', '葡萄波波奶盖');
+INSERT INTO milktea_sql.milktea (id, Type, Price, TypeName, image, Name) VALUES ('0002', 1, 27.00, '果茶家族', 'https://springboot-exp-1255644734.cos.ap-guangzhou.myqcloud.com/id0002.jpg', '多肉芒芒甘露');
+INSERT INTO milktea_sql.milktea (id, Type, Price, TypeName, image, Name) VALUES ('0003', 1, 20.00, '果茶家族', 'https://springboot-exp-1255644734.cos.ap-guangzhou.myqcloud.com/id0003.jpg', '芝芝桃桃');
+INSERT INTO milktea_sql.milktea (id, Type, Price, TypeName, image, Name) VALUES ('0004', 2, 19.00, '茗茶/牛乳', 'https://springboot-exp-1255644734.cos.ap-guangzhou.myqcloud.com/id0004.jpg', '芝芝绿妍');
+INSERT INTO milktea_sql.milktea (id, Type, Price, TypeName, image, Name) VALUES ('0005', 2, 22.00, '茗茶/牛乳', 'https://springboot-exp-1255644734.cos.ap-guangzhou.myqcloud.com/id0005.jpg', '芝芝金玉');
+INSERT INTO milktea_sql.milktea (id, Type, Price, TypeName, image, Name) VALUES ('0006', 3, 27.00, '波波家族', 'https://springboot-exp-1255644734.cos.ap-guangzhou.myqcloud.com/id0006.jpg', '豆豆波波茶');
+INSERT INTO milktea_sql.milktea (id, Type, Price, TypeName, image, Name) VALUES ('0007', 3, 25.00, '波波家族', 'https://springboot-exp-1255644734.cos.ap-guangzhou.myqcloud.com/id0007.jpg', '芋泥波波牛乳');
+INSERT INTO milktea_sql.milktea (id, Type, Price, TypeName, image, Name) VALUES ('0008', 4, 26.00, '醇香咖啡', 'https://springboot-exp-1255644734.cos.ap-guangzhou.myqcloud.com/id0008.jpg', '芝芝咖啡');
+INSERT INTO milktea_sql.milktea (id, Type, Price, TypeName, image, Name) VALUES ('0009', 4, 29.00, '醇香咖啡', 'https://springboot-exp-1255644734.cos.ap-guangzhou.myqcloud.com/id0009.jpg', '雪山香草拿铁');
+INSERT INTO milktea_sql.milktea (id, Type, Price, TypeName, image, Name) VALUES ('0010', 1, 32.00, '果茶家族', 'https://springboot-exp-1255644734.cos.ap-guangzhou.myqcloud.com/id0010.jpg', '芝芝莓莓');
+INSERT INTO milktea_sql.milktea (id, Type, Price, TypeName, image, Name) VALUES ('0011', 1, 28.00, '果茶家族', 'https://springboot-exp-1255644734.cos.ap-guangzhou.myqcloud.com/id0011.jpg', '芝芝莓莓桃');
+INSERT INTO milktea_sql.milktea (id, Type, Price, TypeName, image, Name) VALUES ('0012', 1, 23.00, '果茶家族', 'https://springboot-exp-1255644734.cos.ap-guangzhou.myqcloud.com/id0012.jpg', '满杯红柚');
 
 -- ----------------------------
 -- Table structure for orderinfo
@@ -165,3 +164,21 @@ INSERT INTO `orderinfo` VALUES (16, 'oJSWT4t6a9pS2v5TAY2oJZFltKY4', '2020-12-26 
 INSERT INTO `orderinfo` VALUES (17, 'oJSWT4t6a9pS2v5TAY2oJZFltKY4', '2020-12-26 19:00:26', 60.00, 0, '广东省,东莞市,松山湖,东莞理工学院', '13602348194', '李华铧');
 
 SET FOREIGN_KEY_CHECKS = 1;
+
+-- ----------------------------
+-- Table structure for bannerimg
+-- ----------------------------
+create table bannerImg
+(
+    id int not null,
+    imgUrl varchar(255) null,
+    constraint bannerImg_pk
+        primary key (id)
+);
+
+-- ----------------------------
+-- Records of bannerimg
+-- ----------------------------
+INSERT INTO milktea_sql.bannerimg (id, imgUrl) VALUES (1, 'https://springboot-exp-1255644734.cos.ap-guangzhou.myqcloud.com/banner/bnr1.jpg');
+INSERT INTO milktea_sql.bannerimg (id, imgUrl) VALUES (2, 'https://springboot-exp-1255644734.cos.ap-guangzhou.myqcloud.com/banner/bnr2.png');
+INSERT INTO milktea_sql.bannerimg (id, imgUrl) VALUES (3, 'https://springboot-exp-1255644734.cos.ap-guangzhou.myqcloud.com/banner/bnr3.png');

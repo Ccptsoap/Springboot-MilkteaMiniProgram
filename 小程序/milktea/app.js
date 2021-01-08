@@ -23,7 +23,6 @@ App({
           console.log("用户已同意授权")
           wx.getUserInfo({
             success: res => {
-
               this.globalData.userInfo = res.userInfo
               console.log("写入userinfo")
               if (this.userInfoReadyCallback) {

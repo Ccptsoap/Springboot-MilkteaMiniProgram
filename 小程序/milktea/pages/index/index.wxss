@@ -15,7 +15,7 @@
   height: 100rpx;
   /* padding:0rpx; */
   line-height: 100rpx;
-  width: 50%;
+  width: 100%;
 }
 
 

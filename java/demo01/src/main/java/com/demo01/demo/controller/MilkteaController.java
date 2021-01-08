@@ -2,6 +2,7 @@ package com.demo01.demo.controller;
 
 
 import com.demo01.demo.entity.Milktea;
+import com.demo01.demo.service.BannerService;
 import com.demo01.demo.service.MilkteaService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -18,6 +19,7 @@ import java.util.List;
 public class MilkteaController {
     @Autowired
     MilkteaService milkteaService;
+
     @GetMapping("recommend")
     @ApiOperation(value = " 首页“为你推荐”")
     public List<Milktea> recommend() {
@@ -67,4 +69,5 @@ public class MilkteaController {
     public int countMilktea() {
         return milkteaService.countMilktea();
     }
+
 }

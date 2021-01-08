@@ -1,20 +1,18 @@
 <view class="title">
-<image src="/icon/logo.png" class="java-img"></image>
-<view class="tex">
-	喜茶
-</view>
+<!-- <image src="/icon/logo.png" class="java-img"></image> -->
+<view class="tex">喜茶</view>
 </view>
 
 <!-- 轮播图展示海报 -->
 <swiper autoplay="true" indicator-dots="true" indicator-color="pink" indicator-active-color="orange" interval="3000" duration="500" class="swiperTop">
 	<swiper-item>
-		<image src="/banner/bnr1.jpg" class="bnr-img" mode="widthFix"></image>
+		<image src="{{bannerImgUrl1}}" class="bnr-img" mode="widthFix"></image>
 	</swiper-item>
 	<swiper-item>
-		<image src="/banner/bnr2.jpg" class="bnr-img" mode="widthFix"></image>
+		<image src="{{bannerImgUrl2}}" class="bnr-img" mode="widthFix"></image>
 	</swiper-item>
 	<swiper-item>
-		<image src="/banner/bnr3.jpg" class="bnr-img" mode="widthFix"></image>
+		<image src="{{bannerImgUrl3}}" class="bnr-img" mode="widthFix"></image>
 	</swiper-item>
 </swiper>
 

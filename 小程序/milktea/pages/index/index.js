@@ -6,7 +6,26 @@ Page({
   data: {
     recommendedMilktea: "",
     // 单击后需要跳转至详情页面的奶茶id
-    selectedMilkteaId: ""
+    selectedMilkteaId: "",
+    bannerImgUrl1:"",
+    bannerImgUrl2:"",
+    bannerImgUrl3:""
+  },
+
+  //获取Banner
+  getBanner: function () {
+    wx.request({
+      url: getApp().globalData.apiHost + '/getBannerImgUrl',
+      success: (result) => {
+        console.log("获取Banner")
+        console.log(result)
+        this.setData({
+          bannerImgUrl1: result.data.data[0],
+          bannerImgUrl2: result.data.data[1],
+          bannerImgUrl3: result.data.data[2]
+        })
+      }
+    })
   },
 
   // 为你推荐
@@ -57,6 +76,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    this.getBanner()
     this.recommend()
   },
 
