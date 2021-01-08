@@ -77,8 +77,9 @@ App({
                   wx.setStorageSync('user', result.data)
                   wx.setStorageSync('openid', result.data.openid)
                 } else {
-                  console.log("从服务器获取信息失败！")
+                  console.log("登录成功，但从服务器获取信息失败！")
                   that.globalData.user = result.data
+                  that.globalData.isIn = 1
                   wx.showToast({
                     title: '请填写个人信息',
                     icon: "none"
