@@ -1,4 +1,13 @@
 App({
+  globalData: {
+    openid: "",
+    userInfo: "",
+    user: "",
+    count_type: 0,
+    milktea: [],
+    isIn: 0,
+    apiHost: 'http://localhost:8081'
+  },
   onLaunch: function () {
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
@@ -39,7 +48,7 @@ App({
     ref: "",
     add: function (p) {
       var re = false;
-      if (p.supplyno && p.id && p.price && p.size && p.name && p.num ) {
+      if (p.supplyno && p.id && p.price && p.size && p.name && p.num) {
         var dic = wx.getStorageSync(this.key) || {};
         var flag = false
         var des
@@ -127,13 +136,13 @@ App({
     var that = this
     wx.request({
       // 获取种类数
-      url: 'http://localhost:8081/countType',
+      url: this.globalData.apiHost + '/countType',
       success: (result) => {
         this.globalData.count_type = result.data
         var count_type = result.data
         wx.request({
           // 获取每种类型对应的奶茶产品
-          url: 'http://localhost:8081/selectAllByType',
+          url: this.globalData.apiHost + '/selectAllByType',
           success: (result) => {
             var temp_category = result.data
             for (var i = 0; i < count_type; i++) {
@@ -153,13 +162,6 @@ App({
 
   modal: function (p) {
     wx.showModal(p);
-  },
-  globalData: {
-    openid: "",
-    userInfo: "",
-    user: "",
-    count_type: 0,
-    milktea: [],
-    isIn:0
   }
+
 })

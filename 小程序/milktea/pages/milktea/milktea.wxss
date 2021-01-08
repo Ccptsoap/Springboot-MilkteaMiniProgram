@@ -60,7 +60,7 @@
 }
 
 .index-right-text-top {
-  height: 20px;
+  height: 50rpx;
 }
 
 .rec-img {
@@ -78,15 +78,16 @@
 }
 
 .rec-name {
-  font-size: 35rpx;
-  padding: 20rpx 30rpx;
-  margin-left: 10rpx;
+  font-size: 30rpx;
+  padding: 28rpx 0rpx;
   color: #808180;
+  margin-left: 30rpx;
 }
 
 .rec-price{
-  padding: 20rpx;
+  font-size: 30rpx;
+  padding: 28rpx 0rpx;
   color: #65C2F0;
   display: flex;
-  width: 150rpx;
+  margin-left:auto;
 }

@@ -14,7 +14,7 @@ Page({
   showDetail: function (e) {
     var selectedMilkteaId = e.currentTarget.dataset.id
     wx.request({
-      url: 'http://localhost:8081/selectOneMilktea',
+      url: getApp().globalData.apiHost+'/selectOneMilktea',
       data: {
         id: selectedMilkteaId
       },
@@ -30,7 +30,7 @@ Page({
     var that = this
     wx.request({
       // 获取每种类型对应的奶茶产品
-      url: 'http://localhost:8081/selectAllByType',
+      url: getApp().globalData.apiHost+'/selectAllByType',
       success: (result) => {
         var temp_category = result.data
         var count_type = base.globalData.count_type
@@ -53,6 +53,7 @@ Page({
   },
 
   onLoad: function (options) {
+    console.log("点单界面获取奶茶数据：")
     for (var i = 0; i < base.globalData.milktea.length; i++) {
       console.log(base.globalData.milktea[i])
       var the_index = (String)((Number)(i))

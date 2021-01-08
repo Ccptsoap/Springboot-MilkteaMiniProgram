@@ -2,40 +2,42 @@
 </view>
 
 <form bindsubmit="changeaddress" class="ub">
-<!-- <view class="ub"> -->
-  <view class="item" >
-    <view class="text">地址</view>
+  <!-- <view class="ub"> -->
+  <view class="item">
+    <view class="text">地址：</view>
     <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
-    <view class="picker">
+      <view class="picker">
         {{region[0]}}，{{region[1]}}，{{region[2]}}
-    </view>
-  </picker>
+      </view>
+    </picker>
   </view>
 
-  <view class="item" >
-    <view class="text">详细</view>
-    <view class="input">
-      <input type="text" id="addressDetail"  name="addressDetail"></input>
-    </view>
-  </view>
-
-
-  <view class="item" >
-    <view class="text">手机</view>
-    <view class="input">
-      <input type="text" id="phonenum" value="{{phonenum}}" name="phonenum"></input>
-    </view>
-  </view>
-  <view class="item" >
-    <view class="text">姓名</view>
-    <view class="input">
-      <input type="text" id="name" value="{{name}}" name="name"></input>
+  <view class="item">
+        <view class="input">
+      <view class="text">详细：</view>
+      <input type="text" style="background-color: white; width: 250px; height: 30px; border-radius: 5px;" id="addressDetail" name="addressDetail"></input>
     </view>
   </view>
 
 
+  <view class="item">
+        <view class="input">
+      <view class="text">手机：</view>
+      <input type="text" style="background-color: white; width: 250px; height: 30px; border-radius: 5px;" id="phonenum" value="{{phonenum}}" name="phonenum"></input>
+    </view>
+  </view>
+  <view class="item">
+        <view class="input">
+      <view class="text">姓名：</view>
+      <input type="text" style="background-color: white; width: 250px; height: 30px; border-radius: 5px;" id="name" value="{{name}}" name="name"></input>
+    </view>
+  </view>
 
-<!-- </view> -->
-<button form-type="submit"   class="btn"><view class="text">保存</view></button>
+
+
+  <!-- </view> -->
+  <button form-type="submit" class="btn">
+    <view class="text">保存</view>
+  </button>
 
 </form>

@@ -1,23 +1,27 @@
 <view class="main">
-	<image wx:if="{{milktea}}" src="{{milktea.image}}" class="current-img"></image>
+	<view style="text-align: center; margin:20px 0;">
+		<image wx:if="{{milktea}}" src="{{milktea.image}}" class="current-img"></image>
+	</view>
 	<view class="current-name">{{milktea.name}}</view>
 
-	
+
 
 	<view class="subtitle">状态</view>
 	<view class="button-container">
 		<block wx:for="{{sugar_buttons}}" wx:key="buttons">
-			<button class='{{item.checked?"checked-button":"normal-button"}}' data-id='{{item.id}}' bindtap='sugarButtonTap'>{{item.name}}</button>
+			<button class='{{item.checked?"checked-button":"normal-button"}}' data-id='{{item.id}}'
+				bindtap='sugarButtonTap'>{{item.name}}</button>
 		</block>
 	</view>
 
 	<view class="subtitle">冰量</view>
 	<view class="button-container">
 		<block wx:for="{{ice_buttons}}" wx:key="buttons">
-			<button class='{{item.checked?"checked-button":"normal-button"}}' data-id='{{item.id}}' bindtap='iceButtonTap'>{{item.name}}</button>
+			<button class='{{item.checked?"checked-button":"normal-button"}}' data-id='{{item.id}}'
+				bindtap='iceButtonTap'>{{item.name}}</button>
 		</block>
 	</view>
-
+	<view style="padding-top:100rpx"> </view>
 </view>
 
 <view class="bottom-bar">
@@ -25,18 +29,20 @@
 		<view class="current-price">￥
 			<text>{{price}}</text>
 		</view>
-		<view class="total-text">{{total}}</view>
+		<view class="total-text" style="margin-top:0px;margin-left:20rpx;padding-top:34rpx;padding-bottom: 34rpx;">{{total}}</view>
 
 		<!-- 增加减少数量按钮 -->
-		<view class="number">
-			<view class="minus-button" bindtap="minusCount" data-index="{{index}}">
+		<view class="number" style="margin-top:20rpx;margin-left:20rpx;margin-right:20rpx;margin-bottom: 20rpx;">
+
+			<view class="minus-button" style="margin-top:5px;margin-bottom:5px;margin-left:5px;margin-right: 5px;" bindtap="minusCount" data-index="{{index}}">
 				<text>-</text></view>
 			<text class="milktea-num">{{num}}</text>
-			<view class="plus-button" bindtap="plusCount" data-index="{{index}}">
+
+			<view class="plus-button" style="margin-top:5px;margin-bottom:5px;margin-left:5px;margin-right: 5px;" bindtap="plusCount" data-index="{{index}}">
 				<text>+</text>
 			</view>
 		</view>
 	</view>
 	<button class="confirm" bindtap='confirmButtonTap'>
-	<text>加入购物袋</text></button>
+		<text>加入购物袋</text></button>
 </view>

@@ -2,7 +2,8 @@
 	<view class="index">
 		<view class="index-left">
 			<scroll-view scroll-with-animation="true" scroll-y style="height:100vh;" scroll-top="{{leftToTop}}">
-				<view wx:for="{{milktea}}" wx:key="id" bindtap="jumpTo" data-id="{{item.id}}" style="background: {{item.id === currentLeftSelect ? '#C4F5FF' : ''}}" class="index-left-text">
+				<view wx:for="{{milktea}}" wx:key="id" bindtap="jumpTo" data-id="{{item.id}}"
+					style="background: {{item.id === currentLeftSelect ? '#C4F5FF' : ''}}" class="index-left-text">
 					<view class="navi-bar" id="{{item.id}}">
 						{{item.name}}
 					</view>
@@ -10,10 +11,12 @@
 			</scroll-view>
 		</view>
 		<view class="index-right">
-			<scroll-view scroll-with-animation="true" scroll-y style="height: 100vh;" bindscroll="rightScroll" scroll-into-view="{{toView}}" bindscrolltolower="lower">
+			<scroll-view scroll-with-animation="true" scroll-y style="height: 100vh;" bindscroll="rightScroll"
+				scroll-into-view="{{toView}}" bindscrolltolower="lower">
 				<view wx:for="{{milktea}}" wx:key="id" id="{{item.id}}">
-					<view class="index-right-text-top"><text>{{item.name}}</text></view>
-					<view class="index-right-text" wx:for="{{item.category}}" wx:key="id">
+					<view class="index-right-text-top" style="padding-top: 6px;"><text>{{item.name}}</text></view>
+					<view class="index-right-text" wx:for="{{item.category}}" wx:key="id"
+						style="padding-bottom:0px;padding-top:0px;/*border-top-width:5px*/margin-top:10px;margin-bottom: 10px;">
 						<view class="eachOne" bindtap="showDetail" data-id="{{item.id}}">
 							<image src="{{item.image}}" class="rec-img"></image>
 							<view class="rec-name">{{item.name}}</view>

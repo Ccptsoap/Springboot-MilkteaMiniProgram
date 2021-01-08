@@ -39,7 +39,7 @@ Page({
     console.log("num"+this.data.phonenum)
     console.log("openid"+this.data.openid)
     wx.request({
-      url: 'http://localhost:8081/changeUser',
+      url: getApp().globalData.apiHost+'/changeUser',
       method: 'POST',
       data: {openid:this.data.openid,name:this.data.name,phonenum:this.data.phonenum,address:this.data.changeaddress},
       success:(result)=>{

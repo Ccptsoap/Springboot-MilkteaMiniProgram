@@ -44,14 +44,14 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    console.log("onshow")
+    // console.log("onshow")
     
     this.setData({
       userInfo : base.globalData.userInfo
     })
     
     console.log(this.data.userInfo)
-    console.log(base.globalData.user.openid)
+    console.log("openid："+base.globalData.user.openid)
   },
  
   /**

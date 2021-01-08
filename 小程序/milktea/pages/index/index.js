@@ -4,16 +4,17 @@ Page({
    * 页面的初始数据
    */
   data: {
-    recommendedMilktea:"",
+    recommendedMilktea: "",
     // 单击后需要跳转至详情页面的奶茶id
-    selectedMilkteaId:""
+    selectedMilkteaId: ""
   },
 
   // 为你推荐
   recommend: function () {
     wx.request({
-      url: 'http://localhost:8081/recommend',
+      url: getApp().globalData.apiHost + '/recommend',
       success: (result) => {
+      console.log("为你推荐奶茶数据：")
         console.log(result)
         this.setData({
           recommendedMilktea: result.data
@@ -25,7 +26,7 @@ Page({
   showDetail: function (e) {
     var selectedMilkteaId = e.currentTarget.dataset.id
     wx.request({
-      url: 'http://localhost:8081/selectOneMilktea',
+      url: getApp().globalData.apiHost + '/selectOneMilktea',
       data: {
         id: selectedMilkteaId
       },
@@ -40,55 +41,56 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function(options) {
+  onLoad: function (options) {
+    console.log("全局apiHost:" + getApp().globalData.apiHost)
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function() {
+  onReady: function () {
 
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function() {
+  onShow: function () {
     this.recommend()
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function() {
+  onHide: function () {
 
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function() {
+  onUnload: function () {
 
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function() {
+  onPullDownRefresh: function () {
 
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function() {
+  onReachBottom: function () {
 
   },
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function() {
+  onShareAppMessage: function () {
 
   }
 })

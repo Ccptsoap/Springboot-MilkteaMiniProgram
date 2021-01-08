@@ -82,13 +82,13 @@
 }
 
 .rec-name {
-  font-size: 32rpx;
+  font-size: 30rpx;
   color: #808180;
 }
 
 .rec-price {
   color: #65C2F0;
-  width: 150rpx;
+  /* width: 150rpx; */
 }
 
 .recommend-bar {

@@ -1,3 +1,20 @@
-<button type="primary" open-type="getUserInfo" bindgetuserinfo="wxlogin">登录</button>
+<view class="container1">
+  <view class="wechatapp">
+    <!-- <image class="header" src="/images/wechatapp.png"></image> -->
+    <view class="header">
+      <open-data class="" type="userAvatarUrl"></open-data>
+    </view>
+  </view>
 
+  <view class="auth-title">申请获取以下权限</view>
+  <view class="auth-subtitle">获得你的公开信息（昵称、头像等）</view>
 
+  <!-- <button class="btn-normal" openType="getUserInfo" lang="zh_CN" bindgetuserinfo="getUserInfo">授权登录</button>
+  </view> -->
+  <view class="login-btn">
+  <button class="btn-normal" open-type="getUserInfo" bindgetuserinfo="wxlogin">授权登录</button>
+</view>
+  <view class="no-login-btn">
+    <button class="btn-normal" catchtap="onNotLogin">暂不登录</button>
+  </view>
+</view>
