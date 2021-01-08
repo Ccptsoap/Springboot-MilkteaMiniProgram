@@ -14,7 +14,7 @@ Page({
     wx.request({
       url: getApp().globalData.apiHost + '/recommend',
       success: (result) => {
-      console.log("为你推荐奶茶数据：")
+        console.log("为你推荐奶茶数据：")
         console.log(result)
         this.setData({
           recommendedMilktea: result.data
@@ -43,6 +43,7 @@ Page({
    */
   onLoad: function (options) {
     console.log("全局apiHost:" + getApp().globalData.apiHost)
+
   },
 
   /**

@@ -19,86 +19,27 @@ App({
     wx.getSetting({
       success: res => {
         if (res.authSetting['scope.userInfo']) {
-          // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
+
+          console.log("用户已同意授权")
           wx.getUserInfo({
             success: res => {
-              // 可以将 res 发送给后台解码出 unionId
+
               this.globalData.userInfo = res.userInfo
               console.log("写入userinfo")
-
-              // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
-              // 所以此处加入 callback 以防止这种情况
               if (this.userInfoReadyCallback) {
                 this.userInfoReadyCallback(res)
               }
             }
           })
+        }else{
+          console.log("用户未同意授权")
+          setTimeout(function () {
+            wx.navigateTo({url:'/pages/login/login'})
+          }, 1000)
         }
       }
     })
-
-
-    var that = this;
-    wx.login({
-
-      success(res) {
-
-        console.log("登录返回code：" + res.code)
-        wx.request({
-          url: 'https://api.weixin.qq.com/sns/jscode2session',
-          data: {
-            appid: "wxea509e2fe57d041e",
-            secret: "7e92c30b02ec571bdc1da47fee12ab0f",
-            js_code: res.code,
-            grand_type: "authorization_code"
-          },
-          method: "GET",
-
-          success: function (res) {
-            that.globalData.openid = res.data.openid
-            console.log("微信返回的openid：" + that.globalData.openid)
-            wx.request({
-              url: getApp().globalData.apiHost + '/login',
-              method: 'POST',
-              data: {
-                openid: res.data.openid,
-                nickname: that.globalData.userInfo.nickName
-              },
-              success: (result) => {
-                console.log("服务端返回数据： 服务器返回openid：" + result.data.openid + " 用户姓名：" + result.data.name)
-                console.log((result.data))
-
-                if (result.data.name != null) {
-                  that.globalData.isIn = 1;
-                  console.log("成功从服务器获取个人信息：" + " 姓名：" + result.data.name + " 地址：" + result.data.address)
-                  wx.clearStorage({})
-                  that.globalData.user = result.data
-                  that.globalData.openid = res.data.openid
-                  wx.setStorageSync('user', result.data)
-                  wx.setStorageSync('openid', result.data.openid)
-                } else {
-                  console.log("登录成功，但从服务器获取信息失败！")
-                  that.globalData.user = result.data
-                  that.globalData.isIn = 1
-                  wx.showToast({
-                    title: '请填写个人信息',
-                    icon: "none"
-                  })
-                  setTimeout(function () {
-                    wx.navigateTo({
-                      url: '/pages/address/changeAddress/changeAddress'
-                    })
-                  }, 1000)
-                }
-              }
-            })
-          }
-        })
-      }
-    })
-
-
-    this.getReady()
+     this.getReady()
   },
 
   cart: {

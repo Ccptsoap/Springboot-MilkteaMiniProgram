@@ -51,7 +51,7 @@
                     console.log(wx.getStorageSync('userInfo'))
                     setTimeout(function () {
                       wx.switchTab({
-                        url: '../user/user',
+                        url: '../index/index',
                       })
                     }, 1000)
                   } else {

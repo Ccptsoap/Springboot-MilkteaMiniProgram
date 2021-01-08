@@ -38,7 +38,7 @@
     "minifyWXSS": true
   },
   "compileType": "miniprogram",
-  "libVersion": "2.12.2",
+  "libVersion": "2.14.3",
   "projectname": "milktea-new",
   "debugOptions": {
     "hidedInDevtools": []
