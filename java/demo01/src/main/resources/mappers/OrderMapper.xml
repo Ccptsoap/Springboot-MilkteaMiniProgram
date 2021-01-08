@@ -41,11 +41,11 @@
     <!--增加-->
     <!--增删改都没有resultType-->
     <!---->
-    <insert id="addOneSelectInfo" parameterType="SelectInfo">
+    <insert id="addOneSelectInfo" parameterType="com.demo01.demo.entity.SelectInfo">
         insert into comselectinfo value(#{orderId},#{id},#{number},#{description},#{price})
     </insert>
 
-    <insert id="addOneOrderInfo" parameterType="Order">
+    <insert id="addOneOrderInfo" parameterType="com.demo01.demo.entity.Order">
         insert into OrderInfo value(null,#{openid},#{time},#{total},#{status},#{address},#{phonenum},#{name})
     </insert>
 
@@ -53,6 +53,12 @@
         select a.orderId,a.id,a.number,a.description,a.price,b.image,b.name
         from comselectinfo a, milktea b
         where orderid=#{orderid} and a.id = b.id
+    </select>
+    <select id="getOrderInfoAnyTime" resultType="com.demo01.demo.entity.OrderInfoChart">
+        SELECT DATE_FORMAT( Time, '%Y-%m-%d' ) Time, count(*) orderNum
+        FROM orderinfo
+        where DATE_SUB(CURDATE(), INTERVAL #{days} DAY) &lt;= date(Time)
+        group by DATE_FORMAT( Time, '%Y-%m-%d' )
     </select>
 
 </mapper>

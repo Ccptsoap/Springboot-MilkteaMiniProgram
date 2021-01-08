@@ -1,8 +1,6 @@
 package com.demo01.demo.mappers;
 
-import com.demo01.demo.entity.MiniOrderEntry;
-import com.demo01.demo.entity.Order;
-import com.demo01.demo.entity.SelectInfo;
+import com.demo01.demo.entity.*;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 
@@ -21,4 +19,7 @@ public interface OrderMapper {
      int addOneSelectInfo(SelectInfo selectInfo);
      List<SelectInfo> findSelectInfo(int orderId);
      Integer getTodayOrderNum();
+
+
+     List<OrderInfoChart> getOrderInfoAnyTime(int days);
 }

@@ -2,6 +2,8 @@ package com.demo01.demo.service;
 
 import com.demo01.demo.entity.MiniOrder;
 import com.demo01.demo.entity.Order;
+import com.demo01.demo.entity.OrderForMaker;
+import com.demo01.demo.entity.OrderInfoChart;
 
 import java.util.List;
 
@@ -13,4 +15,6 @@ public interface OrderService {
      Order findOneOrder(int orderId);
      boolean addOneOrderByStr(String openid,String drinkStr,String address,String phoneNum,String name);
      Integer getTodayOrderNum();
+
+     List<OrderInfoChart> getOrderInfo_anyTime(int days);
 }

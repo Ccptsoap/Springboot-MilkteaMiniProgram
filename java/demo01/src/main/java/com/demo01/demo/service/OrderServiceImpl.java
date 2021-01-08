@@ -257,4 +257,11 @@ public class OrderServiceImpl  implements OrderService{
     public Integer getTodayOrderNum() {
         return orderMapper.getTodayOrderNum();
     }
+
+    @Override
+    public List<OrderInfoChart> getOrderInfo_anyTime(int days) {
+        OrderInfoChart orderInfoChart = orderMapper.getOrderInfoAnyTime(days).get(0);
+        System.out.println(orderInfoChart);
+        return orderMapper.getOrderInfoAnyTime(days);
+    }
 }

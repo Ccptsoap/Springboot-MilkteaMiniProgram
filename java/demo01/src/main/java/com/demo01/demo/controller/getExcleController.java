@@ -30,17 +30,19 @@ public class getExcleController {
     MilkteaService milkteaService;
     @Resource
     OrderService orderService;
-    @GetMapping("/getAdminInfo")
-    @ApiOperation(value = "下载管理员账户信息表")
-    public void getAdminInfo(HttpServletResponse response){
-
-        List<Admin> admins= adminService.getAllAdmin();
-        SimpleDateFormat sdf=new SimpleDateFormat("yyyyMMdd");
-        String time=sdf.format(new Date());
-        time=time.replaceAll("-","").replaceAll(":","").replaceAll(" ","");
-        String fileName="管理员账号信息";
-        ExcelUtil.writeExcel(response,admins,fileName+time,fileName,new Admin());
-    }
+//    @Resource
+//    OrderInfoChart orderInfoChart;
+//    @GetMapping("/getAdminInfo")
+//    @ApiOperation(value = "下载管理员账户信息表")
+//    public void getAdminInfo(HttpServletResponse response){
+//
+//        List<Admin> admins= adminService.getAllAdmin();
+//        SimpleDateFormat sdf=new SimpleDateFormat("yyyyMMdd");
+//        String time=sdf.format(new Date());
+//        time=time.replaceAll("-","").replaceAll(":","").replaceAll(" ","");
+//        String fileName="管理员账号信息";
+//        ExcelUtil.writeExcel(response,admins,fileName+time,fileName,new Admin());
+//    }
     @GetMapping("/getMilkTeaExcle")
     @ApiOperation(value = "下载全部奶茶信息")
     public void getAllMilkTea(HttpServletResponse response){
@@ -142,5 +144,17 @@ public class getExcleController {
         time=time.replaceAll("-","").replaceAll(":","").replaceAll(" ","");
         String fileName="全部订单信息";
         ExcelUtil.writeExcel(response,new myResponse().parse(orders),fileName+time,fileName,new myResponse());
+    }
+    @GetMapping("/getOrderInfoChart")
+    @ApiOperation(value = "下载订单数目统计")
+    public void getAllMilkTea(HttpServletResponse response,int days){
+
+        List<OrderInfoChart> OrderInfo= orderService.getOrderInfo_anyTime(days);
+        System.out.println(OrderInfo.get(0).getTime());
+        SimpleDateFormat sdf=new SimpleDateFormat("yyyyMMdd");
+        String time=sdf.format(new Date());
+        time=time.replaceAll("-","").replaceAll(":","").replaceAll(" ","");
+        String fileName="订单数目统计";
+        ExcelUtil.writeExcel(response,OrderInfo,fileName+time,fileName,new OrderInfoChart());
     }
 }
