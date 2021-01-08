@@ -6,30 +6,28 @@ Page({
    * 页面的初始数据
    */
   data: {
-    userInfo:""
+    userInfo: ""
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-  },
-  clearInfo:function(){
-    wx.clearStorage({
-    })
+  onLoad: function (options) {},
+  clearInfo: function () {
+    wx.clearStorage({})
     base.globalData.isIn = 0;
     base.globalData.userInfo = "";
     base.globalData.openid = "";
     base.globalData.user = "";
     wx.showToast({
       title: '成功退出',
-      icon:"success"
+      icon: "success"
     })
-    setTimeout(function(){
+    setTimeout(function () {
       wx.navigateTo({
-        url:"/pages/login/login"
+        url: "/pages/login/login"
       })
-    },1000)
+    }, 1000)
   },
 
 
@@ -45,15 +43,15 @@ Page({
    */
   onShow: function () {
     // console.log("onshow")
-    
+
     this.setData({
-      userInfo : base.globalData.userInfo
+      userInfo: base.globalData.userInfo
     })
-    
+
     console.log(this.data.userInfo)
-    console.log("openid："+base.globalData.user.openid)
+    console.log("openid：" + base.globalData.user.openid)
   },
- 
+
   /**
    * 生命周期函数--监听页面隐藏
    */

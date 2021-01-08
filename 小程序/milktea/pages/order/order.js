@@ -6,10 +6,10 @@ Page({
    * 页面的初始数据
    */
   data: {
-    currentTab:0,
-    userName:"",
-    miniOrderList:"",
-    openid :""
+    currentTab: 0,
+    userName: "",
+    miniOrderList: "",
+    openid: ""
   },
 
   swichTab: function (e) {
@@ -23,20 +23,72 @@ Page({
     }
     this.update()
   },
-  update: function(){
-   // 1 取出缓存中的用户名
+  update: function () {
+    // 1 取出缓存中的用户名
     var openid = base.globalData.openid
-    this.setData(
-      { 
-        openid: openid
-      }
-    )
-    if (this.data.currentTab==0)
-    {
+    this.setData({
+      openid: openid
+    })
+    if (this.data.currentTab == 0) {
       wx.request({
 
-        data: { openid: this.data.openid},
-        url: getApp().globalData.apiHost+'/findTodayMiniOrder',
+        data: {
+          openid: this.data.openid
+        },
+        url: getApp().globalData.apiHost + '/findTodayMiniOrder',
+        success: (result) => {
+          console.log("查询到的今日订单：")
+          console.log(result.data)
+          var tmp = result.data
+          var img = []
+          for (var i = 0; i < tmp.length; i++) {
+            img = []
+            for (var j = 0; j < tmp[i].imageList.length; j++) {
+              img[j] = tmp[i].imageList[j];
+            }
+            tmp[i].img = img;
+          }
+
+          for (var i = 0; i < tmp.length; i++) {
+            //console.log(tmp[i].orderTime);  //2019-01-21T06:25:50.000Z
+            var d = new Date(tmp[i].orderTime);
+            //console.log(d);   //Sun Jan 20 2019 16:43:42 GMT+0800
+            //console.log(d.getTime());  //这个全输入时间戳
+            var y = d.getFullYear();
+            var mon = d.getMonth() + 1;
+
+            var day = d.getDate();
+            var h = d.getHours(); //12
+            var m = d.getMinutes(); //12
+            var s = d.getMinutes();
+            if (h < 10) {
+              h = "0" + h;
+            }
+            if (m < 10) {
+              m = "0" + m;
+            }
+
+            tmp[i].orderTime = y + '/' + mon + '/' + day + ' ' + h + ':' + m + ':' + s
+            //console.log(tmp[i].orderTime);//12:12或09:07,这是最终输入的格式
+            // var d1 = new Date(tmp[i].orderTime);
+            // var dateee = d1.toJSON();
+            // var d2 = Date(+new Date(dateee) + 8 * 3600 * 1000)
+            // tmp[i].orderTime=d2.toISOString().replace(/T/g, ' ').replace(/\.[\d]{3}Z/, '')
+            // console.log(tmp[i].orderTime)
+          }
+
+          this.setData({
+            miniOrderList: tmp
+          })
+        }
+      })
+    } else {
+      wx.request({
+
+        data: {
+          openid: this.data.openid
+        },
+        url: getApp().globalData.apiHost + '/findAllMiniOrder',
         success: (result) => {
           //console.log(result.data)
           var tmp = result.data
@@ -48,60 +100,6 @@ Page({
             }
             tmp[i].img = img;
           }
-          
-          for (var i = 0; i < tmp.length;i++)
-          {
-            //console.log(tmp[i].orderTime);  //2019-01-21T06:25:50.000Z
-            var d = new Date(tmp[i].orderTime);
-            //console.log(d);   //Sun Jan 20 2019 16:43:42 GMT+0800
-            //console.log(d.getTime());  //这个全输入时间戳
-            var y = d.getFullYear();
-            var mon = d.getMonth()+1;
-           
-            var day = d.getDate();
-            var h = d.getHours();//12
-            var m = d.getMinutes(); //12
-            var s = d.getMinutes();
-            if (h < 10) {
-              h = "0" + h;
-            }
-            if (m < 10) {
-              m = "0" + m;
-            }
-
-            tmp[i].orderTime =y + '/' + mon + '/' + day + ' ' +h + ':' + m +':'+s
-            //console.log(tmp[i].orderTime);//12:12或09:07,这是最终输入的格式
-            // var d1 = new Date(tmp[i].orderTime);
-            // var dateee = d1.toJSON();
-            // var d2 = Date(+new Date(dateee) + 8 * 3600 * 1000)
-            // tmp[i].orderTime=d2.toISOString().replace(/T/g, ' ').replace(/\.[\d]{3}Z/, '')
-            // console.log(tmp[i].orderTime)
-          }
-
-          this.setData(
-            { miniOrderList: tmp }
-          )
-        }
-      })
-    }
-    else
-    {
-      wx.request({
-
-        data: { openid: this.data.openid },
-        url: getApp().globalData.apiHost+'/findAllMiniOrder',
-        success: (result) => {
-          //console.log(result.data)
-          var tmp = result.data
-          var img=[]
-          for (var i=0;  i< tmp.length; i++) {
-            img = []
-            for (var j = 0; j < tmp[i].imageList.length;j++)
-            {
-              img[j] = tmp[i].imageList[j];
-            }  
-            tmp[i].img=img;
-          }
           for (var i = 0; i < tmp.length; i++) {
             //console.log(tmp[i].orderTime);  //2019-01-21T06:25:50.000Z
             var d = new Date(tmp[i].orderTime);
@@ -111,7 +109,7 @@ Page({
             var mon = d.getMonth() + 1;
 
             var day = d.getDate();
-            var h = d.getHours();//12
+            var h = d.getHours(); //12
             var m = d.getMinutes(); //12
             var s = d.getMinutes();
             if (h < 10) {
@@ -123,9 +121,9 @@ Page({
 
             tmp[i].orderTime = y + '/' + mon + '/' + day + ' ' + h + ':' + m + ':' + s
           }
-          this.setData(
-            { miniOrderList: tmp }
-          )
+          this.setData({
+            miniOrderList: tmp
+          })
         }
       })
     }
@@ -136,8 +134,10 @@ Page({
     var orderId = e.currentTarget.dataset.id
     //发送请求的api
     wx.request({
-      data: { orderId: orderId},
-      url: getApp().globalData.apiHost+'/findOneOrder',
+      data: {
+        orderId: orderId
+      },
+      url: getApp().globalData.apiHost + '/findOneOrder',
       success: (result) => {
         console.log(result.data)
         wx.navigateTo({

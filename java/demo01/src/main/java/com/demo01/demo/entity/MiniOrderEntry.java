@@ -27,6 +27,7 @@ public class MiniOrderEntry {
         this.image = image;
     }
 
+
     public String getOpenid() {
         return openid;
     }

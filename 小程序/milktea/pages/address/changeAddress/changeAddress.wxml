@@ -1,21 +1,24 @@
 <view class="u">
+  <view class="text" style="font-size:20px;color:white;">填写个人信息</view>
 </view>
 
 <form bindsubmit="changeaddress" class="ub">
   <!-- <view class="ub"> -->
   <view class="item">
-    <view class="text">地址：</view>
+    <view class="input">
+    <view class="text">辖区：</view>
     <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
       <view class="picker">
         {{region[0]}}，{{region[1]}}，{{region[2]}}
       </view>
     </picker>
+    </view>
   </view>
 
   <view class="item">
-        <view class="input">
-      <view class="text">详细：</view>
-      <input type="text" style="background-color: white; width: 250px; height: 30px; border-radius: 5px;" id="addressDetail" name="addressDetail"></input>
+    <view class="input">
+      <view class="text">地址：</view>
+      <input type="text" style="background-color: white; width: 250px; height: 30px; border-radius: 5px;padding-left: 8px;" id="addressDetail" name="addressDetail"></input>
     </view>
   </view>
 
@@ -23,13 +26,13 @@
   <view class="item">
         <view class="input">
       <view class="text">手机：</view>
-      <input type="text" style="background-color: white; width: 250px; height: 30px; border-radius: 5px;" id="phonenum" value="{{phonenum}}" name="phonenum"></input>
+      <input type="text" style="background-color: white; width: 250px; height: 30px; border-radius: 5px;padding-left: 8px;" id="phonenum" value="{{phonenum}}" name="phonenum"></input>
     </view>
   </view>
   <view class="item">
         <view class="input">
       <view class="text">姓名：</view>
-      <input type="text" style="background-color: white; width: 250px; height: 30px; border-radius: 5px;" id="name" value="{{name}}" name="name"></input>
+      <input type="text" style="background-color: white; width: 250px; height: 30px; border-radius: 5px;padding-left: 8px;" id="name" value="{{name}}" name="name"></input>
     </view>
   </view>
 

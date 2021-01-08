@@ -10,9 +10,7 @@
       openid: ""
     },
     wxlogin: function (e) {
-      const {
-        userInfo
-      } = e.detail;
+      const {userInfo} = e.detail;
 
       wx.login({
         success(res) {

@@ -41,6 +41,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public String changeUser(User user) {
 //        调用 mapper中的方法
+
         User beforeUser = userMapper.findByID(user.getOpenid());
         if (beforeUser == null) {
             return "您尚未登录，请先登录！！！！";

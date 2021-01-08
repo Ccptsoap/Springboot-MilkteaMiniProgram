@@ -10,26 +10,32 @@
 
 <view class="ub">
 
-  
-  
-    <view class="item" >
-    <view class="image"><image src="/icon/index3.png" class="image"></image></view>
-    <view class="text" >
-        <navigator url="../address/address" open-type="navigate" hover-class="navigator-hover">修改地址信息</navigator>
+
+
+  <view class="item">
+    <view class="image">
+      <image src="/icon/index3.png" class="image"></image>
+    </view>
+    <view class="text">
+      <navigator url="../address/address" open-type="navigate" hover-class="navigator-hover">修改地址信息</navigator>
     </view>
   </view>
 
-    <view class="item" >
-    <view class="image"><image src="/icon/index6.png" class="image"></image></view>
-    <view class="text" >
-        <navigator url="../login/login" open-type="navigate" hover-class="navigator-hover">登录</navigator>
+  <view class="item">
+    <view class=" image">
+      <image src="/icon/index6.png" class="image"></image>
+    </view>
+    <view class="text">
+      <navigator url="../login/login" open-type="navigate" hover-class="navigator-hover">登录</navigator>
     </view>
   </view>
 
-  
 
-  <view class="item" >
-    <view class="image"><image src="/icon/index5.png" class="image"></image></view>
+
+  <view class="item">
+    <view class="image">
+      <image src="/icon/index5.png" class="image"></image>
+    </view>
     <view class="text" bindtap="clearInfo">退出</view>
   </view>
 

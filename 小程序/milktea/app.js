@@ -13,13 +13,8 @@ App({
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
+    console.log("开启触发登录")
 
-    // 登录
-    wx.login({
-      success: res => {
-        // 发送 res.code 到后台换取 openId, sessionKey, unionId
-      }
-    })
     // 获取用户信息
     wx.getSetting({
       success: res => {
@@ -29,6 +24,7 @@ App({
             success: res => {
               // 可以将 res 发送给后台解码出 unionId
               this.globalData.userInfo = res.userInfo
+              console.log("写入userinfo")
 
               // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
               // 所以此处加入 callback 以防止这种情况
@@ -40,6 +36,67 @@ App({
         }
       }
     })
+
+
+    var that = this;
+    wx.login({
+
+      success(res) {
+
+        console.log("登录返回code：" + res.code)
+        wx.request({
+          url: 'https://api.weixin.qq.com/sns/jscode2session',
+          data: {
+            appid: "wxea509e2fe57d041e",
+            secret: "7e92c30b02ec571bdc1da47fee12ab0f",
+            js_code: res.code,
+            grand_type: "authorization_code"
+          },
+          method: "GET",
+
+          success: function (res) {
+            that.globalData.openid = res.data.openid
+            console.log("微信返回的openid：" + that.globalData.openid)
+            wx.request({
+              url: getApp().globalData.apiHost + '/login',
+              method: 'POST',
+              data: {
+                openid: res.data.openid,
+                nickname: that.globalData.userInfo.nickName
+              },
+              success: (result) => {
+                console.log("服务端返回数据： 服务器返回openid：" + result.data.openid + " 用户姓名：" + result.data.name)
+                console.log((result.data))
+
+                if (result.data.name != null) {
+                  that.globalData.isIn = 1;
+                  console.log("成功从服务器获取个人信息：" + " 姓名：" + result.data.name + " 地址：" + result.data.address)
+                  wx.clearStorage({})
+                  that.globalData.user = result.data
+                  that.globalData.openid = res.data.openid
+                  wx.setStorageSync('user', result.data)
+                  wx.setStorageSync('openid', result.data.openid)
+                } else {
+                  console.log("从服务器获取信息失败！")
+                  that.globalData.user = result.data
+                  wx.showToast({
+                    title: '请填写个人信息',
+                    icon: "none"
+                  })
+                  setTimeout(function () {
+                    wx.navigateTo({
+                      url: '/pages/address/changeAddress/changeAddress'
+                    })
+                  }, 1000)
+                }
+              }
+            })
+          }
+        })
+      }
+    })
+
+
     this.getReady()
   },
 
@@ -158,6 +215,7 @@ App({
     })
 
   },
+
 
 
   modal: function (p) {
