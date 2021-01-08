@@ -157,4 +157,5 @@ public class getExcleController {
         String fileName="订单数目统计";
         ExcelUtil.writeExcel(response,OrderInfo,fileName+time,fileName,new OrderInfoChart());
     }
+
 }

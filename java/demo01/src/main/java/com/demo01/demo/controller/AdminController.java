@@ -61,6 +61,11 @@ public class AdminController {
         return ResultUtils.success(milkteaService.deleteMilktea(milkteaId));
     }
 
+    @GetMapping("/admin/orders/getOrderInfoAnyTime")
+    @ApiOperation(value = "统计历史每日订单数")
+    public Result<?> getOrderInfoAnyTime(int days) {
+        return ResultUtils.success(orderService.getOrderInfo_anyTime(days));
+    }
     @PostMapping("/admin/getAdminInfo")
     @ApiOperation(value = "获取管理员信息")
     public Result<?> getAdminInfoByUsername(HttpSession session) {

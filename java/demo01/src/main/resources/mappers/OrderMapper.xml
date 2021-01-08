@@ -55,10 +55,12 @@
         where orderid=#{orderid} and a.id = b.id
     </select>
     <select id="getOrderInfoAnyTime" resultType="com.demo01.demo.entity.OrderInfoChart">
+
         SELECT DATE_FORMAT( Time, '%Y-%m-%d' ) time, count(*) orderNum
         FROM orderinfo
         where DATE_SUB(CURDATE(), INTERVAL #{days} DAY) &lt;= date(Time)
         group by DATE_FORMAT( Time, '%Y-%m-%d' )
     </select>
+
 
 </mapper>
