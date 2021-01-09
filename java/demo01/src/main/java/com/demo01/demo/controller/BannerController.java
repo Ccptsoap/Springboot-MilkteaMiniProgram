@@ -7,6 +7,8 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -20,9 +22,22 @@ public class BannerController {
     @Autowired
     BannerService bannerService;
 
-    @GetMapping("getBannerImgUrl")
+    @GetMapping("/admin/getBannerImgUrl")
     @ApiOperation(value = "获取banner图片的url")
     public Result<?> getBannerImgUrl() {
         return ResultUtils.success(bannerService.getBannerImgUrl());
+    }
+
+    @PostMapping("/admin/uploadBannerImgUrl")
+    @ApiOperation(value = "获取banner图片的url")
+    public Result<?> uploadBannerImgUrl(String id, String imgUrl) {
+        System.out.println("uploadBannerImgUrl：获取到id：" + id + "获取到URL：" + imgUrl);
+        Integer res = bannerService.uploadBannerImgUrl(id, imgUrl);
+        if (res == 1) {
+            return ResultUtils.success();
+        } else {
+            return ResultUtils.error(-15, "找不到ID指定的Banner");
+        }
+
     }
 }

@@ -21,4 +21,10 @@ public class BannerServiceImpl implements BannerService {
         tempString = bannerMapper.getBannerImgUrl();
         return tempString;
     }
+
+    @Override
+    public int uploadBannerImgUrl(String id, String imgUrl) {
+        System.out.println("SERVICE:uploadBannerImgUrl：获取到id：" + id + "获取到URL：" + imgUrl);
+        return bannerMapper.uploadBannerImgUrl(id, imgUrl);
+    }
 }

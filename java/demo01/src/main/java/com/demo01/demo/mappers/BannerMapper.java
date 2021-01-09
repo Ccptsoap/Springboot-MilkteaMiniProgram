@@ -13,4 +13,5 @@ import java.util.List;
 @Repository
 public interface BannerMapper {
     List<String> getBannerImgUrl();
+    Integer uploadBannerImgUrl(String id,String imgUrl);
 }
