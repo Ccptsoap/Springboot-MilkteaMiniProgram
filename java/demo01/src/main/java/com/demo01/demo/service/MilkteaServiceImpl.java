@@ -1,5 +1,6 @@
 package com.demo01.demo.service;
 
+import com.demo01.demo.entity.MilkTeaForExcel;
 import com.demo01.demo.entity.Milktea;
 import com.demo01.demo.mappers.MilkteaMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -54,6 +55,11 @@ public class MilkteaServiceImpl implements MilkteaService {
     @Override
     public List<Milktea> selectAllMilktea() {
         return milkteaMapper.selectAll();
+    }
+
+    @Override
+    public List<MilkTeaForExcel> selectMilkTeaForExcel() {
+        return milkteaMapper.getMilkTeaForExcel();
     }
 
     @Override

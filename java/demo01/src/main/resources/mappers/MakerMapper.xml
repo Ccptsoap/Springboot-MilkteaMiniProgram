@@ -8,7 +8,6 @@
     <select id="showAllOrderForMaker" resultType="com.demo01.demo.entity.OrderForMaker">
         select csi.OrderID,mt.name,csi.Description,oi.Time
         from comselectinfo csi,milktea mt,orderinfo oi
-        where  csi.OrderID = oi.OrderID and csi.id in (mt.id) and oi.Status=1
-
+        where  csi.OrderID = oi.OrderID and csi.id in (mt.id) and Status=0
     </select>
 </mapper>

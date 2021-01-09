@@ -79,12 +79,21 @@ public class MakerController {
     public Result<?> showAllOrderForMaker(){
 
         List<Response> rspss=new LinkedList<>();
-        List<OrderForMaker> ofmss=makerService.showAllOrderForMaker();
+        List<OrderForMaker> ofmss=new LinkedList<>();
+        try {
+
+
+            ofmss = makerService.showAllOrderForMaker();
+            ofmss.get(0);
+        }
+        catch (Exception e){
+            return ResultUtils.success("今日已无订单");
+        }
         int i=ofmss.size();
         int j=0;
         int from=0;
         String orderid=ofmss.get(0).getOrderID();
-        Response rsps_Min=new Response();
+
         while (j<i)
         {
 

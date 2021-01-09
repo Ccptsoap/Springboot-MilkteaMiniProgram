@@ -55,4 +55,8 @@
     <select id="deleteMilktea" resultType="java.lang.Integer">
         delete from milktea where id=#{id}
     </select>
+    <select id="getMilkTeaForExcel" resultType="com.demo01.demo.entity.MilkTeaForExcel">
+        select *
+        from milktea
+    </select>
 </mapper>

@@ -1,5 +1,6 @@
 package com.demo01.demo.mappers;
 
+import com.demo01.demo.entity.MilkTeaForExcel;
 import com.demo01.demo.entity.Milktea;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
@@ -25,7 +26,7 @@ public interface MilkteaMapper {
     Integer countMilktea();
 
     Integer insertMilktea(Milktea milktea);
-
+    List<MilkTeaForExcel> getMilkTeaForExcel();
     Integer updateMilktea(Milktea milktea);
     Integer deleteMilktea(String id);
 }
