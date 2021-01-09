@@ -1,6 +1,6 @@
 <view class="swiper-tab">
-  <view class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichTab">今日订单</view>
-  <view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichTab">历史订单</view>
+  <view class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichTab">制作中</view>
+  <view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichTab">已完成</view>
 </view>
 
 <!-- <view class="tab-layer"></view> -->
@@ -20,8 +20,10 @@
       </view>
 
       <view class="info" style="white-space:pre-wrap">
-        <view class="timeAndId" style="white-space:pre-wrap"> 下单时间：{{item.orderTime}} \n 订单编号:{{item.orderId}}</view>
+        <view class="timeAndId" style="white-space:pre-wrap"> 下单时间：{{item.orderTime}}</view>
         <view class="price">￥:{{item.total}}</view>
+      </view>
+      <view class="timeAndId" style="white-space:pre-wrap;margin-bottom:5px;color:#66CCFF;font-size:20px;height: 40px;font-weight:bold;"> 取餐号:{{item.orderId}}
       </view>
       <view class="whiteSpace"></view>
     </view>
@@ -41,7 +43,7 @@
     <view class="eachOne" wx:for="{{miniOrderList}}" wx:key="index" bindtap="showDetail" data-id="{{item.orderId}}">
 
       <view class="pic">
-        <view class="eachPic" style="margin-left: 5px;"  wx:for="{{item.img}}" wx:key="index">
+        <view class="eachPic" style="margin-left: 5px;" wx:for="{{item.img}}" wx:key="index">
           <image class="img" src="{{item}}" style="border-radius: 8px;"></image>
         </view>
       </view>
@@ -49,7 +51,7 @@
       <view class="info" style="white-space:pre-wrap">
         <view class="timeAndId" style="white-space:pre-wrap"> 下单时间：{{item.orderTime}} \n 订单编号:{{item.orderId}}</view>
         <view class="price">￥:{{item.total}}</view>
-      </view>      
+      </view>
       <view class="whiteSpace"></view>
     </view>
 

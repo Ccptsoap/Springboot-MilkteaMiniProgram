@@ -112,10 +112,14 @@ Page({
           url: '../pay/pay?from=cart'
         })
       }else{
+
         wx.showToast({
-          title: "未登录",
+          title: "未登录 正在跳转",
           icon:"none"
          })
+         setTimeout(function () {
+          wx.navigateTo({url:'/pages/login/login'})
+        }, 1000)
       }
     } else {
       wx.showToast({

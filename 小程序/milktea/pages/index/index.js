@@ -78,6 +78,7 @@ Page({
   onShow: function () {
     this.getBanner()
     this.recommend()
+    console.log("登录页缓存中的openid："+wx.getStorageSync('openid'))
   },
 
   /**

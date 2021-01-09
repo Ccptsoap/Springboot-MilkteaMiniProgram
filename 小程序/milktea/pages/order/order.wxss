@@ -42,7 +42,6 @@
 .box .eachOne{
   /* width: 30%; */
   width: 100%;
-  height: 290rpx;
   background-color:white; 
   display: flex;
   flex-direction: column;
