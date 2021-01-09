@@ -42,7 +42,19 @@
 #####  5.订单页面
 订单页面向客户展示了客户的历史订单，以及未完成订单  
 ![输入图片说明](https://images.gitee.com/uploads/images/2021/0110/072514_6da64baa_4796963.png "屏幕截图.png")  
-
+#####  6.客户个人信息页面  
+客户可以在这个页面查看自己的个人信息，退出登录  
+![输入图片说明](https://images.gitee.com/uploads/images/2021/0110/073044_8880c001_4796963.png "屏幕截图.png")  
+#####  小程序端操作说明  
+#####  7.下订单  
+![输入图片说明](https://images.gitee.com/uploads/images/2021/0110/073452_8ae3054b_4796963.png "屏幕截图.png")  
+#####  8.在购物车结算  
+![输入图片说明](https://images.gitee.com/uploads/images/2021/0110/073526_d7ac4866_4796963.png "屏幕截图.png")  
+#####  9.支付  
+![输入图片说明](https://images.gitee.com/uploads/images/2021/0110/073548_2b708853_4796963.png "屏幕截图.png")  
+#####  10.未取餐订单  
+支付以后可以在未取餐订单中查看已下订单  
+![输入图片说明](https://images.gitee.com/uploads/images/2021/0110/074203_94674fad_4796963.png "屏幕截图.png")
 ####  后端  
 ###  后台 
 ####  前端  
