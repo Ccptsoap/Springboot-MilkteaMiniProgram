@@ -25,8 +25,25 @@
 ![输入图片说明](https://images.gitee.com/uploads/images/2021/0108/205103_b6c610bc_4796963.png "屏幕截图.png")
 ### 三.具体实现
 ####  客户端  
-#####  前端  
-#####  后端  
+客户端采用小程序为客户提供图形界面，方便客户查看商品，下订单，查看订单状态
+####  前端  
+#####  1.登录：  
+客户可以使用微信一键登录进入小程序，小程序会保存用户的登录信息  
+![输入图片说明](https://images.gitee.com/uploads/images/2021/0110/061934_35dc0c9b_4796963.png "屏幕截图.png")  
+![输入图片说明](https://images.gitee.com/uploads/images/2021/0110/062023_c926fdc2_4796963.png "屏幕截图.png")  
+#####  2.首页（展示推荐信息，公告图片）：  
+ ![输入图片说明](https://images.gitee.com/uploads/images/2021/0110/064927_97975e2d_4796963.png "屏幕截图.png")  
+#####  3.点单页面
+点单页面为客户展示商品列表以供选购  
+![输入图片说明](https://images.gitee.com/uploads/images/2021/0110/071637_eafb6713_4796963.png "屏幕截图.png")  
+#####  4.购物车页面  
+客户可以在购物车页面查看自己选购了那些商品，并提供下单入口  
+![输入图片说明](https://images.gitee.com/uploads/images/2021/0110/072110_a16121dc_4796963.png "屏幕截图.png")  
+#####  5.订单页面
+订单页面向客户展示了客户的历史订单，以及未完成订单  
+![输入图片说明](https://images.gitee.com/uploads/images/2021/0110/072514_6da64baa_4796963.png "屏幕截图.png")  
+
+####  后端  
 ###  后台 
 ####  前端  
 ####  后端  
@@ -301,3 +318,10 @@ public class getExcleController {
     //……
 }
 ```  
+提供给制作人员的接口:
+#####  1.查看未制作订单  
+制作人员可以在后台查看未制作订单以及订单描述信息，根据后台给出的提示进行制作商品  
+![订单返回形式](https://images.gitee.com/uploads/images/2021/0109/142845_4af91cb3_4796963.png "屏幕截图.png")
+#####  2.更新订单状态  
+![输入图片说明](https://images.gitee.com/uploads/images/2021/0110/060757_e69d9fbb_4796963.png "屏幕截图.png")  
+订单制作完成以后，制作员可以更新订单状态
