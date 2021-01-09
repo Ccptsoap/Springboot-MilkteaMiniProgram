@@ -17,12 +17,6 @@ public class UserController {
     @Autowired
     UserService userService;
 
-    //    @RequestMapping("change")
-//    public boolean test01(User user){
-//        boolean res= userService.changeOne(user);
-//        return res;
-//    }
-//
     @PostMapping("login")
     @ApiOperation(value = "登录")
     public User login(@RequestBody LoginInfoDTO loginInfoDTO) {

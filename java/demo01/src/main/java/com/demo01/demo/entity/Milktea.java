@@ -6,18 +6,18 @@ import com.alibaba.excel.metadata.BaseRowModel;
 /**
  * NULL
  */
-public class Milktea extends BaseRowModel {
-    @ExcelProperty(value = "编号",index = 0)
+public class Milktea {
+//    @ExcelProperty(value = "编号",index = 0)
     String id;
-    @ExcelProperty(value = "品名",index = 1)
+//    @ExcelProperty(value = "品名",index = 1)
     String name;
-    @ExcelProperty(value = "单价",index = 2)
+//    @ExcelProperty(value = "单价",index = 2)
     String price;
-    @ExcelProperty(value = "类型编号",index = 3)
+//    @ExcelProperty(value = "类型编号",index = 3)
     String type;
-    @ExcelProperty(value = "类型",index = 4)
+//    @ExcelProperty(value = "类型",index = 4)
     String typeName;
-    @ExcelProperty(value = "展示图片",index = 5)
+//    @ExcelProperty(value = "展示图片",index = 5)
     String image;
 
     public String getId() {

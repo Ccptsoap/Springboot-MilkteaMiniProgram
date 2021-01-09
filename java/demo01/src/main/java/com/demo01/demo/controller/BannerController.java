@@ -22,14 +22,14 @@ public class BannerController {
     @Autowired
     BannerService bannerService;
 
-    @GetMapping("/admin/getBannerImgUrl")
+    @GetMapping("/getBannerImgUrl")
     @ApiOperation(value = "获取banner图片的url")
     public Result<?> getBannerImgUrl() {
         return ResultUtils.success(bannerService.getBannerImgUrl());
     }
 
     @PostMapping("/admin/uploadBannerImgUrl")
-    @ApiOperation(value = "获取banner图片的url")
+    @ApiOperation(value = "更新banner图片的url")
     public Result<?> uploadBannerImgUrl(String id, String imgUrl) {
         System.out.println("uploadBannerImgUrl：获取到id：" + id + "获取到URL：" + imgUrl);
         Integer res = bannerService.uploadBannerImgUrl(id, imgUrl);

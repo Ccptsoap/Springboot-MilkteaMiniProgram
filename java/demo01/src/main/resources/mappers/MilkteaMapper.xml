@@ -39,7 +39,7 @@
     </select>
 
     <select id="insertMilktea" resultType="java.lang.Integer">
-        INSERT INTO milktea (id, type, price, TypeName, image, name) VALUES (#{id},#{type},#{price},#{typeName},#{image},#{name})
+        INSERT INTO milktea (id, Type, price, TypeName, image, name) VALUES (#{id},#{type},#{price},#{typeName},#{image},#{name})
     </select>
     <update id="updateMilktea">
             update milktea

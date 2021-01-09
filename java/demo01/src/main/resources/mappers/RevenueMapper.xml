@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.demo01.demo.mappers.RevenueMapper">
+    <select id="get7DayRevenueInfo" resultType="com.demo01.demo.entity.Revenue">
+        select *
+        from revenue
+        order by date desc limit 7
+    </select>
+</mapper>
