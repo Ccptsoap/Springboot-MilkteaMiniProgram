@@ -9,4 +9,5 @@ import java.util.List;
 public interface BannerService {
     List<String> getBannerImgUrl();
     int uploadBannerImgUrl(String id,String imgUrl);
+    List<String> getCosBannerImg();
 }

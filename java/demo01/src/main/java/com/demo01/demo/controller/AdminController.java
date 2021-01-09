@@ -7,12 +7,14 @@ import com.demo01.demo.service.MilkteaService;
 import com.demo01.demo.service.OrderService;
 import com.demo01.demo.utils.Result;
 import com.demo01.demo.utils.ResultUtils;
+import com.qcloud.cos.model.ListObjectsRequest;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
+import java.util.List;
 
 @RestController
 @Api(tags = "管理员控制器")
@@ -73,5 +75,12 @@ public class AdminController {
         Admin adminTemp = adminService.getAdminInfoByUsername(adminFromSession.getUsername());
         adminTemp.setPassword_md5(null);
         return ResultUtils.success(adminTemp);
+    }
+
+    @PostMapping("/getCosMilkteaImg")
+    @ApiOperation(value = "获取腾讯云COS中全部奶茶图片")
+    public Result<?> getCosMilkteaImg() {
+        List<String> imgUrl = adminService.getCosMilkteaImg();
+        return ResultUtils.success(imgUrl);
     }
 }

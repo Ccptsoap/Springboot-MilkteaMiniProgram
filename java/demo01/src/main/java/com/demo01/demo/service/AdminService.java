@@ -1,6 +1,8 @@
 package com.demo01.demo.service;
 
 import com.demo01.demo.entity.Admin;
+import com.qcloud.cos.model.COSObjectSummary;
+import com.qcloud.cos.model.ListObjectsRequest;
 
 import java.util.List;
 
@@ -14,4 +16,5 @@ public interface AdminService {
     Admin checkAdmin(String username, String password_md5);
     List<Admin> getAllAdmin();
     Admin getAdminInfoByUsername(String username);
+    List<String> getCosMilkteaImg();
 }

@@ -19,7 +19,6 @@ App({
     wx.getSetting({
       success: res => {
         var openid = String(wx.getStorageSync('openid'))
-
         this.globalData.openid = openid
         console.log("加载时从缓存获取的openid：" + this.globalData.openid)
         if (res.authSetting['scope.userInfo'] && this.globalData.openid != "") {
@@ -28,6 +27,7 @@ App({
             success: res => {
               this.globalData.userInfo = res.userInfo
               console.log("写入userinfo")
+              this.globalData.isIn = 1
               if (this.userInfoReadyCallback) {
                 this.userInfoReadyCallback(res)
               }

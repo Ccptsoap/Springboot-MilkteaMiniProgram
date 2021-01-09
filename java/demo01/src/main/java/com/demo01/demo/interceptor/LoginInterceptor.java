@@ -20,7 +20,7 @@ public class LoginInterceptor implements HandlerInterceptor {
 
         if (request.getSession().getAttribute("admin") == null) {
             System.out.println(request.getRequestURI() + " 请求被拦截，原因：未登录。");
-            response.sendRedirect("login");
+//            response.sendRedirect("login");
             return false;
         }
         return true;

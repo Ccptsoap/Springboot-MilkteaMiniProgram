@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 /**
  * @author Soap
  * time 2021-01-09 1:07
@@ -38,6 +40,11 @@ public class BannerController {
         } else {
             return ResultUtils.error(-15, "找不到ID指定的Banner");
         }
-
+    }
+    @PostMapping("/getCosBannerImg")
+    @ApiOperation(value = "获取腾讯云COS中全部Banner图片")
+    public Result<?> getCosMilkteaImg() {
+        List<String> imgUrl = bannerService.getCosBannerImg();
+        return ResultUtils.success(imgUrl);
     }
 }
