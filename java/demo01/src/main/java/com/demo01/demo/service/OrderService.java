@@ -11,7 +11,8 @@ public interface OrderService {
      List<Order> findAllOrderByID(String openid);
      List<Order> findAllOrder();
      List<MiniOrder> findAllMiniOrder(String openid);
-     List<MiniOrder> findTodayMiniOrder(String openid);
+     List<MiniOrder> findMakingMiniOrder(String openid);
+     List<MiniOrder> findCompletedMiniOrder(String openid);
      Order findOneOrder(int orderId);
      boolean addOneOrderByStr(String openid,String drinkStr,String address,String phoneNum,String name);
      Integer getTodayOrderNum();

@@ -18,8 +18,11 @@ App({
     // 获取用户信息
     wx.getSetting({
       success: res => {
-        if (res.authSetting['scope.userInfo']) {
+        var openid = String(wx.getStorageSync('openid'))
 
+        this.globalData.openid = openid
+        console.log("加载时从缓存获取的openid：" + this.globalData.openid)
+        if (res.authSetting['scope.userInfo'] && this.globalData.openid != "") {
           console.log("用户已同意授权")
           wx.getUserInfo({
             success: res => {
@@ -30,15 +33,17 @@ App({
               }
             }
           })
-        }else{
+        } else {
           console.log("用户未同意授权")
           setTimeout(function () {
-            wx.navigateTo({url:'/pages/login/login'})
+            wx.navigateTo({
+              url: '/pages/login/login'
+            })
           }, 1000)
         }
       }
     })
-     this.getReady()
+    this.getReady()
   },
 
   cart: {

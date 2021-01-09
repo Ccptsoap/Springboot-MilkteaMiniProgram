@@ -49,7 +49,7 @@ Page({
     })
 
     console.log(this.data.userInfo)
-    console.log("openid：" + base.globalData.user.openid)
+    console.log("openid：" + base.globalData.openid)
   },
 
   /**

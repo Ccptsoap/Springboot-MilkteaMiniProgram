@@ -114,9 +114,9 @@ public class MakerController {
     }
 
     @GetMapping("/maker/updatestatus")
-    @ApiOperation(value = "更新订单状态")
-    public void updateStatus(String orderID){
-        makerService.updateStatus(orderID);
+    @ApiOperation(value = "更新订单状态为制作完成")
+    public void updateStatusToCompleted(String orderID){
+        makerService.updateStatusToCompleted(orderID);
     }
 
 }

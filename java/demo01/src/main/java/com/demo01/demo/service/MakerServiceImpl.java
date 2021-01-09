@@ -20,8 +20,8 @@ public class MakerServiceImpl implements MakerService{
     }
 
     @Override
-    public void updateStatus(String orderID) {
-        makerMapper.updateStatus(orderID);
+    public void updateStatusToCompleted(String orderID) {
+        makerMapper.updateStatusToCompleted(orderID);
     }
 
     ;

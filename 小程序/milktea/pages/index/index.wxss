@@ -78,7 +78,7 @@
 .rec-img {
   height: 150rpx;
   width: 150rpx;
-  border-radius: 50%;
+  border-radius: 16rpx;
 }
 
 .rec-name {

@@ -6,7 +6,7 @@
 <view class="pro" animation="{{p._ani}}" wx:if="{{!p.del}}" wx:for="{{plist}}" wx:for-item="p" wx:key="supplyno">
   <view class="pro-con" animation="{{p.ani}}" bindtouchstart="ptouchsatrt" data-index="{{p.index}}" bindtouchend="ptouchend">
     <view class="pimg" data-index="{{p.index}}" data-name="{{p.name}}" data-brand="{{p.brand}}" catchtap="previewImg" >
-      <image src="{{p.img}}" mode="aspectFill"></image>
+      <image src="{{p.image}}" mode="aspectFill"></image>
     </view>
     <view class="pname">
       <view class="name">{{p.name}}</view>

@@ -10,5 +10,5 @@ import java.util.List;
 @Repository
 public interface MakerMapper {
     List<OrderForMaker> showAllOrderForMaker();
-    void updateStatus(String orderID);
+    void updateStatusToCompleted(String orderID);
 }

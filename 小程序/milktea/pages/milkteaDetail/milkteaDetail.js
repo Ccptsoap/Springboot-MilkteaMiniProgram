@@ -137,6 +137,7 @@ Page({
     this.data.navigateTitle = name
     this.data.sugar_buttons[0].checked = true
     this.data.ice_buttons[0].checked = true
+    console.log("奶茶详情页取全局图片url："+ this.data.milktea.image)
     this.setData({
       image: this.data.milktea.image,
       price: this.data.milktea.price,
@@ -150,7 +151,8 @@ Page({
     var that = this
     var singlePrice = Number(this.data.price / this.data.num)
     base.cart.cartno = Number(base.cart.cartno) + 1
-    console.log("supplyno in confirmButtonTap" + base.cart.cartno)
+    console.log("supplyno in confirmButtonTap，购物车项目编号" + base.cart.cartno)
+    console.log("插入购物车项目图片URL" + this.data.milktea.image)
     if (base.cart.add({
         supplyno: base.cart.cartno,
         id: this.data.milktea.id,
@@ -158,7 +160,7 @@ Page({
         size: this.data.total,
         price: singlePrice,
         num: this.data.num,
-        image: this.data.image
+        image: this.data.milktea.image
       })) {
       this.setData({
         cartNum: base.cart.getNum()

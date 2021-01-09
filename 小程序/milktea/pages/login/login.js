@@ -10,7 +10,9 @@
       openid: ""
     },
     wxlogin: function (e) {
-      const {userInfo} = e.detail;
+      const {
+        userInfo
+      } = e.detail;
 
       wx.login({
         success(res) {
@@ -47,7 +49,9 @@
                     base.globalData.user = result.data
                     base.globalData.openid = res.data.openid
                     wx.setStorageSync('user', result.data)
-                    wx.setStorageSync('openid', result.data.openid)
+                      wx.setStorageSync('openid', result.data.openid)
+                    console.log("写入缓存的openid：" + wx.getStorageSync('openid'))
+                    console.log("我的页打印用户信息：")
                     console.log(wx.getStorageSync('userInfo'))
                     setTimeout(function () {
                       wx.switchTab({
@@ -129,7 +133,7 @@
      * 生命周期函数--监听页面初次渲染完成
      */
     onReady: function () {
-      
+
     },
 
     /**

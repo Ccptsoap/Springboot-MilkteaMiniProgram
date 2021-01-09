@@ -17,14 +17,11 @@ Page({
   onLoad: function (options) {
     var l = base.cart.getList();
     for (var i = 0; i < l.length; i++) {
-      // l[i].img = '/images/img' + l[i].id + '.png';
-      l[i].img = '/images/id' + l[i].id + '.jpg';
       l[i].index = i;
     }
     this.setData({ plist: l });
     this.changeTotal();
-    
-    
+
   },
   
   /**
@@ -40,8 +37,8 @@ Page({
   onShow: function () {
     var l = base.cart.getList();
     for (var i = 0; i < l.length; i++) {
-      // l[i].img = '/images/img' + l[i].id + '.png';
-      l[i].img = '/images/id' + l[i].id + '.jpg';
+      console.log("l[i]"+l[i].id)
+      // l[i].img = '/images/id' + l[i].id + '.jpg';
       l[i].index = i;
     }
     this.setData({ plist: l });
@@ -112,10 +109,14 @@ Page({
           url: '../pay/pay?from=cart'
         })
       }else{
+
         wx.showToast({
-          title: "未登录",
+          title: "未登录 正在跳转",
           icon:"none"
          })
+         setTimeout(function () {
+          wx.navigateTo({url:'/pages/login/login'})
+        }, 1000)
       }
     } else {
       wx.showToast({

@@ -180,5 +180,5 @@ create table bannerImg
 -- Records of bannerimg
 -- ----------------------------
 INSERT INTO milktea_sql.bannerimg (id, imgUrl) VALUES (1, 'https://springboot-exp-1255644734.cos.ap-guangzhou.myqcloud.com/banner/bnr1.jpg');
-INSERT INTO milktea_sql.bannerimg (id, imgUrl) VALUES (2, 'https://springboot-exp-1255644734.cos.ap-guangzhou.myqcloud.com/banner/bnr2.png');
-INSERT INTO milktea_sql.bannerimg (id, imgUrl) VALUES (3, 'https://springboot-exp-1255644734.cos.ap-guangzhou.myqcloud.com/banner/bnr3.png');
+INSERT INTO milktea_sql.bannerimg (id, imgUrl) VALUES (2, 'https://springboot-exp-1255644734.cos.ap-guangzhou.myqcloud.com/banner/bnr2.jpg');
+INSERT INTO milktea_sql.bannerimg (id, imgUrl) VALUES (3, 'https://springboot-exp-1255644734.cos.ap-guangzhou.myqcloud.com/banner/bnr3.jpg');
