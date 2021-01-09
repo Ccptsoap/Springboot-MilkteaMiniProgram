@@ -49,7 +49,7 @@
       </view>
 
       <view class="info" style="white-space:pre-wrap">
-        <view class="timeAndId" style="white-space:pre-wrap"> 下单时间：{{item.orderTime}} \n 订单编号:{{item.orderId}}</view>
+        <view class="timeAndId" style="white-space:pre-wrap"> 下单时间：{{item.orderTime}} \n 历史取餐号:{{item.orderId}}</view>
         <view class="price">￥:{{item.total}}</view>
       </view>
       <view class="whiteSpace"></view>

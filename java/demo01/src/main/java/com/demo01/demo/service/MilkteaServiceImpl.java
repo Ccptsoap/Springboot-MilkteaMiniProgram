@@ -17,7 +17,6 @@ public class MilkteaServiceImpl implements MilkteaService {
 
     @Override
     public List<Milktea> recommend() {
-//        return milkteaMapper.selectTop(8);
 //        随机选择8款奶茶向用户推荐
         Integer nums = 8;
         Integer start = 1;
@@ -36,11 +35,9 @@ public class MilkteaServiceImpl implements MilkteaService {
         }
         for (Object l : list) {
             NumberFormat formatter = NumberFormat.getNumberInstance();
-            formatter.setMinimumIntegerDigits(4);
-            formatter.setGroupingUsed(false);
             String s = formatter.format(Integer.parseInt(l.toString()));
 
-            System.out.println(s);
+//            System.out.println(s);
             ret.add(selectOneMilktea(s));
         }
         return ret;

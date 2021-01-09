@@ -13,7 +13,8 @@ public interface OrderMapper {
      List<Integer> findAllOrderId();
      List<MiniOrderEntry> findAllMiniOrder(String openid);
      Order findOneOrder(int orderId);
-     List<MiniOrderEntry> findTodayMiniOrder(String openid);
+     List<MiniOrderEntry> findMakingMiniOrder(String openid);
+     List<MiniOrderEntry> findCompletedMiniOrder(String openid);
      int addOneOrderInfo(Order order);
      int findLastOrderId();
      int addOneSelectInfo(SelectInfo selectInfo);

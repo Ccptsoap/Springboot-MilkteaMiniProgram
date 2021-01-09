@@ -72,8 +72,8 @@ page {
 
 .pro-con .pimg image {
   width: 130rpx;
-  height: 120rpx;
-  border-radius: 5px;
+  height: 130rpx;
+  border-radius: 16rpx;
 }
 
 .pro-con .pname {

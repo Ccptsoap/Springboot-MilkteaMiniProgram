@@ -31,13 +31,12 @@ Page({
     })
     if (this.data.currentTab == 0) {
       wx.request({
-
         data: {
           openid: this.data.openid
         },
-        url: getApp().globalData.apiHost + '/findTodayMiniOrder',
+        url: getApp().globalData.apiHost + '/findMakingMiniOrder',
         success: (result) => {
-          console.log("查询到的今日订单：")
+          console.log("查询到的制作中订单：")
           console.log(result.data)
           var tmp = result.data
           var img = []
@@ -50,10 +49,7 @@ Page({
           }
 
           for (var i = 0; i < tmp.length; i++) {
-            //console.log(tmp[i].orderTime);  //2019-01-21T06:25:50.000Z
             var d = new Date(tmp[i].orderTime);
-            //console.log(d);   //Sun Jan 20 2019 16:43:42 GMT+0800
-            //console.log(d.getTime());  //这个全输入时间戳
             var y = d.getFullYear();
             var mon = d.getMonth() + 1;
 
@@ -67,14 +63,7 @@ Page({
             if (m < 10) {
               m = "0" + m;
             }
-
             tmp[i].orderTime = y + '/' + mon + '/' + day + ' ' + h + ':' + m + ':' + s
-            //console.log(tmp[i].orderTime);//12:12或09:07,这是最终输入的格式
-            // var d1 = new Date(tmp[i].orderTime);
-            // var dateee = d1.toJSON();
-            // var d2 = Date(+new Date(dateee) + 8 * 3600 * 1000)
-            // tmp[i].orderTime=d2.toISOString().replace(/T/g, ' ').replace(/\.[\d]{3}Z/, '')
-            // console.log(tmp[i].orderTime)
           }
 
           this.setData({
@@ -88,9 +77,10 @@ Page({
         data: {
           openid: this.data.openid
         },
-        url: getApp().globalData.apiHost + '/findAllMiniOrder',
+        url: getApp().globalData.apiHost + '/findCompletedMiniOrder',
         success: (result) => {
-          //console.log(result.data)
+          console.log("查询到的已完成订单：")
+          console.log(result.data)
           var tmp = result.data
           var img = []
           for (var i = 0; i < tmp.length; i++) {
@@ -159,7 +149,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.update()
+    // this.update()
 
   },
 

@@ -2,7 +2,6 @@ package com.demo01.demo.controller;
 
 import com.demo01.demo.entity.MiniOrder;
 import com.demo01.demo.entity.Order;
-import com.demo01.demo.entity.SelectInfo;
 import com.demo01.demo.mappers.OrderMapper;
 import com.demo01.demo.service.OrderService;
 import io.swagger.annotations.Api;
@@ -10,7 +9,6 @@ import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.sql.Timestamp;
@@ -38,12 +36,19 @@ public class OrderController {
     public List<Order> findAllOrder(){ return orderService.findAllOrder(); }
 
     //查询用户今日订单缩略信息
-    @GetMapping("findTodayMiniOrder")
-    @ApiOperation(value = "查询用户今日订单缩略信息")
-    public List<MiniOrder> findTodayMiniOrder(String openid)
-    {
-        return orderService.findTodayMiniOrder(openid);
+    @GetMapping("findMakingMiniOrder")
+    @ApiOperation(value = "查询用户制作中订单缩略信息")
+    public List<MiniOrder> findMakingMiniOrder(String openid) {
+        return orderService.findMakingMiniOrder(openid);
     }
+
+    //查询用户今日订单缩略信息
+    @GetMapping("findCompletedMiniOrder")
+    @ApiOperation(value = "查询用户已完成订单缩略信息")
+    public List<MiniOrder> findCompletedMiniOrder(String openid) {
+        return orderService.findCompletedMiniOrder(openid);
+    }
+
     //查询用户所有订单缩略信息
     @GetMapping("findAllMiniOrder")
     @ApiOperation(value = "查询用户所有订单缩略信息")
