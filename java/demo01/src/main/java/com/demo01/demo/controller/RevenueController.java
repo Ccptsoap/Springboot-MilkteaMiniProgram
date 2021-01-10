@@ -21,7 +21,7 @@ public class RevenueController {
     RevenueService revenueService;
 
     @GetMapping("/get7DayRevenueInfo")
-    @ApiOperation(value = "获取奶茶列表")
+    @ApiOperation(value = "获取过去7天每天的营收情况")
     public Result<?> get7DayRevenueInfo() {
         return ResultUtils.success(revenueService.get7DayRevenueInfo());
     }
