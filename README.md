@@ -226,7 +226,148 @@ mapper语句：
         insert into OrderInfo value(null,#{openid},#{time},#{total},#{status},#{address},#{phonenum},#{name})
     </insert>
 ```
+#####  5.查询制作中订单接口
+```java
+    @GetMapping("findMakingMiniOrder")
+    @ApiOperation(value = "查询用户制作中订单缩略信息")
+    public List<MiniOrder> findMakingMiniOrder(String openid) {
+        List<MiniOrderEntry> entryList = orderMapper.findMakingMiniOrder(openid);
+        List<MiniOrder> orderList = new ArrayList<>();
+        List<String> drinkIdList = new ArrayList<>();
+        List<String> imageList = new ArrayList<>();
+        MiniOrder orderTmp = new MiniOrder();
+        int drinkId;
+        int orderId = -1;
+        double total = 0;
+        //查询结果为空
+        if (entryList.size() == 0)
+            return null;
+        //根据订单编号合并订单条目，组成一个完整订单
+        for (MiniOrderEntry e : entryList) {
+            //当前条目属于一个新订单
+            if (orderId != e.getOrderId()) {
+                //不是第一个订单才需要添加到orderList
+                if (orderId != -1) {
+                    orderTmp.setTotal(total);
+                    orderTmp.setDrinkIdList(drinkIdList);
+                    orderTmp.setImageList(imageList);
+                    orderList.add(orderTmp);
+                }
+                //清空上个订单用到的变量
+                orderTmp = new MiniOrder();
+                drinkIdList = new ArrayList<>();
+                imageList = new ArrayList<>();
+                total = 0;
+                //不是第一个订单才需要清空drinkList,imageList
+                if (orderId != -1) {
+                    drinkIdList.clear();
+                    imageList.clear();
+                }
+                //
+                orderId = e.getOrderId();
+                orderTmp.setOrderId(e.getOrderId());
+                orderTmp.setOrderTime(e.getTime());
+                orderTmp.setOpenid(e.getOpenid());
+                total += e.getPrice();
+                //加入一种饮品
+                drinkIdList.add(e.getId());
+                imageList.add(e.getImage());
 
+            }
+            //当前条目与上条条目属于同一个订单，仅添加饮品
+            else {
+                total += e.getPrice();
+                drinkIdList.add(e.getId());
+                imageList.add(e.getImage());
+            }
+        }
+
+        orderTmp.setTotal(total);
+        orderTmp.setDrinkIdList(drinkIdList);
+        orderTmp.setImageList(imageList);
+        orderList.add(orderTmp);
+        return orderList;
+    }
+```
+mapper语句：
+```xml
+    <select id="findMakingMiniOrder" resultType="com.demo01.demo.entity.MiniOrderEntry">
+        select a.orderId,a.openid,a.total,a.time,b.id,b.number,b.price,c.image
+        from OrderInfo a, comselectinfo b, milktea c
+        where openid=#{openid} and a.orderId = b.orderId and b.id = c.id and Status = 0;
+    </select>
+```
+#####  6.查询已完成订单接口
+```java
+    @GetMapping("findCompletedMiniOrder")
+    @ApiOperation(value = "查询用户已完成订单缩略信息")
+    public List<MiniOrder> findCompletedMiniOrder(String openid) {
+        List<MiniOrderEntry> entryList = orderMapper.findCompletedMiniOrder(openid);
+        List<MiniOrder> orderList = new ArrayList<>();
+        List<String> drinkIdList = new ArrayList<>();
+        List<String> imageList = new ArrayList<>();
+        MiniOrder orderTmp = new MiniOrder();
+        int drinkId;
+        int orderId = -1;
+        double total = 0;
+        //查询结果为空
+        if (entryList.size() == 0)
+            return null;
+        //根据订单编号合并订单条目，组成一个完整订单
+        for (MiniOrderEntry e : entryList) {
+            //当前条目属于一个新订单
+            if (orderId != e.getOrderId()) {
+                //不是第一个订单才需要添加到orderList
+                if (orderId != -1) {
+                    orderTmp.setTotal(total);
+                    orderTmp.setDrinkIdList(drinkIdList);
+                    orderTmp.setImageList(imageList);
+                    orderList.add(orderTmp);
+                }
+                //清空上个订单用到的变量
+                orderTmp = new MiniOrder();
+                drinkIdList = new ArrayList<>();
+                imageList = new ArrayList<>();
+                total = 0;
+                //不是第一个订单才需要清空drinkList,imageList
+                if (orderId != -1) {
+                    drinkIdList.clear();
+                    imageList.clear();
+                }
+                //
+                orderId = e.getOrderId();
+                orderTmp.setOrderId(e.getOrderId());
+                orderTmp.setOrderTime(e.getTime());
+                orderTmp.setOpenid(e.getOpenid());
+                total += e.getPrice();
+                //加入一种饮品
+                drinkIdList.add(e.getId());
+                imageList.add(e.getImage());
+
+            }
+            //当前条目与上条条目属于同一个订单，仅添加饮品
+            else {
+                total += e.getPrice();
+                drinkIdList.add(e.getId());
+                imageList.add(e.getImage());
+            }
+        }
+
+        orderTmp.setTotal(total);
+        orderTmp.setDrinkIdList(drinkIdList);
+        orderTmp.setImageList(imageList);
+        orderList.add(orderTmp);
+        return orderList;
+    }
+```
+mapper语句：
+```xml
+    <select id="findCompletedMiniOrder" resultType="com.demo01.demo.entity.MiniOrderEntry">
+        select a.orderId,a.openid,a.total,a.time,b.id,b.number,b.price,c.image
+        from OrderInfo a, comselectinfo b, milktea c
+        where openid=#{openid} and a.orderId = b.orderId and b.id = c.id and Status = 1;
+    </select>
+``` 
 ###  后台 
 ####  前端  
 ####  后端  
