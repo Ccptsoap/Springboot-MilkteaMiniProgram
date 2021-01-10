@@ -6,7 +6,7 @@
 <!-- <view class="tab-layer"></view> -->
 <view wx:if="{{currentTab==0}}">
   <view wx:if="{{miniOrderList.length==0}}" class="null">
-    你今天无订单，赶快去点单吧
+    无制作中的订单，赶快去点单吧
     <image src="/icon/empty3.png" class="emptyImg"></image>
   </view>
   <view class="box">
@@ -34,7 +34,7 @@
 <view wx:if="{{currentTab==1}}">
 
   <view wx:if="{{miniOrderList.length==0}}" class="null">
-    你还未下过单，赶快去点单吧
+    无已完成的订单，赶快去点单吧
     <image src="/icon/empty3.png" class="emptyImg"></image>
   </view>
   <view class="box">
