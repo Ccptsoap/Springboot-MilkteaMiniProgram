@@ -15,7 +15,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.getAll();
   },
 
   /**
@@ -46,7 +46,6 @@ Page({
           phonenum: base.globalData.user.phonenum,
           name: base.globalData.user.name
         })
-        console.log("222222222222")
       }
     })
   },
@@ -54,7 +53,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    this.getAll();
+    
   },
 
 

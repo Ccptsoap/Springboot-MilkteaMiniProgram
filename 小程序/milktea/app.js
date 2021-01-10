@@ -20,6 +20,7 @@ App({
       success: res => {
         var openid = String(wx.getStorageSync('openid'))
         this.globalData.openid = openid
+        this.globalData.user = wx.getStorageSync('user')
         console.log("加载时从缓存获取的openid：" + this.globalData.openid)
         if (res.authSetting['scope.userInfo'] && this.globalData.openid != "") {
           console.log("用户已同意授权")

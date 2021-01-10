@@ -17,7 +17,7 @@
       <image src="/icon/index3.png" class="image"></image>
     </view>
     <view class="text">
-      <navigator url="../address/address" open-type="navigate" hover-class="navigator-hover">修改地址信息</navigator>
+      <navigator url="../address/address" open-type="navigate" hover-class="navigator-hover">修改个人信息</navigator>
     </view>
   </view>
 

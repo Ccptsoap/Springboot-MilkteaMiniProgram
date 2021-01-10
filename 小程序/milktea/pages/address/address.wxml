@@ -23,6 +23,6 @@
 
 
 <!-- </view> -->
-<button bindtap="jumpBtn"><view class="text">修改</view></button>
+<button bindtap="jumpBtn" style="width:80%;margin-top:80rpx;"><view class="text">修改</view></button>
 
 </form>
