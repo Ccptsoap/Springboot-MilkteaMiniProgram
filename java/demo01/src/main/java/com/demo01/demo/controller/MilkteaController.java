@@ -44,9 +44,10 @@ public class MilkteaController {
 
     @GetMapping("selectAllByType")
     @ApiOperation(value = "返回全部的奶茶 会按奶茶种类排序")
-    public List<List<Milktea>> selectAllByType(String type) {
+    public List<List<Milktea>> selectAllByType() {
         List<List<Milktea>> res= new ArrayList<List<Milktea>>();
-        for (int i = 0; i < 4; i++) {
+        int countType = countType();
+        for (int i = 0; i < countType; i++) {
             List<Milktea> temp = selectByType(Integer.toString(i+1) );
             res.add(temp);
         }
