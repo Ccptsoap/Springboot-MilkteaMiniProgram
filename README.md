@@ -55,7 +55,178 @@
 #####  10.未取餐订单  
 支付以后可以在未取餐订单中查看已下订单  
 ![输入图片说明](https://images.gitee.com/uploads/images/2021/0110/074203_94674fad_4796963.png "屏幕截图.png")
-####  后端  
+####  后端
+后端主要提供的功能：
+#####  1.“为你推荐”接口   
+在首页中随机显示8款奶茶
+```java
+@GetMapping("recommend")
+    @ApiOperation(value = " 首页“为你推荐”")
+    public List<Milktea> recommend() {
+           随机选择8款奶茶向用户推荐
+        Integer nums = 8;
+        Integer start = 1;
+        Integer end = countMilktea();
+        //1.创建集合容器对象
+        List list = new ArrayList();
+        List ret = new ArrayList();
+        //2.创建Random对象
+        Random r = new Random();
+        //循环将得到的随机数进行判断，如果随机数不存在于集合中，则将随机数放入集合中，如果存在，则将随机数丢弃不做操作，进行下一次循环，直到集合长度等于nums
+        while (list.size() != nums) {
+            Integer num = r.nextInt(end - start) + start;
+            if (!list.contains(num)) {
+                list.add(num);
+            }
+        }
+        for (Object l : list) {
+            NumberFormat formatter = NumberFormat.getNumberInstance();
+            String s = formatter.format(Integer.parseInt(l.toString()));
+
+//            System.out.println(s);
+            ret.add(selectOneMilktea(s));
+        }
+        return ret;
+    }
+```
+mapper语句：
+```xml
+    <select id="selectMilkteaById" resultType="com.demo01.demo.entity.Milktea">
+        select *
+        from milktea
+        where id = #{id}
+    </select>
+```
+#####  2.按种类排序返回全部奶茶接口
+用于小程序点单页面按照种类显示奶茶。先获取奶茶的种类数，然后根据种类id将全部奶茶按照种类装到各个数组中，再将这些数组装到一个大数组中
+```java
+    @GetMapping("selectAllByType")
+    @ApiOperation(value = "返回全部的奶茶 会按奶茶种类排序")
+    public List<List<Milktea>> selectAllByType(String type) {
+    List<List<Milktea>> res= new ArrayList<List<Milktea>>();
+            int countType = countType();
+            for (int i = 0; i < countType; i++) {
+                List<Milktea> temp = selectByType(Integer.toString(i+1) );
+                res.add(temp);
+            }
+            return res;
+        }
+```
+mapper语句：
+```xml
+    <select id="selectByType" resultType="com.demo01.demo.entity.Milktea">
+        select *
+        from milktea
+        where type = #{type}
+    </select>
+```
+#####  3.用户登录接口
+用于用户使用微信进行登录的接口。先判断从小程序获得的openid是否为空，为空则登录失败返回空值，否则查询数据库该openid是否已存入数据库，未存入则将该openid与用户昵称插入数据库并且后端返回存有openid该用户对象，否则只更新用户昵称并返回存有对应用户信息的用户对象。
+```java
+@PostMapping("login")
+    @ApiOperation(value = "登录")
+    public User login(@RequestBody LoginInfoDTO loginInfoDTO) {
+        String openid = loginInfoDTO.getOpenid();
+        String nickname = loginInfoDTO.getNickname();
+        User res = userService.login(openid);
+        if (res.getOpenid() != null) {
+            res.setNickname(nickname);
+            userService.setNickName(res);
+        }
+        return res;
+    }
+
+//userService.login(String openid)方法
+@Override
+    public User login(String openid) {
+        if (openid.equals("")) {
+            System.out.println("ID是空的，无法登陆");
+            return new User();
+        }
+        User successUser = userMapper.login(openid);
+        if (null == successUser) {
+            this.logon(openid);
+            User user = new User();
+            user.setOpenid(openid);
+            return user;
+        }
+        return successUser;
+    }
+```
+主要mapper语句：
+```xml
+    <select id="login" resultType="User">
+    select *  from cusaccinfo where openid=#{openid}
+    </select>
+
+    <insert id="logon" parameterType="String">
+        insert into cusaccinfo(openid) values(#{openid})
+    </insert>
+```
+#####  4.下单接口  
+用于用户下单的接口。后端先将订单时间、总价格、用户openid和用户地址信息插入数据库中的orderinfo表（订单信息表），获取自增的orderid后将从小程序获取的奶茶信息拆分开来，按照奶茶的id组成为单条条目，依照orderid插入数据库中的comselectinfo表（订单详情表）中
+```java
+    @PostMapping("addOneOrderByStr")
+    @ApiOperation(value = "增加一个订单条目")
+    public boolean addOneOrderByStr(String openid,String drinkStr,String address,String phoneNum,String name)
+    {
+//转对象集合
+        JSONArray json = JSONArray.fromObject(drinkStr);
+        List<OrderDrink> drinkList = (List<OrderDrink>) JSONArray.toCollection(json, OrderDrink.class);
+        //加入时间
+        Timestamp time = new Timestamp(System.currentTimeMillis());
+
+        double totalPrice = 0;
+
+        //统计价格
+        for (OrderDrink d : drinkList) {
+            totalPrice = totalPrice + d.getDrinkPrice();
+        }
+
+        //先插入orderinfo表
+        Order order = new Order();
+
+        order.setOpenid(openid);
+        order.setTime(time);
+        order.setTotal(totalPrice);
+        order.setStatus(0);
+        order.setAddress(address);
+        order.setPhonenum(phoneNum);
+        order.setName(name);
+        if (orderMapper.addOneOrderInfo(order) == 0)
+            return false;
+
+        //后插入selectinfo表
+        SelectInfo selectInfo;
+        //获取orderinof表最大的orderid
+        int orderId = orderMapper.findLastOrderId();
+
+        //拆分drinklist,组成为单条条目，插入数据库
+        for (OrderDrink d : drinkList) {
+            selectInfo = new SelectInfo();
+            selectInfo.setId(d.getDrinkId());
+            selectInfo.setDescription(d.getDrinkInfo());
+            selectInfo.setNumber(d.getDrinkNum());
+            selectInfo.setPrice(d.getDrinkPrice());
+            selectInfo.setOrderId(orderId);
+            totalPrice = totalPrice + d.getDrinkPrice();
+            if (orderMapper.addOneSelectInfo(selectInfo) == 0)
+                return false;
+        }
+        return true;
+    }
+```
+mapper语句：
+```xml
+    <insert id="addOneSelectInfo" parameterType="com.demo01.demo.entity.SelectInfo">
+        insert into comselectinfo value(#{orderId},#{id},#{number},#{description},#{price})
+    </insert>
+
+    <insert id="addOneOrderInfo" parameterType="com.demo01.demo.entity.Order">
+        insert into OrderInfo value(null,#{openid},#{time},#{total},#{status},#{address},#{phonenum},#{name})
+    </insert>
+```
+
 ###  后台 
 ####  前端  
 ####  后端  
