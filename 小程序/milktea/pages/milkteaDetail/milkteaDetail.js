@@ -169,23 +169,22 @@ Page({
         title: '加入成功！',
         content: "跳转到购物车或留在当前页",
         showCancel: true,
-        cancelText: "留在此页",
+        cancelText: "继续点单",
         confirmText: "去购物车",
         success: function (res) {
           if (res.confirm) {
-            that.goc();
+            wx.switchTab({
+              url: "../cart/cart"
+          })
+          }else{
+            wx.switchTab({
+              url: "../milktea/milktea"
+          })
           }
         }
       })
     }
   },
-  goc: function () {
-    var _this = this;
-    // base.cart.ref = "../cakeDetail/cakeDetail?pname=" + _this.data.name + "&brand=" + _this.data.brand;
-    wx.switchTab({
-        url: "../cart/cart"
-    })
-},
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

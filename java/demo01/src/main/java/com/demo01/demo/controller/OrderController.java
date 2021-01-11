@@ -35,6 +35,16 @@ public class OrderController {
     @ApiOperation(value = "查询全部订单详细信息")
     public List<Order> findAllOrder(){ return orderService.findAllOrder(); }
 
+    //查询全部制作中订单详细信息
+    @GetMapping("findAllMakingOrder")
+    @ApiOperation(value = "查询全部制作中订单详细信息")
+    public List<Order> findAllMakingOrder(){ return orderService.findAllMakingOrder(); }
+
+    //查询全部已完成订单详细信息
+    @GetMapping("findAllCompletedOrder")
+    @ApiOperation(value = "查询全部已完成订单详细信息")
+    public List<Order> findAllCompletedOrderId(){ return orderService.findAllCompletedOrder(); }
+
     //查询用户今日订单缩略信息
     @GetMapping("findMakingMiniOrder")
     @ApiOperation(value = "查询用户制作中订单缩略信息")

@@ -32,9 +32,9 @@ public class BannerController {
 
     @PostMapping("/admin/uploadBannerImgUrl")
     @ApiOperation(value = "更新banner图片的url")
-    public Result<?> uploadBannerImgUrl(String id, String imgUrl) {
-        System.out.println("uploadBannerImgUrl：获取到id：" + id + "获取到URL：" + imgUrl);
-        Integer res = bannerService.uploadBannerImgUrl(id, imgUrl);
+    public Result<?> uploadBannerImgUrl(String id, String image) {
+        System.out.println("uploadBannerImgUrl：获取到id：" + id + "获取到URL：" + image);
+        Integer res = bannerService.uploadBannerImgUrl(id, image);
         if (res == 1) {
             return ResultUtils.success();
         } else {

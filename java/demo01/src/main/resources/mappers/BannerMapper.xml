@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.demo01.demo.mappers.BannerMapper">
-    <select id="getBannerImgUrl" resultType="java.lang.String">
-        select imgUrl from bannerimg
+    <select id="getBannerImgUrl" resultType="com.demo01.demo.entity.Banner">
+        select * from bannerimg
     </select>
 
     <update id="uploadBannerImgUrl">

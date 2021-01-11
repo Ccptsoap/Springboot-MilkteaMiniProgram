@@ -20,9 +20,9 @@ Page({
         console.log("获取Banner")
         console.log(result)
         this.setData({
-          bannerImgUrl1: result.data.data[0],
-          bannerImgUrl2: result.data.data[1],
-          bannerImgUrl3: result.data.data[2]
+          bannerImgUrl1: result.data.data[0].image,
+          bannerImgUrl2: result.data.data[1].image,
+          bannerImgUrl3: result.data.data[2].image
         })
       }
     })

@@ -10,6 +10,8 @@ import java.util.List;
 public interface OrderService {
      List<Order> findAllOrderByID(String openid);
      List<Order> findAllOrder();
+     List<Order> findAllMakingOrder();
+     List<Order> findAllCompletedOrder();
      List<MiniOrder> findAllMiniOrder(String openid);
      List<MiniOrder> findMakingMiniOrder(String openid);
      List<MiniOrder> findCompletedMiniOrder(String openid);

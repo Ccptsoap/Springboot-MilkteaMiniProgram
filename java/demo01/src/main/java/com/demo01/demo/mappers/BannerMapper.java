@@ -1,5 +1,6 @@
 package com.demo01.demo.mappers;
 
+import com.demo01.demo.entity.Banner;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 
@@ -12,6 +13,6 @@ import java.util.List;
 @Mapper
 @Repository
 public interface BannerMapper {
-    List<String> getBannerImgUrl();
+    List<Banner> getBannerImgUrl();
     Integer uploadBannerImgUrl(String id,String imgUrl);
 }

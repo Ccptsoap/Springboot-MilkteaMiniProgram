@@ -212,6 +212,24 @@ public class OrderServiceImpl implements OrderService {
         });
         return orderList;
     }
+    public List<Order> findAllMakingOrder() {
+        List<Order> orderList = new ArrayList();
+        List<Integer> orderIdList = orderMapper.findAllMakingOrderId();
+        orderIdList.forEach(re -> {
+            Order order = findOneOrder(re);
+            orderList.add(order);
+        });
+        return orderList;
+    }
+    public List<Order> findAllCompletedOrder() {
+        List<Order> orderList = new ArrayList();
+        List<Integer> orderIdList = orderMapper.findAllCompletedOrderId();
+        orderIdList.forEach(re -> {
+            Order order = findOneOrder(re);
+            orderList.add(order);
+        });
+        return orderList;
+    }
 
     public Order findOneOrder(int orderId) {
         List<SelectInfo> entryList = orderMapper.findSelectInfo(orderId);

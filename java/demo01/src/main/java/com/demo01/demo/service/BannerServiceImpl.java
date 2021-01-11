@@ -1,5 +1,6 @@
 package com.demo01.demo.service;
 
+import com.demo01.demo.entity.Banner;
 import com.demo01.demo.mappers.BannerMapper;
 import com.qcloud.cos.COSClient;
 import com.qcloud.cos.ClientConfig;
@@ -27,10 +28,10 @@ public class BannerServiceImpl implements BannerService {
     BannerMapper bannerMapper;
 
     @Override
-    public List<String> getBannerImgUrl() {
-        List<String> tempString = null;
-        tempString = bannerMapper.getBannerImgUrl();
-        return tempString;
+    public List<Banner> getBannerImgUrl() {
+        List<Banner> temp = null;
+        temp = bannerMapper.getBannerImgUrl();
+        return temp;
     }
 
     @Override

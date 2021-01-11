@@ -11,6 +11,15 @@
         select orderid from orderinfo
     </select>
 
+<!--    找到所有制作中的订单ID-->
+    <select id="findAllMakingOrderId" resultType="Integer">
+        select orderid from orderinfo where Status = 0;
+    </select>
+<!--    找到所有已完成的订单ID-->
+    <select id="findAllCompletedOrderId" resultType="Integer">
+        select orderid from orderinfo where Status = 1;
+    </select>
+
     <select id="findAllMiniOrder" resultType="com.demo01.demo.entity.MiniOrderEntry">
         select a.orderId,a.openid,a.total,a.time,b.id,b.number,b.price,c.image
         from OrderInfo a, comselectinfo b, milktea c

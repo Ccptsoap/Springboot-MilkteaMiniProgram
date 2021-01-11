@@ -4,14 +4,14 @@
       <text class="tit-text">地址</text>
       <view class="tit-tool " catchtap="changeAddress" >修改</view>
 </view>
-<view class="phone" style="white-space:pre-wrap">{{address}}</view>
+<view class="phone" style="white-space:pre-wrap;margin-left: 10px">{{address}}</view>
 <view class="list">
 
-  <view class="phone" style="white-space:pre-wrap">联系电话   {{phonenum}}
+  <view class="phone" style="white-space:pre-wrap;padding-left: 10px;">联系电话   {{phonenum}}
   </view>
   <view class="whiteSpace"></view>
 
-  <view class="label">商品列表</view>
+  <view class="label" style="padding-left: 10px;">商品列表</view>
 
   <view class="eachOne" wx:for="{{drinkList}}" wx:key="index" >
 
@@ -39,11 +39,11 @@
   </view>
 
   <view class="total">
-    共{{totalNum}}件商品，小计 ￥{{totalPrice}}
+    <view style="margin-right: 10px;">共{{totalNum}}件商品，小计 ￥{{totalPrice}}</view>
   </view>
   <view class="whiteSpace"></view>
   <view class="payWay" >
-    微信支付
+    <view style="margin-right: 10px;">微信支付</view>
   </view>
 </view>
 
