@@ -17,168 +17,136 @@
 SET NAMES utf8mb4;
 SET FOREIGN_KEY_CHECKS = 0;
 
--- ----------------------------
--- Table structure for admin
--- ----------------------------
-DROP TABLE IF EXISTS `admin`;
-CREATE TABLE `admin`  (
-  `id` int(15) NOT NULL,
-  `password` char(20) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `username` char(15) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  PRIMARY KEY (`id`) USING BTREE
-) ENGINE = MyISAM CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Fixed;
-
--- ----------------------------
--- Records of admin
--- ----------------------------
-INSERT INTO `admin` VALUES (1, '123', 'root');
-
--- ----------------------------
--- Table structure for comselectinfo
--- ----------------------------
-DROP TABLE IF EXISTS `comselectinfo`;
-CREATE TABLE `comselectinfo`  (
-  `OrderID` char(15) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `id` char(15) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `Number` int(11) NULL DEFAULT 1,
-  `Description` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
-  `Price` decimal(6, 2) NULL DEFAULT NULL,
-  PRIMARY KEY (`OrderID`, `id`) USING BTREE,
-  INDEX `Fk_id`(`id`) USING BTREE
-) ENGINE = MyISAM CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Dynamic;
-
--- ----------------------------
--- Records of comselectinfo
--- ----------------------------
-INSERT INTO `comselectinfo` VALUES ('1', '0012', 1, '标准糖,正常冰', 23.00);
-INSERT INTO `comselectinfo` VALUES ('1', '0003', 1, '标准糖,正常冰', 20.00);
-INSERT INTO `comselectinfo` VALUES ('2', '0010', 1, '标准糖,正常冰', 32.00);
-INSERT INTO `comselectinfo` VALUES ('3', '0010', 1, '标准糖,正常冰', 32.00);
-INSERT INTO `comselectinfo` VALUES ('3', '0002', 1, '标准糖,正常冰', 27.00);
-INSERT INTO `comselectinfo` VALUES ('4', '0011', 2, '无糖,正常', 56.00);
-INSERT INTO `comselectinfo` VALUES ('4', '0002', 1, '标准糖,正常冰', 27.00);
-INSERT INTO `comselectinfo` VALUES ('5', '0007', 1, '标准糖,正常冰', 25.00);
-INSERT INTO `comselectinfo` VALUES ('6', '0010', 1, '标准糖,正常冰', 32.00);
-INSERT INTO `comselectinfo` VALUES ('7', '0010', 3, '微糖,正常', 96.00);
-INSERT INTO `comselectinfo` VALUES ('9', '0013', 1, '标准糖,正常冰', 30.00);
-INSERT INTO `comselectinfo` VALUES ('9', '0002', 1, '标准糖,正常冰', 27.00);
-INSERT INTO `comselectinfo` VALUES ('9', '0012', 1, '标准糖,正常冰', 23.00);
-INSERT INTO `comselectinfo` VALUES ('8', '0012', 1, '标准糖,正常冰', 23.00);
-INSERT INTO `comselectinfo` VALUES ('9', '0008', 1, '标准糖,正常冰', 26.00);
-INSERT INTO `comselectinfo` VALUES ('10', '0012', 1, '标准糖,正常冰', 23.00);
-INSERT INTO `comselectinfo` VALUES ('10', '0003', 2, '标准糖,正常冰', 40.00);
-INSERT INTO `comselectinfo` VALUES ('10', '0011', 1, '标准糖,正常冰', 28.00);
-INSERT INTO `comselectinfo` VALUES ('13', '0007', 1, '标准糖,正常冰', 25.00);
-INSERT INTO `comselectinfo` VALUES ('14', '0008', 1, '标准糖,正常冰', 26.00);
-INSERT INTO `comselectinfo` VALUES ('14', '0013', 1, '标准糖,正常冰', 30.00);
-INSERT INTO `comselectinfo` VALUES ('14', '0011', 1, '标准糖,正常冰', 28.00);
-INSERT INTO `comselectinfo` VALUES ('15', '0013', 1, '标准糖,正常冰', 30.00);
-INSERT INTO `comselectinfo` VALUES ('16', '0004', 1, '标准糖,正常冰', 19.00);
-INSERT INTO `comselectinfo` VALUES ('16', '0002', 1, '标准糖,正常冰', 27.00);
-INSERT INTO `comselectinfo` VALUES ('16', '0008', 1, '标准糖,正常冰', 26.00);
-INSERT INTO `comselectinfo` VALUES ('17', '0001', 1, '标准糖,正常冰', 31.00);
-INSERT INTO `comselectinfo` VALUES ('17', '0009', 1, '标准糖,正常冰', 29.00);
-
--- ----------------------------
--- Table structure for cusaccinfo
--- ----------------------------
-DROP TABLE IF EXISTS `cusaccinfo`;
-CREATE TABLE `cusaccinfo`  (
-  `OpenID` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `Name` char(20) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
-  `PhoneNum` char(15) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
-  `NickName` char(20) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
-  `Address` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
-  PRIMARY KEY (`OpenID`) USING BTREE
-) ENGINE = MyISAM CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Dynamic;
-
--- ----------------------------
--- Records of cusaccinfo
--- ----------------------------
-INSERT INTO `cusaccinfo` VALUES ('oJSWT4t6a9pS2v5TAY2oJZFltKY4', '李华铧', '13602348194', '狛枝', '广东省,东莞市,松山湖,东莞理工学院');
-
--- ----------------------------
--- Table structure for milktea
--- ----------------------------
-DROP TABLE IF EXISTS `milktea`;
-CREATE TABLE `milktea`  (
-  `id` char(15) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `Type` int(11) NULL DEFAULT NULL,
-  `Price` decimal(6, 2) NOT NULL,
-  `TypeName` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
-  `image` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
-  `Name` varchar(30) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  PRIMARY KEY (`id`) USING BTREE
-) ENGINE = MyISAM CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Dynamic;
-
--- ----------------------------
--- Records of milktea
--- ----------------------------
-INSERT INTO milktea_sql.milktea (id, Type, Price, TypeName, image, Name) VALUES ('0001', 3, 31.00, '波波家族', 'https://springboot-exp-1255644734.cos.ap-guangzhou.myqcloud.com/id0001.jpg', '葡萄波波奶盖');
-INSERT INTO milktea_sql.milktea (id, Type, Price, TypeName, image, Name) VALUES ('0002', 1, 27.00, '果茶家族', 'https://springboot-exp-1255644734.cos.ap-guangzhou.myqcloud.com/id0002.jpg', '多肉芒芒甘露');
-INSERT INTO milktea_sql.milktea (id, Type, Price, TypeName, image, Name) VALUES ('0003', 1, 20.00, '果茶家族', 'https://springboot-exp-1255644734.cos.ap-guangzhou.myqcloud.com/id0003.jpg', '芝芝桃桃');
-INSERT INTO milktea_sql.milktea (id, Type, Price, TypeName, image, Name) VALUES ('0004', 2, 19.00, '茗茶/牛乳', 'https://springboot-exp-1255644734.cos.ap-guangzhou.myqcloud.com/id0004.jpg', '芝芝绿妍');
-INSERT INTO milktea_sql.milktea (id, Type, Price, TypeName, image, Name) VALUES ('0005', 2, 22.00, '茗茶/牛乳', 'https://springboot-exp-1255644734.cos.ap-guangzhou.myqcloud.com/id0005.jpg', '芝芝金玉');
-INSERT INTO milktea_sql.milktea (id, Type, Price, TypeName, image, Name) VALUES ('0006', 3, 27.00, '波波家族', 'https://springboot-exp-1255644734.cos.ap-guangzhou.myqcloud.com/id0006.jpg', '豆豆波波茶');
-INSERT INTO milktea_sql.milktea (id, Type, Price, TypeName, image, Name) VALUES ('0007', 3, 25.00, '波波家族', 'https://springboot-exp-1255644734.cos.ap-guangzhou.myqcloud.com/id0007.jpg', '芋泥波波牛乳');
-INSERT INTO milktea_sql.milktea (id, Type, Price, TypeName, image, Name) VALUES ('0008', 4, 26.00, '醇香咖啡', 'https://springboot-exp-1255644734.cos.ap-guangzhou.myqcloud.com/id0008.jpg', '芝芝咖啡');
-INSERT INTO milktea_sql.milktea (id, Type, Price, TypeName, image, Name) VALUES ('0009', 4, 29.00, '醇香咖啡', 'https://springboot-exp-1255644734.cos.ap-guangzhou.myqcloud.com/id0009.jpg', '雪山香草拿铁');
-INSERT INTO milktea_sql.milktea (id, Type, Price, TypeName, image, Name) VALUES ('0010', 1, 32.00, '果茶家族', 'https://springboot-exp-1255644734.cos.ap-guangzhou.myqcloud.com/id0010.jpg', '芝芝莓莓');
-INSERT INTO milktea_sql.milktea (id, Type, Price, TypeName, image, Name) VALUES ('0011', 1, 28.00, '果茶家族', 'https://springboot-exp-1255644734.cos.ap-guangzhou.myqcloud.com/id0011.jpg', '芝芝莓莓桃');
-INSERT INTO milktea_sql.milktea (id, Type, Price, TypeName, image, Name) VALUES ('0012', 1, 23.00, '果茶家族', 'https://springboot-exp-1255644734.cos.ap-guangzhou.myqcloud.com/id0012.jpg', '满杯红柚');
-
--- ----------------------------
--- Table structure for orderinfo
--- ----------------------------
-DROP TABLE IF EXISTS `orderinfo`;
-CREATE TABLE `orderinfo`  (
-  `OrderID` int(11) NOT NULL AUTO_INCREMENT,
-  `OpenID` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `Time` datetime(0) NOT NULL,
-  `Total` decimal(6, 2) NOT NULL,
-  `Status` int(11) NOT NULL,
-  `Address` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
-  `PhoneNum` char(15) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
-  `Name` char(15) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
-  PRIMARY KEY (`OrderID`) USING BTREE,
-  INDEX `Fk_penID`(`OpenID`) USING BTREE
-) ENGINE = MyISAM AUTO_INCREMENT = 18 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Dynamic;
-
--- ----------------------------
--- Records of orderinfo
--- ----------------------------
-INSERT INTO `orderinfo` VALUES (1, 'oJSWT4t6a9pS2v5TAY2oJZFltKY4', '2020-12-24 23:55:12', 43.00, 0, NULL, NULL, NULL);
-INSERT INTO `orderinfo` VALUES (2, 'oJSWT4t6a9pS2v5TAY2oJZFltKY4', '2020-12-25 00:05:25', 32.00, 0, NULL, NULL, NULL);
-INSERT INTO `orderinfo` VALUES (3, 'oJSWT4t6a9pS2v5TAY2oJZFltKY4', '2020-12-25 00:06:33', 59.00, 0, NULL, NULL, NULL);
-INSERT INTO `orderinfo` VALUES (4, 'oJSWT4t6a9pS2v5TAY2oJZFltKY4', '2020-12-25 00:45:36', 83.00, 0, NULL, NULL, NULL);
-INSERT INTO `orderinfo` VALUES (5, 'oJSWT4t6a9pS2v5TAY2oJZFltKY4', '2020-12-25 00:49:05', 25.00, 0, '广东省,东莞市,松山湖,东莞理工学院', NULL, '李华铧');
-INSERT INTO `orderinfo` VALUES (6, 'oJSWT4t6a9pS2v5TAY2oJZFltKY4', '2020-12-25 00:50:35', 32.00, 0, '广东省,东莞市,松山湖,东莞理工学院', '13602348194', '李华铧');
-INSERT INTO `orderinfo` VALUES (7, 'oJSWT4t6a9pS2v5TAY2oJZFltKY4', '2020-12-25 02:35:43', 96.00, 0, '广东省,东莞市,松山湖,东莞理工学院', '13602348194', '李华铧');
-INSERT INTO `orderinfo` VALUES (8, 'oJSWT4t6a9pS2v5TAY2oJZFltKY4', '2020-12-25 03:21:15', 23.00, 0, '广东省,东莞市,松山湖,东莞理工学院', '13602348194', '李华铧');
-INSERT INTO `orderinfo` VALUES (9, 'oJSWT4t6a9pS2v5TAY2oJZFltKY4', '2020-12-25 03:21:45', 106.00, 0, '广东省,东莞市,松山湖,东莞理工学院', '13602348194', '李华铧');
-INSERT INTO `orderinfo` VALUES (10, 'oJSWT4t6a9pS2v5TAY2oJZFltKY4', '2020-12-26 17:45:16', 28.00, 0, '广东省,东莞市,松山湖,东莞理工学院', '13602348194', '李华铧');
-INSERT INTO `orderinfo` VALUES (14, 'oJSWT4t6a9pS2v5TAY2oJZFltKY4', '2020-12-26 18:15:29', 84.00, 0, '广东省,东莞市,松山湖,东莞理工学院', '13602348194', '李华铧');
-INSERT INTO `orderinfo` VALUES (13, 'oJSWT4t6a9pS2v5TAY2oJZFltKY4', '2020-12-26 18:14:29', 25.00, 0, '广东省,东莞市,松山湖,东莞理工学院', '13602348194', '李华铧');
-INSERT INTO `orderinfo` VALUES (15, 'oJSWT4t6a9pS2v5TAY2oJZFltKY4', '2020-12-26 18:55:33', 30.00, 0, '广东省,东莞市,松山湖,东莞理工学院', '13602348194', '李华铧');
-INSERT INTO `orderinfo` VALUES (16, 'oJSWT4t6a9pS2v5TAY2oJZFltKY4', '2020-12-26 18:58:29', 72.00, 0, '广东省,东莞市,松山湖,东莞理工学院', '13602348194', '李华铧');
-INSERT INTO `orderinfo` VALUES (17, 'oJSWT4t6a9pS2v5TAY2oJZFltKY4', '2020-12-26 19:00:26', 60.00, 0, '广东省,东莞市,松山湖,东莞理工学院', '13602348194', '李华铧');
-
-SET FOREIGN_KEY_CHECKS = 1;
-
--- ----------------------------
--- Table structure for bannerimg
--- ----------------------------
-create table bannerImg
+create table admin
 (
-    id int not null,
-    imgUrl varchar(255) null,
-    constraint bannerImg_pk
-        primary key (id)
+    id       int(15)  not null
+        primary key,
+    password char(20) not null,
+    username char(15) not null
 );
 
--- ----------------------------
--- Records of bannerimg
--- ----------------------------
+create table bannerimg
+(
+    id     int          not null
+        primary key,
+    imgUrl varchar(255) null
+);
+
+create table comselectinfo
+(
+    OrderID     char(15)      not null,
+    id          char(15)      not null,
+    Number      int default 1 null,
+    Description varchar(255)  null,
+    Price       decimal(6, 2) null,
+    primary key (OrderID, id)
+);
+
+create index Fk_id
+    on comselectinfo (id);
+
+create table cusaccinfo
+(
+    OpenID   varchar(255) not null
+        primary key,
+    Name     char(20)     null,
+    PhoneNum char(15)     null,
+    NickName char(20)     null,
+    Address  varchar(255) null
+);
+
+create table milktea
+(
+    id       int auto_increment,
+    Type     int           null,
+    Price    decimal(6, 2) not null,
+    TypeName varchar(255)  null,
+    image    varchar(255)  null,
+    Name     varchar(30)   not null,
+    constraint milktea_id_uindex
+        unique (id)
+);
+
+alter table milktea
+    add primary key (id);
+
+create table orderinfo
+(
+    OrderID  int auto_increment
+        primary key,
+    OpenID   varchar(255)  not null,
+    Time     datetime      not null,
+    Total    decimal(6, 2) not null,
+    Status   int           not null,
+    Address  varchar(255)  null,
+    PhoneNum char(15)      null,
+    Name     char(15)      null
+);
+
+create index Fk_penID
+    on orderinfo (OpenID);
+
+create table revenue
+(
+    date        date   not null
+        primary key,
+    orderNumber int    null,
+    revenue     double null
+)
+    comment '收入表，记录某天订单数和当天收入';
+
+INSERT INTO milktea_sql.admin (id, password, username) VALUES (1, '123', 'root');
+
 INSERT INTO milktea_sql.bannerimg (id, imgUrl) VALUES (1, 'https://springboot-exp-1255644734.cos.ap-guangzhou.myqcloud.com/banner/bnr1.jpg');
 INSERT INTO milktea_sql.bannerimg (id, imgUrl) VALUES (2, 'https://springboot-exp-1255644734.cos.ap-guangzhou.myqcloud.com/banner/bnr2.jpg');
 INSERT INTO milktea_sql.bannerimg (id, imgUrl) VALUES (3, 'https://springboot-exp-1255644734.cos.ap-guangzhou.myqcloud.com/banner/bnr3.jpg');
+
+INSERT INTO milktea_sql.comselectinfo (OrderID, id, Number, Description, Price) VALUES ('26', '3', 1, '标准糖,正常冰', 20.00);
+INSERT INTO milktea_sql.comselectinfo (OrderID, id, Number, Description, Price) VALUES ('27', '11', 1, '标准糖,正常冰', 28.00);
+INSERT INTO milktea_sql.comselectinfo (OrderID, id, Number, Description, Price) VALUES ('27', '6', 1, '标准糖,正常冰', 27.00);
+INSERT INTO milktea_sql.comselectinfo (OrderID, id, Number, Description, Price) VALUES ('28', '34', 1, '标准糖,正常冰', 21.00);
+INSERT INTO milktea_sql.comselectinfo (OrderID, id, Number, Description, Price) VALUES ('28', '11', 1, '标准糖,正常冰', 28.00);
+INSERT INTO milktea_sql.comselectinfo (OrderID, id, Number, Description, Price) VALUES ('28', '3', 1, '标准糖,正常冰', 20.00);
+INSERT INTO milktea_sql.comselectinfo (OrderID, id, Number, Description, Price) VALUES ('28', '2', 1, '标准糖,正常冰', 27.00);
+INSERT INTO milktea_sql.comselectinfo (OrderID, id, Number, Description, Price) VALUES ('29', '8', 1, '标准糖,正常冰', 26.00);
+INSERT INTO milktea_sql.comselectinfo (OrderID, id, Number, Description, Price) VALUES ('29', '11', 2, '标准糖,正常冰', 56.00);
+INSERT INTO milktea_sql.comselectinfo (OrderID, id, Number, Description, Price) VALUES ('30', '10', 1, '标准糖,正常冰', 32.00);
+INSERT INTO milktea_sql.comselectinfo (OrderID, id, Number, Description, Price) VALUES ('31', '5', 1, '半糖,少冰', 22.00);
+INSERT INTO milktea_sql.comselectinfo (OrderID, id, Number, Description, Price) VALUES ('31', '12', 1, '微糖,少少冰', 23.00);
+INSERT INTO milktea_sql.comselectinfo (OrderID, id, Number, Description, Price) VALUES ('32', '3', 1, '标准糖,正常冰', 20.00);
+INSERT INTO milktea_sql.comselectinfo (OrderID, id, Number, Description, Price) VALUES ('33', '37', 2, '半糖,少冰', 244.00);
+
+INSERT INTO milktea_sql.cusaccinfo (OpenID, Name, PhoneNum, NickName, Address) VALUES ('oJSWT4t6a9pS2v5TAY2oJZFltKY4', '李华铧', '13602348194', '狛枝', '广东省,东莞市,松山湖,东莞理工学院');
+INSERT INTO milktea_sql.cusaccinfo (OpenID, Name, PhoneNum, NickName, Address) VALUES ('oJSWT4gRMK8MJg6myGJdA_4MZaaY', '宁龙辉', '18925422863', 'ZER0N-1', '广东省,东莞市,松山湖,东莞理工学院');
+
+INSERT INTO milktea_sql.milktea (id, Type, Price, TypeName, image, Name) VALUES (2, 1, 27.00, '果茶家族', 'https://springboot-exp-1255644734.cos.ap-guangzhou.myqcloud.com/milktea/id0002.jpg', '多肉芒芒甘露');
+INSERT INTO milktea_sql.milktea (id, Type, Price, TypeName, image, Name) VALUES (3, 1, 20.00, '果茶家族', 'https://springboot-exp-1255644734.cos.ap-guangzhou.myqcloud.com/milktea/id0003.jpg', '芝芝桃桃');
+INSERT INTO milktea_sql.milktea (id, Type, Price, TypeName, image, Name) VALUES (4, 2, 19.00, '茗茶/牛乳', 'https://springboot-exp-1255644734.cos.ap-guangzhou.myqcloud.com/milktea/id0004.jpg', '芝芝绿妍');
+INSERT INTO milktea_sql.milktea (id, Type, Price, TypeName, image, Name) VALUES (5, 2, 22.00, '茗茶/牛乳', 'https://springboot-exp-1255644734.cos.ap-guangzhou.myqcloud.com/milktea/id0005.jpg', '芝芝金玉');
+INSERT INTO milktea_sql.milktea (id, Type, Price, TypeName, image, Name) VALUES (6, 3, 27.00, '波波家族', 'https://springboot-exp-1255644734.cos.ap-guangzhou.myqcloud.com/milktea/id0006.jpg', '豆豆波波茶');
+INSERT INTO milktea_sql.milktea (id, Type, Price, TypeName, image, Name) VALUES (7, 3, 25.00, '波波家族', 'https://springboot-exp-1255644734.cos.ap-guangzhou.myqcloud.com/milktea/id0007.jpg', '芋泥波波牛乳');
+INSERT INTO milktea_sql.milktea (id, Type, Price, TypeName, image, Name) VALUES (8, 4, 26.00, '醇香咖啡', 'https://springboot-exp-1255644734.cos.ap-guangzhou.myqcloud.com/milktea/id0008.jpg', '芝芝咖啡');
+INSERT INTO milktea_sql.milktea (id, Type, Price, TypeName, image, Name) VALUES (9, 4, 29.00, '醇香咖啡', 'https://springboot-exp-1255644734.cos.ap-guangzhou.myqcloud.com/milktea/id0009.jpg', '雪山香草拿铁');
+INSERT INTO milktea_sql.milktea (id, Type, Price, TypeName, image, Name) VALUES (10, 1, 32.00, '果茶家族', 'https://springboot-exp-1255644734.cos.ap-guangzhou.myqcloud.com/milktea/id0010.jpg', '芝芝莓莓');
+INSERT INTO milktea_sql.milktea (id, Type, Price, TypeName, image, Name) VALUES (11, 1, 28.00, '果茶家族', 'https://springboot-exp-1255644734.cos.ap-guangzhou.myqcloud.com/milktea/id0011.jpg', '芝芝莓莓桃');
+INSERT INTO milktea_sql.milktea (id, Type, Price, TypeName, image, Name) VALUES (12, 1, 23.00, '果茶家族', 'https://springboot-exp-1255644734.cos.ap-guangzhou.myqcloud.com/milktea/id0012.jpg', '满杯红柚');
+INSERT INTO milktea_sql.milktea (id, Type, Price, TypeName, image, Name) VALUES (1, 3, 31.00, '波波家族', 'https://springboot-exp-1255644734.cos.ap-guangzhou.myqcloud.com/milktea/id0001.jpg', '葡萄波波奶盖');
+INSERT INTO milktea_sql.milktea (id, Type, Price, TypeName, image, Name) VALUES (37, 2, 122.00, '茗茶/牛乳', 'https://springboot-exp-1255644734.cos.ap-guangzhou.myqcloud.com/milktea/id0006.jpg', '测试牛乳');
+
+INSERT INTO milktea_sql.orderinfo (OrderID, OpenID, Time, Total, Status, Address, PhoneNum, Name) VALUES (32, 'oJSWT4gRMK8MJg6myGJdA_4MZaaY', '2021-01-11 21:25:09', 20.00, 1, '广东省,东莞市,松山湖,东莞理工学院', '18925422863', '宁龙辉');
+INSERT INTO milktea_sql.orderinfo (OrderID, OpenID, Time, Total, Status, Address, PhoneNum, Name) VALUES (33, 'oJSWT4gRMK8MJg6myGJdA_4MZaaY', '2021-01-11 21:29:09', 244.00, 1, '广东省,东莞市,松山湖,东莞理工学院', '18925422863', '宁龙辉');
+INSERT INTO milktea_sql.orderinfo (OrderID, OpenID, Time, Total, Status, Address, PhoneNum, Name) VALUES (26, 'oJSWT4gRMK8MJg6myGJdA_4MZaaY', '2021-01-10 20:58:01', 20.00, 1, '广东省,东莞市,松山湖,东莞理工学院', '18925422863', '宁龙辉');
+INSERT INTO milktea_sql.orderinfo (OrderID, OpenID, Time, Total, Status, Address, PhoneNum, Name) VALUES (27, 'oJSWT4gRMK8MJg6myGJdA_4MZaaY', '2021-01-11 18:09:41', 55.00, 1, '广东省,东莞市,松山湖,东莞理工学院', '18925422863', '宁龙辉');
+INSERT INTO milktea_sql.orderinfo (OrderID, OpenID, Time, Total, Status, Address, PhoneNum, Name) VALUES (28, 'oJSWT4gRMK8MJg6myGJdA_4MZaaY', '2021-01-11 18:12:20', 96.00, 1, '广东省,东莞市,松山湖,东莞理工学院', '18925422863', '宁龙辉');
+INSERT INTO milktea_sql.orderinfo (OrderID, OpenID, Time, Total, Status, Address, PhoneNum, Name) VALUES (29, 'oJSWT4gRMK8MJg6myGJdA_4MZaaY', '2021-01-11 20:51:59', 82.00, 1, '广东省,东莞市,松山湖,东莞理工学院', '18925422863', '宁龙辉');
+INSERT INTO milktea_sql.orderinfo (OrderID, OpenID, Time, Total, Status, Address, PhoneNum, Name) VALUES (30, 'oJSWT4gRMK8MJg6myGJdA_4MZaaY', '2021-01-11 21:16:30', 32.00, 1, '广东省,东莞市,松山湖,东莞理工学院', '18925422863', '宁龙辉');
+INSERT INTO milktea_sql.orderinfo (OrderID, OpenID, Time, Total, Status, Address, PhoneNum, Name) VALUES (31, 'oJSWT4gRMK8MJg6myGJdA_4MZaaY', '2021-01-11 21:23:25', 45.00, 1, '广东省,东莞市,松山湖,东莞理工学院', '18925422863', '宁龙辉');
+
+INSERT INTO milktea_sql.revenue (date, orderNumber, revenue) VALUES ('2021-01-03', 23, 598);
+INSERT INTO milktea_sql.revenue (date, orderNumber, revenue) VALUES ('2021-01-04', 42, 1092);
+INSERT INTO milktea_sql.revenue (date, orderNumber, revenue) VALUES ('2021-01-05', 21, 778);
+INSERT INTO milktea_sql.revenue (date, orderNumber, revenue) VALUES ('2021-01-06', 32, 889);
+INSERT INTO milktea_sql.revenue (date, orderNumber, revenue) VALUES ('2021-01-07', 32, 889);
+INSERT INTO milktea_sql.revenue (date, orderNumber, revenue) VALUES ('2021-01-08', 42, 1092);
+INSERT INTO milktea_sql.revenue (date, orderNumber, revenue) VALUES ('2021-01-09', 123, 3198);
+INSERT INTO milktea_sql.revenue (date, orderNumber, revenue) VALUES ('2021-01-10', 52, 1292);
