@@ -24,7 +24,12 @@
 ![输入图片说明](https://images.gitee.com/uploads/images/2021/0108/205013_17ee09ba_4796963.png "屏幕截图.png")
 ![输入图片说明](https://images.gitee.com/uploads/images/2021/0108/205103_b6c610bc_4796963.png "屏幕截图.png")
 ### 三.技术栈  
-
+####  客户端  
+微信小程序 
+####  后台前端  
+React，Ant组件库
+####  后台后端  
+SpringBoot，Mysql
 ### 四.具体实现
 ####  客户端  
 客户端采用小程序为客户提供图形界面，方便客户查看商品，下订单，查看订单状态
@@ -374,29 +379,29 @@ mapper语句：
 ####  前端  
 #####登录页面  
 ![输入图片说明](https://images.gitee.com/uploads/images/2021/0111/231609_ab12fa18_6563150.png "屏幕截图.png")
-#####防水墙  
+#####  防水墙   
 ![输入图片说明](https://images.gitee.com/uploads/images/2021/0111/231644_23fcaf84_6563150.png "屏幕截图.png")
 
 前端主页面主要有几个模块组成：左上角是LOGO，右上角是账户信息，左侧栏是菜单，占据页面大部分内容的是内容展示框  
 ![输入图片说明](https://images.gitee.com/uploads/images/2021/0111/131038_f93697b6_6563150.png "屏幕截图.png")
-![输入图片说明](https://images.gitee.com/uploads/images/2021/0111/232200_298404ab_6563150.png "屏幕截图.png")  
-可以在已完成订单中找到：  
-![输入图片说明](https://images.gitee.com/uploads/images/2021/0111/232416_6ee9c4d6_6563150.png "屏幕截图.png")  
-客户在小程序看到的：  
-![输入图片说明](https://images.gitee.com/uploads/images/2021/0111/232504_bdd47410_6563150.png "屏幕截图.png")  
 
 前端的菜单有  
 
 #####  1.首页  
 首页向用户展示一些重要统计数据的图表信息，让经营者能够清楚知道自己的营收情况，订单数目，下单人数，品类销量排行    
 ![输入图片说明](https://images.gitee.com/uploads/images/2021/0111/132007_23d75e7c_6563150.png "屏幕截图.png")
-#####  2.订单管理  
-给经营者管理订单，或是给制作者查看订单信息，根据信息制作相应奶茶  
+#####  2.订单管理   
+给经营者管理订单，或是给制作者查看订单信息，根据信息制作相应奶茶   
 ![输入图片说明](https://images.gitee.com/uploads/images/2021/0111/232058_23c4ca52_6563150.png "屏幕截图.png")  
 制作人员可以点击制作完成，这样用户就可以得到取餐号在前台取餐  
 ![输入图片说明](https://images.gitee.com/uploads/images/2021/0111/232144_79f38830_6563150.png "屏幕截图.png")  
+![输入图片说明](https://images.gitee.com/uploads/images/2021/0111/233608_aca66501_6563150.png "屏幕截图.png")  
+可以在已完成订单中找到  
+![输入图片说明](https://images.gitee.com/uploads/images/2021/0111/233649_3273db27_6563150.png "屏幕截图.png")  
+用户则可以在自己的小程序端看到：  
+![输入图片说明](https://images.gitee.com/uploads/images/2021/0111/233724_71d3f789_6563150.png "屏幕截图.png")  
 
-查看历史订单记录，起到查账的作用  
+查看历史订单记录，也可以起到查账的作用  
 ![输入图片说明](https://images.gitee.com/uploads/images/2021/0111/231917_7ccb5a32_6563150.png "屏幕截图.png")
 
 #####  3.商品管理  
@@ -405,9 +410,10 @@ mapper语句：
 添加商品操作：  
 ![输入图片说明](https://images.gitee.com/uploads/images/2021/0111/133921_4f3f2a63_6563150.png "屏幕截图.png")  
 ![输入图片说明](https://images.gitee.com/uploads/images/2021/0111/133949_a97dca45_6563150.png "屏幕截图.png")  
-![输入图片说明](https://images.gitee.com/uploads/images/2021/0111/134314_42e30d74_6563150.png "屏幕截图.png")
+![输入图片说明](https://images.gitee.com/uploads/images/2021/0111/234044_d496758d_6563150.png "屏幕截图.png")
 其中商品图标是动态获取的  
-![输入图片说明](https://images.gitee.com/uploads/images/2021/0111/134237_d2db90b1_6563150.png "屏幕截图.png")  
+![输入图片说明](https://images.gitee.com/uploads/images/2021/0111/234121_8b73c738_6563150.png "屏幕截图.png")  
+通过COSBrowser，用户可以放自己的图片进去，然后就可以在添加奶茶的时候使用  
 ##### banner管理
 banner指的是小程序首页的展示图片，可以从此页面进行更换  
 
