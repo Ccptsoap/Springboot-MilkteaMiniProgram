@@ -116,8 +116,8 @@ INSERT INTO milktea_sql.comselectinfo (OrderID, id, Number, Description, Price) 
 INSERT INTO milktea_sql.comselectinfo (OrderID, id, Number, Description, Price) VALUES ('32', '3', 1, '标准糖,正常冰', 20.00);
 INSERT INTO milktea_sql.comselectinfo (OrderID, id, Number, Description, Price) VALUES ('33', '37', 2, '半糖,少冰', 244.00);
 
-INSERT INTO milktea_sql.cusaccinfo (OpenID, Name, PhoneNum, NickName, Address) VALUES ('oJSWT4t6a9pS2v5TAY2oJZFltKY4', '李华铧', '13602348194', '狛枝', '广东省,东莞市,松山湖,东莞理工学院');
-INSERT INTO milktea_sql.cusaccinfo (OpenID, Name, PhoneNum, NickName, Address) VALUES ('oJSWT4gRMK8MJg6myGJdA_4MZaaY', '宁龙辉', '18925422863', 'ZER0N-1', '广东省,东莞市,松山湖,东莞理工学院');
+INSERT INTO milktea_sql.cusaccinfo (OpenID, Name, PhoneNum, NickName, Address) VALUES ('oJSWT4t6a9pS2v5TAY2oJZFltKY4', 'xxx', '123', '狛枝', 'xxx,xxx,xxx,xxx');
+INSERT INTO milktea_sql.cusaccinfo (OpenID, Name, PhoneNum, NickName, Address) VALUES ('oJSWT4gRMK8MJg6myGJdA_4MZaaY', 'xxx', '123', 'ZER0N-1', 'xxx,xxx,xxx,xxx');
 
 INSERT INTO milktea_sql.milktea (id, Type, Price, TypeName, image, Name) VALUES (2, 1, 27.00, '果茶家族', 'https://springboot-exp-1255644734.cos.ap-guangzhou.myqcloud.com/milktea/id0002.jpg', '多肉芒芒甘露');
 INSERT INTO milktea_sql.milktea (id, Type, Price, TypeName, image, Name) VALUES (3, 1, 20.00, '果茶家族', 'https://springboot-exp-1255644734.cos.ap-guangzhou.myqcloud.com/milktea/id0003.jpg', '芝芝桃桃');
